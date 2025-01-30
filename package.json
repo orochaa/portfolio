@@ -1,0 +1,42 @@
+{
+  "name": "site",
+  "private": true,
+  "main": "src/main/index.tsx",
+  "type": "module",
+  "scripts": {
+    "start": "vite preview",
+    "dev": "vite",
+    "lint": "run-s lint:tsc lint:prettier lint:eslint",
+    "lint:tsc": "tsc -p tsconfig.build.json",
+    "lint:prettier": "prettier --write .",
+    "lint:eslint": "eslint --fix \"src/**/*.ts{x,}\"",
+    "build": "tsc -p tsconfig.build.json && vite build"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "react-icons": "^5.4.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.1",
+    "@total-typescript/ts-reset": "^0.6.1",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^22.12.0",
+    "@types/react": "^19.0.8",
+    "@types/react-dom": "^19.0.3",
+    "@vitejs/plugin-react": "^4.3.4",
+    "eslint": "^9.19.0",
+    "eslint-plugin-mist3rbru": "^0.6.4",
+    "npm-run-all2": "^7.0.2",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11"
+  },
+  "pnpm": {
+    "overrides": {
+      "csstype": "3.1.2"
+    }
+  }
+}
