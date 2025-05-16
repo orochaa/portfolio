@@ -1,0 +1,1 @@
+- [] Add readme to snake, cantinho do acai, cineapp, go-opportunities, team-up, chattys, scalable-upload

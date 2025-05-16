@@ -1,5 +1,5 @@
 {
-  "name": "site",
+  "name": "portfolio",
   "private": true,
   "main": "src/main/index.tsx",
   "type": "module",
@@ -13,9 +13,13 @@
     "build": "tsc -p tsconfig.build.json && vite build"
   },
   "dependencies": {
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.511.0",
+    "motion": "^12.12.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
-    "react-icons": "^5.4.0"
+    "tailwind-merge": "^3.3.0"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.0.1",
@@ -31,6 +35,7 @@
     "prettier": "^3.4.2",
     "prettier-plugin-tailwindcss": "^0.6.11",
     "tailwindcss": "^4.0.1",
+    "tw-animate-css": "^1.3.0",
     "typescript": "^5.7.3",
     "vite": "^6.0.11"
   },
