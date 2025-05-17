@@ -8,13 +8,13 @@ import { motion } from 'motion/react'
 export function App(): React.JSX.Element {
   return (
     <div className="min-h-svh">
-      <div className="mx-auto w-11/12 py-20">
+      <div className="mx-auto w-11/12 max-w-6xl py-20">
         <Title>Projetos</Title>
         <div className="flex flex-col gap-8">
           {groups.map(group => (
             <div key={group.name}>
               <p className="mb-2 text-xl font-semibold">{group.name}</p>
-              <ul className="grid grid-cols-2 gap-2">
+              <ul className="grid grid-cols-1 gap-2 lg:grid-cols-2">
                 {group.projects.map((project, i) => (
                   <motion.li
                     key={project.name}
@@ -33,7 +33,7 @@ export function App(): React.JSX.Element {
                     viewport={{ once: true }}
                   >
                     <GlowContainer
-                      containerClassName="h-32 rounded-lg border border-zinc-600 p-4 "
+                      containerClassName="min-h-32 rounded-lg border border-zinc-600 p-4 "
                       boxClassName="rounded-lg "
                       glowClassName="size-96 from-zinc-200"
                     >
