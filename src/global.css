@@ -5,6 +5,8 @@
 
 @theme {
   --font-*: initial;
+
+  --color-background: #121214;
 }
 
 @custom-variant data-selected (&[data-selected="true"]);

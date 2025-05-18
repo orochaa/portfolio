@@ -1,8 +1,8 @@
 /* eslint-disable unicorn/no-array-callback-reference */
-import { getLanguage } from '@/data/languages'
-import type { Language, LanguageName } from '@/data/languages'
-import { getTechnology } from '@/data/tecnologies'
-import type { Technology, TechnologyName } from '@/data/tecnologies'
+import { getLanguage } from '@/lib/data/languages'
+import type { Language, LanguageName } from '@/lib/data/languages'
+import { getTechnology } from '@/lib/data/technologies'
+import type { Technology, TechnologyName } from '@/lib/data/technologies'
 
 export interface Project {
   name: string
@@ -54,8 +54,7 @@ export const projects: Project[] = (
     {
       name: 'newsletter-lambda',
       displayName: 'Newsletter',
-      description:
-        'A simple, scalable newsletter subscription API built with AWS Lambda, DynamoDB, SES, and the Serverless Framework, using TypeScript.',
+      description: 'A simple, scalable newsletter subscription API.',
       technologies: [
         'node',
         'aws-lambda',
@@ -72,8 +71,7 @@ export const projects: Project[] = (
     {
       name: 'url-shortener-lambda',
       displayName: 'URL Shortener',
-      description:
-        'A simple, scalable URL shortener service built with AWS Lambda, DynamoDB, and the Serverless Framework, using TypeScript.',
+      description: 'A simple, scalable URL shortener service.',
       technologies: ['node', 'aws-lambda', 'aws-dynamodb', 'serverless'],
       languages: ['typescript'],
       githubUrl:
@@ -96,8 +94,7 @@ export const projects: Project[] = (
     {
       name: '2048',
       displayName: '2048',
-      description:
-        'Web-based implementation of the popular 2048 game, developed using TypeScript, React, and TailwindCSS.',
+      description: 'Web-based implementation of the popular 2048 game.',
       technologies: ['react', 'tailwindcss'],
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/2048?tab=readme-ov-file#readme',
@@ -108,8 +105,7 @@ export const projects: Project[] = (
     {
       name: 'snake',
       displayName: 'Snake',
-      description:
-        'Web-based implementation of the popular Snake game, developed using TypeScript, React, and TailwindCSS.',
+      description: 'Web-based implementation of the popular Snake game.',
       technologies: ['react', 'tailwindcss'],
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/snake?tab=readme-ov-file#readme',
@@ -139,8 +135,7 @@ export const projects: Project[] = (
     {
       name: 'cineapp',
       displayName: 'Cineapp',
-      description:
-        '🎥 Web app based on streaming services, made with React, TailwindCSS, SWR and The Movie Database.',
+      description: '🎥 Web app based on streaming services.',
       technologies: ['react', 'tailwindcss', 'the-movie-database'],
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/cineapp?tab=readme-ov-file#readme',

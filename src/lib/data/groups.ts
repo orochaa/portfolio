@@ -1,5 +1,5 @@
-import { projects } from '@/data/projects'
-import type { Project } from '@/data/projects'
+import { projects } from '@/lib/data/projects'
+import type { Project } from '@/lib/data/projects'
 
 export const groups: {
   name: string
