@@ -2,7 +2,7 @@ import { GlowContainer } from '@/components/glow-container'
 import { LearnMore } from '@/components/learn-more'
 import { GithubIcon } from '@/components/ui/github'
 import { LinkIcon } from '@/components/ui/link'
-import type { Project } from '@/data/projects'
+import type { Project } from '@/lib/data/projects'
 import { motion } from 'motion/react'
 
 export interface ProjectProps {
@@ -35,9 +35,10 @@ export function Project(props: ProjectProps): React.JSX.Element {
         },
       }}
       viewport={{ once: true }}
+      className="min-h-40"
     >
       <GlowContainer
-        containerClassName="min-h-40 rounded-lg border border-zinc-600 p-4"
+        containerClassName="h-full rounded-lg border border-zinc-600 p-4"
         boxClassName="rounded-lg "
         glowClassName="size-96 from-zinc-200"
       >
@@ -77,23 +78,21 @@ export function Project(props: ProjectProps): React.JSX.Element {
           </div>
         </div>
         <p className="min-h-12">{project.description}</p>
-        <div className="mt-3 flex flex-col gap-1">
-          <div className="flex gap-1">
-            {project.languages.map(language => (
-              <LearnMore key={language.name} {...language}>
-                <span className="rounded-lg bg-blue-500/10 px-2 py-0.5 text-sm text-blue-200">
-                  {language.name}
-                </span>
-              </LearnMore>
-            ))}
-            {project.technologies.map(technology => (
-              <LearnMore key={technology.name} {...technology}>
-                <span className="rounded-lg bg-orange-300/10 px-2 py-0.5 text-sm text-orange-200">
-                  {technology.name}
-                </span>
-              </LearnMore>
-            ))}
-          </div>
+        <div className="mt-3 flex gap-1">
+          {project.languages.map(language => (
+            <LearnMore key={language.name} {...language}>
+              <span className="rounded-lg bg-blue-500/10 px-2 py-0.5 text-sm text-blue-200">
+                {language.name}
+              </span>
+            </LearnMore>
+          ))}
+          {project.technologies.map(technology => (
+            <LearnMore key={technology.name} {...technology}>
+              <span className="rounded-lg bg-orange-300/10 px-2 py-0.5 text-sm text-orange-200">
+                {technology.name}
+              </span>
+            </LearnMore>
+          ))}
         </div>
       </GlowContainer>
     </motion.li>

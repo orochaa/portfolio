@@ -57,7 +57,7 @@ export function LearnMore(props: LearnMoreProps): React.JSX.Element {
   }, [isVisible, left])
 
   return (
-    <div ref={containerRef} className="relative inline-block">
+    <div ref={containerRef} className="relative inline-block shrink-0">
       <button
         type="button"
         title="Lear more"
