@@ -19,11 +19,23 @@ export const languages = [
       'High-level, general-purpose, memory-safe, object-oriented programming language.',
     url: 'https://www.java.com/',
   },
-] as const satisfies {
+] as const satisfies Language[]
+
+export interface Language {
   name: string
   displayName: string
   description: string
   url: string
-}[]
+}
 
-export type Language = (typeof languages)[number]['name']
+export type LanguageName = (typeof languages)[number]['name']
+
+export function getLanguage(languageName: LanguageName): Language {
+  const language = languages.find(language => language.name === languageName)
+
+  if (!language) {
+    throw new Error(`Language ${languageName} not found`)
+  }
+
+  return language
+}

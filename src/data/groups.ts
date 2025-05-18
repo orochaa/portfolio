@@ -1,5 +1,5 @@
-import { projects  } from '@/data/projects'
-import type {Project} from '@/data/projects';
+import { projects } from '@/data/projects'
+import type { Project } from '@/data/projects'
 
 export const groups: {
   name: string
@@ -12,10 +12,6 @@ export const groups: {
   {
     name: 'Backend',
     projects: projects.filter(project => project.tags.includes('backend')),
-  },
-  {
-    name: 'FullStack',
-    projects: projects.filter(project => project.tags.includes('frontend')),
   },
   {
     name: 'Tools',

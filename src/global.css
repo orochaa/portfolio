@@ -7,6 +7,9 @@
   --font-*: initial;
 }
 
+@custom-variant data-selected (&[data-selected="true"]);
+@custom-variant data-active (&[data-active="true"]);
+
 * {
   -webkit-font-smoothing: antialiased;
 }

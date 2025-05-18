@@ -136,11 +136,25 @@ export const technologies = [
       'Bidirectional and low-latency communication for every platform.',
     url: 'https://socket.io/',
   },
-] as const satisfies {
+] as const satisfies Technology[]
+
+export interface Technology {
   name: string
   displayName: string
   description: string
   url: string
-}[]
+}
 
-export type Technology = (typeof technologies)[number]['name']
+export type TechnologyName = (typeof technologies)[number]['name']
+
+export function getTechnology(technologyName: TechnologyName): Technology {
+  const technology = technologies.find(
+    technology => technology.name === technologyName
+  )
+
+  if (!technology) {
+    throw new Error(`Technology ${technologyName} not found`)
+  }
+
+  return technology
+}
