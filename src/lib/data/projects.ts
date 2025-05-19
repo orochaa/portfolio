@@ -4,6 +4,16 @@ import type { Language, LanguageName } from '@/lib/data/languages'
 import { getTechnology } from '@/lib/data/technologies'
 import type { Technology, TechnologyName } from '@/lib/data/technologies'
 
+export type TagName =
+  | 'backend'
+  | 'frontend'
+  | 'mobile'
+  | 'game'
+  | 'tools'
+  | 'serverless'
+  | 'contributor'
+  | 'live'
+
 export interface Project {
   name: string
   displayName: string
@@ -15,7 +25,7 @@ export interface Project {
   isPrivate?: boolean
   videoUrl?: string
   imgUrl?: string
-  tags: string[]
+  tags: TagName[]
   stars?: number
   downloadsByMonth?: number
   _weight: number
@@ -31,7 +41,7 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/cineapp?tab=readme-ov-file#readme',
       liveUrl: 'https://cineapp-orochaa.vercel.app/',
-      tags: ['frontend'],
+      tags: ['frontend', 'live'],
       videoUrl: '/assets/cineapp.mp4',
       _weight: 1,
     },
@@ -44,7 +54,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/url-shortener-lambda?tab=readme-ov-file#readme',
       liveUrl: 'https://cantinho-do-acai.vercel.app/',
-      tags: ['frontend'],
+      tags: ['frontend', 'live'],
       videoUrl: '/assets/cantinho-do-acai.mp4',
       _weight: 1,
     },
@@ -64,7 +74,7 @@ export const projects: Project[] = (
       languages: ['typescript'],
       liveUrl: 'https://tap.uniftec.com.br/',
       imgUrl: '/assets/techiacad.png',
-      tags: ['frontend', 'backend'],
+      tags: ['frontend', 'backend', 'live'],
       isPrivate: true,
       _weight: 2,
     },
@@ -77,7 +87,7 @@ export const projects: Project[] = (
       githubUrl: 'https://github.com/orochaa/2048?tab=readme-ov-file#readme',
       liveUrl: 'https://2048-orochaa.vercel.app/',
       videoUrl: '/assets/2048.mp4',
-      tags: ['frontend', 'game'],
+      tags: ['frontend', 'game', 'live'],
       _weight: 1,
     },
     {
@@ -87,7 +97,7 @@ export const projects: Project[] = (
       technologies: ['android', 'node', 'postgresql', 'steam'],
       languages: ['java', 'typescript'],
       githubUrl: 'https://github.com/orochaa/team-up?tab=readme-ov-file#readme',
-      tags: ['mobile', 'backend', 'android'],
+      tags: ['mobile', 'backend'],
       imgUrl: '/assets/team-up.png',
       _weight: 1,
     },
@@ -147,9 +157,9 @@ export const projects: Project[] = (
       description: 'Android/iOS app for tracking personalized workouts.',
       technologies: ['react-native', 'expo'],
       languages: ['typescript'],
-      tags: ['mobile', 'android', 'ios'],
       liveUrl: 'https://apps.apple.com/br/app/lets-train/id6739985648',
       videoUrl: '/assets/lets-train.mp4',
+      tags: ['mobile', 'live'],
       isPrivate: true,
       _weight: 2,
     },
@@ -218,7 +228,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/bombshell-dev/clack?tab=readme-ov-file#readme',
       liveUrl: 'https://www.clack.cc',
-      tags: ['contributor'],
+      tags: ['contributor', 'live'],
       imgUrl: '/assets/clack.gif',
       stars: 6400,
       downloadsByMonth: 4_800_000,
@@ -233,7 +243,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/brazilian-utils/brazilian-utils?tab=readme-ov-file#readme',
       liveUrl: 'https://brazilian-utils.com.br',
-      tags: ['contributor'],
+      tags: ['contributor', 'live'],
       imgUrl: '/assets/brazilian-utils.png',
       stars: 1600,
       downloadsByMonth: 42_000,
