@@ -14,11 +14,11 @@ export const groups: {
     projects: projects.filter(project => project.tags.includes('backend')),
   },
   {
-    name: 'Tools',
-    projects: projects.filter(project => project.tags.includes('tools')),
+    name: 'Mobile',
+    projects: projects.filter(project => project.tags.includes('mobile')),
   },
   {
-    name: 'Games',
-    projects: projects.filter(project => project.tags.includes('game')),
+    name: 'Tools',
+    projects: projects.filter(project => project.tags.includes('tools')),
   },
 ]

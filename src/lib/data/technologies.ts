@@ -131,10 +131,16 @@ export const technologies = [
   },
   {
     name: 'socket',
-    displayName: 'socket',
+    displayName: 'Socket',
     description:
       'Bidirectional and low-latency communication for every platform.',
     url: 'https://socket.io/',
+  },
+  {
+    name: 'react-native',
+    displayName: 'ReactNative',
+    description: 'Build native mobile apps using JavaScript and React.',
+    url: 'https://reactnative.dev/',
   },
 ] as const satisfies Technology[]
 

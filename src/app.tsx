@@ -12,7 +12,7 @@ export function App(): React.JSX.Element {
         </Title>
         <div className="relative flex">
           <ScrollSpyNav />
-          <div className="flex flex-col gap-8 px-6">
+          <div className="space-y-8 px-6">
             {groups.map((group, groupIndex) => (
               <div key={group.name}>
                 <h3 id={group.name} className="mb-2 text-xl font-semibold">
