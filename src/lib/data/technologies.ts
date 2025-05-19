@@ -148,6 +148,20 @@ export const technologies = [
     description: 'Build native iOS and Android apps with JavaScript',
     url: 'https://expo.dev',
   },
+  {
+    name: 'aws-sqs',
+    displayName: 'AWS Simple Queue Service',
+    description:
+      'A fully managed message queuing service that enables you to decouple and scale microservices, distributed systems, and serverless applications.',
+    url: 'https://aws.amazon.com/sqs',
+  },
+  {
+    name: 'aws-s3',
+    displayName: 'AWS Simple Storage Service',
+    description:
+      'Object storage built to retrieve any amount of data from anywhere.',
+    url: 'https://aws.amazon.com/s3',
+  },
 ] as const satisfies Technology[]
 
 export interface Technology {
