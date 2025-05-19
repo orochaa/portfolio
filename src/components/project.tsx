@@ -1,7 +1,7 @@
 import { GlowContainer } from '@/components/glow-container'
+import { GithubIcon } from '@/components/icons/github'
+import { LinkIcon } from '@/components/icons/link'
 import { LearnMore } from '@/components/learn-more'
-import { GithubIcon } from '@/components/ui/github'
-import { LinkIcon } from '@/components/ui/link'
 import type { Project } from '@/lib/data/projects'
 import { LockKeyhole } from 'lucide-react'
 import { motion } from 'motion/react'
@@ -55,6 +55,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
               <img
                 src={project.imgUrl}
                 alt=""
+                loading="lazy"
                 className="mx-auto h-[16.75rem]"
               />
             ) : project.videoUrl ? (
