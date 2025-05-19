@@ -1,5 +1,4 @@
 import { Project } from '@/components/project'
-import { Title } from '@/components/title'
 import { groups } from '@/lib/data/groups'
 import { useCallback, useEffect, useState } from 'react'
 import type { MouseEvent } from 'react'
@@ -67,10 +66,10 @@ export function ProjectsSection(): React.JSX.Element {
   }, [])
 
   return (
-    <div className="mx-auto w-11/12 max-w-6xl pb-20">
-      <Title className="bg-background sticky top-0 left-0 z-20 pt-4">
+    <div className="mx-auto w-11/12 max-w-6xl py-20">
+      <h2 className="bg-background sticky top-0 left-0 z-20 mb-6 pt-4 pb-3 text-3xl after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-linear-to-r after:from-zinc-400 after:to-zinc-200">
         Projects
-      </Title>
+      </h2>
       <div className="relative flex">
         <nav className="sticky top-20 left-0 h-fit">
           <ul className="w-36 space-y-1 border-l border-zinc-600">
@@ -79,7 +78,7 @@ export function ProjectsSection(): React.JSX.Element {
                 <a
                   href={`#${h.id}`}
                   data-active={activeId === h.id}
-                  className="relative block rounded-r px-3 py-1.5 text-base transition-colors before:absolute before:bottom-0 before:left-[-1px] before:h-full before:w-[1px] before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400"
+                  className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:left-[-1px] before:h-full before:w-[1px] before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400"
                   // eslint-disable-next-line react/jsx-no-bind
                   onClick={e => handleGoToProjectSection(e, h)}
                 >

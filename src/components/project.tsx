@@ -37,9 +37,10 @@ export function Project(props: ProjectProps): React.JSX.Element {
         },
       }}
       viewport={{ once: true }}
+      className="min-h-40"
     >
       <GlowContainer
-        containerClassName="min-h-40 rounded-lg border border-zinc-600 "
+        containerClassName="h-full rounded-lg border border-zinc-600 "
         boxClassName="rounded-lg"
         glowClassName="size-96 from-zinc-200"
       >
@@ -50,7 +51,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
             href={project.liveUrl ?? project.githubUrl ?? '#'}
             target="_blank"
             rel="noreferrer"
-            className="block border-b border-zinc-600 bg-gradient-to-br from-blue-500/20 via-slate-950/20 to-orange-300/20"
+            className="block border-b border-zinc-600 bg-gradient-to-br from-blue-500/20 to-orange-300/20"
           >
             {project.imgUrl ? (
               <img
@@ -142,7 +143,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                 </span>
               )}
             </div>
-            <div className="flex gap-1">
+            <div className="flex flex-wrap gap-1">
               {project.languages.map(language => (
                 <LearnMore key={language.name} {...language}>
                   <span className="rounded-lg bg-blue-500/10 px-2 py-0.5 text-sm text-blue-200">
