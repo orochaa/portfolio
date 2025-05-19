@@ -18,6 +18,7 @@ export interface Project {
   tags: string[]
   stars?: number
   downloadsByMonth?: number
+  _weight: number
 }
 
 export const projects: Project[] = (
@@ -32,6 +33,7 @@ export const projects: Project[] = (
       liveUrl: 'https://cineapp-orochaa.vercel.app/',
       tags: ['frontend'],
       videoUrl: '/assets/cineapp.mp4',
+      _weight: 1,
     },
     {
       name: 'cantinho-do-acai',
@@ -44,6 +46,7 @@ export const projects: Project[] = (
       liveUrl: 'https://cantinho-do-acai.vercel.app/',
       tags: ['frontend'],
       videoUrl: '/assets/cantinho-do-acai.mp4',
+      _weight: 1,
     },
     {
       name: 'ftec-chatbot',
@@ -63,6 +66,7 @@ export const projects: Project[] = (
       imgUrl: '/assets/techiacad.png',
       tags: ['frontend', 'backend'],
       isPrivate: true,
+      _weight: 2,
     },
     {
       name: '2048',
@@ -74,6 +78,7 @@ export const projects: Project[] = (
       liveUrl: 'https://2048-orochaa.vercel.app/',
       videoUrl: '/assets/2048.mp4',
       tags: ['frontend', 'game'],
+      _weight: 1,
     },
     {
       name: 'team-up',
@@ -84,6 +89,7 @@ export const projects: Project[] = (
       githubUrl: 'https://github.com/orochaa/team-up?tab=readme-ov-file#readme',
       tags: ['mobile', 'backend', 'android'],
       imgUrl: '/assets/team-up.png',
+      _weight: 1,
     },
     {
       name: 'url-shortener-lambda',
@@ -94,6 +100,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/url-shortener-lambda?tab=readme-ov-file#readme',
       tags: ['backend', 'serverless'],
+      _weight: 1,
     },
     {
       name: 'newsletter-lambda',
@@ -110,6 +117,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/newsletter-lambda?tab=readme-ov-file#readme',
       tags: ['backend', 'serverless'],
+      _weight: 1,
     },
     {
       name: 'go-opportunities',
@@ -120,6 +128,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/go-opportunities?tab=readme-ov-file#readme',
       tags: ['backend'],
+      _weight: 1,
     },
     {
       name: 'chattys',
@@ -130,6 +139,7 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/chattys?tab=readme-ov-file#readme',
       tags: ['backend'],
+      _weight: 1,
     },
     {
       name: 'lets-train',
@@ -141,6 +151,7 @@ export const projects: Project[] = (
       liveUrl: 'https://apps.apple.com/br/app/lets-train/id6739985648',
       videoUrl: '/assets/lets-train.mp4',
       isPrivate: true,
+      _weight: 2,
     },
     {
       name: 'scalable-upload',
@@ -160,6 +171,7 @@ export const projects: Project[] = (
         'https://github.com/orochaa/scalable-upload?tab=readme-ov-file#readme',
       tags: ['backend'],
       imgUrl: '/assets/scalable-upload.png',
+      _weight: 1,
     },
     {
       name: 'my-cli',
@@ -170,6 +182,7 @@ export const projects: Project[] = (
       githubUrl: 'https://github.com/orochaa/my-cli?tab=readme-ov-file#readme',
       tags: ['tools'],
       imgUrl: '/assets/my-cli.jpg',
+      _weight: 1,
     },
     {
       name: 'go-clack',
@@ -181,6 +194,7 @@ export const projects: Project[] = (
         'https://github.com/orochaa/go-clack?tab=readme-ov-file#readme',
       tags: ['tools'],
       imgUrl: '/assets/clack.gif',
+      _weight: 1,
     },
     {
       name: 'eslint-config',
@@ -193,6 +207,7 @@ export const projects: Project[] = (
         'https://github.com/orochaa/eslint-config?tab=readme-ov-file#readme',
       tags: ['tools'],
       imgUrl: '/assets/eslint-config.png',
+      _weight: 1,
     },
     {
       name: 'clack',
@@ -207,6 +222,7 @@ export const projects: Project[] = (
       imgUrl: '/assets/clack.gif',
       stars: 6400,
       downloadsByMonth: 4_800_000,
+      _weight: 1,
     },
     {
       name: 'brazilian-utils',
@@ -221,13 +237,16 @@ export const projects: Project[] = (
       imgUrl: '/assets/brazilian-utils.png',
       stars: 1600,
       downloadsByMonth: 42_000,
+      _weight: 1,
     },
   ] satisfies (Omit<Project, 'technologies' | 'languages'> & {
     technologies: TechnologyName[]
     languages: LanguageName[]
   })[]
-).map(project => ({
-  ...project,
-  languages: project.languages.map(getLanguage),
-  technologies: project.technologies.map(getTechnology),
-}))
+)
+  .map(project => ({
+    ...project,
+    languages: project.languages.map(getLanguage),
+    technologies: project.technologies.map(getTechnology),
+  }))
+  .sort((a, b) => b._weight - a._weight)
