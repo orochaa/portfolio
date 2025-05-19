@@ -1,8 +1,8 @@
 /* eslint-disable import/no-default-export */
 /* eslint-disable import/no-nodejs-modules */
 import path from 'node:path'
-import react from '@vitejs/plugin-react'
 import tailwind from '@tailwindcss/vite'
+import react from '@vitejs/plugin-react'
 import { defineConfig } from 'vite'
 
 /**
@@ -10,7 +10,7 @@ import { defineConfig } from 'vite'
  */
 
 export default defineConfig({
-  plugins: [react() ,tailwind()],
+  plugins: [react(), tailwind()],
   server: {
     host: '0.0.0.0',
     port: 4000,

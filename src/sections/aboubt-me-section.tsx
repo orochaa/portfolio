@@ -4,8 +4,8 @@ import { MailIcon } from 'lucide-react'
 
 export function AboutMeSection(): React.JSX.Element {
   return (
-    <div className="bg-zinc-900 py-20">
-      <div className="mx-auto w-11/12">
+    <div className="bg-slate-950 py-20">
+      <div className="mx-auto w-11/12 max-w-6xl">
         <div className="grid grid-cols-2 items-center gap-4">
           <div>
             <p className="mb-1 block text-2xl font-medium">Hello,</p>
@@ -20,7 +20,7 @@ export function AboutMeSection(): React.JSX.Element {
               continuous improvement.
             </p>
 
-            <div className="mt-3 flex gap-1">
+            <div className="mt-3 flex gap-2">
               <a
                 href="https://linkedin.com/in/bruno-rocha-a65a49157"
                 target="_blank"
