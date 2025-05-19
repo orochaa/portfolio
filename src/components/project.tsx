@@ -3,7 +3,8 @@ import { GithubIcon } from '@/components/icons/github'
 import { LinkIcon } from '@/components/icons/link'
 import { LearnMore } from '@/components/learn-more'
 import type { Project } from '@/lib/data/projects'
-import { LockKeyhole } from 'lucide-react'
+import { formatNumber } from '@/lib/utils'
+import { Download, LockKeyhole, Star } from 'lucide-react'
 import { motion } from 'motion/react'
 
 export interface ProjectProps {
@@ -73,10 +74,15 @@ export function Project(props: ProjectProps): React.JSX.Element {
         )}
         <div className="p-4">
           <div className="flex items-center justify-between">
-            <p className="flex items-center gap-2 text-lg font-semibold">
-              {project.displayName}
+            <p className="flex items-center gap-2">
+              <span className="text-lg font-semibold">
+                {project.displayName}
+              </span>
               {!!project.isPrivate && (
-                <span className="flex items-center gap-1 rounded-lg bg-zinc-700/70 px-2 py-0.5 text-sm text-zinc-100">
+                <span
+                  title="Project is private"
+                  className="flex items-center gap-1 rounded-lg bg-zinc-700/70 px-2 py-0.5 text-sm text-zinc-100"
+                >
                   <LockKeyhole size={12} />
                   private
                 </span>
@@ -118,21 +124,40 @@ export function Project(props: ProjectProps): React.JSX.Element {
             </div>
           </div>
           <p className="min-h-12">{project.description}</p>
-          <div className="mt-3 flex gap-1">
-            {project.languages.map(language => (
-              <LearnMore key={language.name} {...language}>
-                <span className="rounded-lg bg-blue-500/10 px-2 py-0.5 text-sm text-blue-200">
-                  {language.name}
+          <div className="mt-3 space-y-1">
+            <div className="flex gap-1">
+              {!!project.downloadsByMonth && (
+                <span
+                  title="Downloads per month"
+                  className="flex items-center gap-1 rounded-lg bg-green-500/20 px-2 py-0.5 text-sm text-green-300"
+                >
+                  <Download size={12} />
+                  {formatNumber(project.downloadsByMonth)}/month
                 </span>
-              </LearnMore>
-            ))}
-            {project.technologies.map(technology => (
-              <LearnMore key={technology.name} {...technology}>
-                <span className="rounded-lg bg-orange-300/10 px-2 py-0.5 text-sm text-orange-200">
-                  {technology.name}
+              )}
+              {!!project.stars && (
+                <span className="flex items-center gap-1 rounded-lg bg-yellow-400/20 px-2 py-0.5 text-sm text-yellow-300">
+                  <Star size={12} />
+                  {formatNumber(project.stars)}
                 </span>
-              </LearnMore>
-            ))}
+              )}
+            </div>
+            <div className="flex gap-1">
+              {project.languages.map(language => (
+                <LearnMore key={language.name} {...language}>
+                  <span className="rounded-lg bg-blue-500/10 px-2 py-0.5 text-sm text-blue-200">
+                    {language.name}
+                  </span>
+                </LearnMore>
+              ))}
+              {project.technologies.map(technology => (
+                <LearnMore key={technology.name} {...technology}>
+                  <span className="rounded-lg bg-orange-300/10 px-2 py-0.5 text-sm text-orange-200">
+                    {technology.name}
+                  </span>
+                </LearnMore>
+              ))}
+            </div>
           </div>
         </div>
       </GlowContainer>

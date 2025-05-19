@@ -16,6 +16,8 @@ export interface Project {
   videoUrl?: string
   imgUrl?: string
   tags: string[]
+  stars?: number
+  downloadsByMonth?: number
 }
 
 export const projects: Project[] = (
@@ -28,7 +30,7 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/cineapp?tab=readme-ov-file#readme',
       liveUrl: 'https://cineapp-orochaa.vercel.app/',
-      tags: ['frontend', 'movies', 'tv-shows', 'streaming'],
+      tags: ['frontend'],
       videoUrl: '/assets/cineapp.mp4',
     },
     {
@@ -40,7 +42,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/url-shortener-lambda?tab=readme-ov-file#readme',
       liveUrl: 'https://cantinho-do-acai.vercel.app/',
-      tags: ['frontend', 'menu', 'order', 'whatsapp'],
+      tags: ['frontend'],
       videoUrl: '/assets/cantinho-do-acai.mp4',
     },
     {
@@ -73,7 +75,7 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl:
         'https://github.com/orochaa/url-shortener-lambda?tab=readme-ov-file#readme',
-      tags: ['backend', 'url-shortener', 'serverless'],
+      tags: ['backend', 'serverless'],
     },
     {
       name: 'newsletter-lambda',
@@ -89,7 +91,7 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl:
         'https://github.com/orochaa/newsletter-lambda?tab=readme-ov-file#readme',
-      tags: ['backend', 'newsletter', 'serverless'],
+      tags: ['backend', 'serverless'],
     },
     {
       name: 'go-opportunities',
@@ -99,24 +101,23 @@ export const projects: Project[] = (
       languages: ['go'],
       githubUrl:
         'https://github.com/orochaa/go-opportunities?tab=readme-ov-file#readme',
-      tags: ['backend', 'jobs', 'opportunities', 'tracking'],
+      tags: ['backend'],
     },
     {
-      name: 'go-mailer',
-      displayName: 'Mailer',
+      name: 'chattys',
+      displayName: 'Chattys',
       description:
-        'A lightweight, high-concurrency email-dispatch service written in Go.',
-      technologies: [],
-      languages: ['go'],
-      githubUrl:
-        'https://github.com/orochaa/go-mailer?tab=readme-ov-file#readme',
-      tags: ['backend', 'email', 'service', 'high-concurrency'],
+        'Web chat based on chat rooms about backend program languages.',
+      technologies: ['node', 'express', 'socket'],
+      languages: ['typescript'],
+      githubUrl: 'https://github.com/orochaa/chattys?tab=readme-ov-file#readme',
+      tags: ['backend'],
     },
     {
       name: 'lets-train',
       displayName: "Let's Train",
       description: 'Android/iOS app for tracking personalized workouts.',
-      technologies: ['react-native'],
+      technologies: ['react-native', 'expo'],
       languages: ['typescript'],
       tags: ['mobile', 'android', 'ios'],
       liveUrl: 'https://apps.apple.com/br/app/lets-train/id6739985648',
@@ -130,7 +131,7 @@ export const projects: Project[] = (
       technologies: ['android', 'node', 'postgresql', 'steam'],
       languages: ['java', 'typescript'],
       githubUrl: 'https://github.com/orochaa/team-up?tab=readme-ov-file#readme',
-      tags: ['mobile', 'backend', 'android', 'app', 'steam'],
+      tags: ['mobile', 'backend', 'android'],
       imgUrl: '/assets/team-up.png',
     },
     {
@@ -149,18 +150,8 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl:
         'https://github.com/orochaa/scalable-upload?tab=readme-ov-file#readme',
-      tags: ['backend', 'upload', 'streaming', 'realtime'],
+      tags: ['backend'],
       imgUrl: '/assets/scalable-upload.png',
-    },
-    {
-      name: 'chattys',
-      displayName: 'Chattys',
-      description:
-        'Web chat based on chat rooms about backend program languages.',
-      technologies: ['node', 'express', 'socket'],
-      languages: ['typescript'],
-      githubUrl: 'https://github.com/orochaa/chattys?tab=readme-ov-file#readme',
-      tags: ['backend', 'chat', 'realtime', 'rooms'],
     },
     {
       name: 'my-cli',
@@ -169,7 +160,7 @@ export const projects: Project[] = (
       technologies: ['go-clack'],
       languages: ['go'],
       githubUrl: 'https://github.com/orochaa/my-cli?tab=readme-ov-file#readme',
-      tags: ['tools', 'automation', 'cli', 'prompt', 'terminal'],
+      tags: ['tools'],
       imgUrl: '/assets/my-cli.jpg',
     },
     {
@@ -180,7 +171,7 @@ export const projects: Project[] = (
       languages: ['go'],
       githubUrl:
         'https://github.com/orochaa/go-clack?tab=readme-ov-file#readme',
-      tags: ['tools', 'cli', 'prompt', 'terminal'],
+      tags: ['tools'],
       imgUrl: '/assets/clack.gif',
     },
     {
@@ -192,8 +183,36 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl:
         'https://github.com/orochaa/eslint-config?tab=readme-ov-file#readme',
-      tags: ['tools', 'eslint', 'config', 'plugin', 'linting'],
+      tags: ['tools'],
       imgUrl: '/assets/eslint-config.png',
+    },
+    {
+      name: 'clack',
+      displayName: 'Clack',
+      description: 'Effortlessly build beautiful command-line apps.',
+      technologies: [],
+      languages: ['typescript'],
+      githubUrl:
+        'https://github.com/bombshell-dev/clack?tab=readme-ov-file#readme',
+      liveUrl: 'https://www.clack.cc',
+      tags: ['contributor'],
+      imgUrl: '/assets/clack.gif',
+      stars: 6400,
+      downloadsByMonth: 4_800_000,
+    },
+    {
+      name: 'brazilian-utils',
+      displayName: 'Brazilian Utils',
+      description: 'Utils library for specific Brazilian businesses.',
+      technologies: [],
+      languages: ['typescript'],
+      githubUrl:
+        'https://github.com/brazilian-utils/brazilian-utils?tab=readme-ov-file#readme',
+      liveUrl: 'https://brazilian-utils.com.br',
+      tags: ['contributor'],
+      imgUrl: '/assets/brazilian-utils.png',
+      stars: 1600,
+      downloadsByMonth: 42_000,
     },
   ] satisfies (Omit<Project, 'technologies' | 'languages'> & {
     technologies: TechnologyName[]

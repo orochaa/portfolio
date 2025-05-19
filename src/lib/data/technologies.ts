@@ -142,6 +142,12 @@ export const technologies = [
     description: 'Build native mobile apps using JavaScript and React.',
     url: 'https://reactnative.dev/',
   },
+  {
+    name: 'expo',
+    displayName: 'ExpoJS',
+    description: 'Build native iOS and Android apps with JavaScript',
+    url: 'https://expo.dev',
+  },
 ] as const satisfies Technology[]
 
 export interface Technology {

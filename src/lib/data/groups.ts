@@ -21,4 +21,8 @@ export const groups: {
     name: 'Tools',
     projects: projects.filter(project => project.tags.includes('tools')),
   },
+  {
+    name: 'Contributor',
+    projects: projects.filter(project => project.tags.includes('contributor')),
+  },
 ]

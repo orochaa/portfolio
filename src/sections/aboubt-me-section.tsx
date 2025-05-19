@@ -22,6 +22,7 @@ export function AboutMeSection(): React.JSX.Element {
 
             <div className="mt-3 flex gap-2">
               <a
+                title="LinkedIn"
                 href="https://linkedin.com/in/bruno-rocha-a65a49157"
                 target="_blank"
                 rel="noreferrer"
@@ -30,6 +31,7 @@ export function AboutMeSection(): React.JSX.Element {
                 <LinkedinIcon size={24} />
               </a>
               <a
+                title="GitHub"
                 href="https://github.com/orochaa"
                 target="_blank"
                 rel="noreferrer"
@@ -38,6 +40,7 @@ export function AboutMeSection(): React.JSX.Element {
                 <GithubIcon size={24} />
               </a>
               <a
+                title="Mail"
                 href="mailto:brunorocha2674@gmail.com"
                 target="_blank"
                 rel="noreferrer"
