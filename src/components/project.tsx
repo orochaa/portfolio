@@ -44,35 +44,41 @@ export function Project(props: ProjectProps): React.JSX.Element {
         boxClassName="rounded-lg"
         glowClassName="size-96 from-zinc-200"
       >
-        {/* eslint-disable-next-line @typescript-eslint/prefer-nullish-coalescing */}
-        {!!(project.imgUrl || project.videoUrl) && (
-          <a
-            title="Go to application"
-            href={project.liveUrl ?? project.githubUrl ?? '#'}
-            target="_blank"
-            rel="noreferrer"
-            className="block border-b border-zinc-600 bg-gradient-to-br from-blue-500/20 to-orange-300/20"
-          >
-            {project.imgUrl ? (
-              <img
-                src={project.imgUrl}
-                alt=""
-                loading="lazy"
-                className="mx-auto h-[16.75rem]"
-              />
-            ) : project.videoUrl ? (
-              <video
-                src={project.videoUrl}
-                autoPlay
-                playsInline
-                loop
-                muted
-                controls={false}
-                className="mx-auto h-[16.75rem]"
-              />
-            ) : null}
-          </a>
-        )}
+        <a
+          title="Go to application"
+          href={project.liveUrl ?? project.githubUrl ?? '#'}
+          target="_blank"
+          rel="noreferrer"
+          className="block border-b border-zinc-600 bg-gradient-to-br from-blue-500/20 to-orange-300/20"
+        >
+          {project.videoUrl ? (
+            <video
+              src={project.videoUrl}
+              autoPlay
+              playsInline
+              loop
+              muted
+              controls={false}
+              className="mx-auto h-[16.75rem]"
+            />
+          ) : project.imgUrl ? (
+            <img
+              src={project.imgUrl}
+              alt=""
+              loading="lazy"
+              className="mx-auto h-[16.75rem]"
+            />
+          ) : (
+            <div className="flex h-[16.75rem] items-center justify-center">
+              <div className="max-w-4/6">
+                <p className="text-lg font-semibold">
+                  🚀 {project.displayName}
+                </p>
+                <p className="text-zinc-100">{project.description}</p>
+              </div>
+            </div>
+          )}
+        </a>
         <div className="p-4">
           <div className="flex items-center justify-between">
             <p className="flex items-center gap-2">
