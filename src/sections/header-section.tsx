@@ -1,12 +1,14 @@
 import { GithubIcon } from '@/components/icons/github'
 import { LinkedinIcon } from '@/components/icons/linkedin'
 import { useTranslation } from '@/hooks/use-translation'
+import { useWindowSize } from '@/hooks/use-window-size'
 import { scrollTo } from '@/lib/utils'
 import { MailIcon } from 'lucide-react'
 import { useCallback, useEffect, useState } from 'react'
 
 export function HeaderSection(): React.JSX.Element {
   const { t, lang, changeLang } = useTranslation()
+  const { windowWidth } = useWindowSize()
 
   const [scrolled, setScrolled] = useState(false)
 
@@ -52,36 +54,38 @@ export function HeaderSection(): React.JSX.Element {
         </div>
         {!!scrolled && (
           <div className="flex gap-14">
-            <div className="flex gap-4 text-lg">
-              <button
-                type="button"
-                className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
-                onClick={scrollTo('#home')}
-              >
-                {t('header.home')}
-              </button>
-              <button
-                type="button"
-                className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
-                onClick={scrollTo('#education')}
-              >
-                {t('education.title')}
-              </button>
-              <button
-                type="button"
-                className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
-                onClick={scrollTo('#technologies')}
-              >
-                {t('technologies.title')}
-              </button>
-              <button
-                type="button"
-                className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
-                onClick={scrollTo('#projects')}
-              >
-                {t('projects.title')}
-              </button>
-            </div>
+            {windowWidth > 768 && (
+              <div className="flex gap-4 text-lg">
+                <button
+                  type="button"
+                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  onClick={scrollTo('#home')}
+                >
+                  {t('header.home')}
+                </button>
+                <button
+                  type="button"
+                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  onClick={scrollTo('#education')}
+                >
+                  {t('education.title')}
+                </button>
+                <button
+                  type="button"
+                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  onClick={scrollTo('#technologies')}
+                >
+                  {t('technologies.title')}
+                </button>
+                <button
+                  type="button"
+                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  onClick={scrollTo('#projects')}
+                >
+                  {t('projects.title')}
+                </button>
+              </div>
+            )}
 
             <div className="flex gap-4">
               <a
