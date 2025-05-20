@@ -59,7 +59,10 @@ export function EducationSection(): React.JSX.Element {
   const { t, lang } = useTranslation()
 
   return (
-    <div id="education" className="bg-background py-20">
+    <div
+      id="education"
+      className="from-background bg-gradient-to-br to-zinc-950 py-20"
+    >
       <div className="mx-auto w-11/12 max-w-7xl">
         <h2 className="mb-6 text-3xl font-semibold">{t('education.title')}</h2>
         <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">

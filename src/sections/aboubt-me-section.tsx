@@ -7,7 +7,10 @@ export function AboutMeSection(): React.JSX.Element {
   const { t } = useTranslation()
 
   return (
-    <div id="home" className="bg-slate-950 py-20">
+    <div
+      id="home"
+      className="bg-gradient-to-b from-slate-950 from-50% to-slate-900 py-20"
+    >
       <div className="mx-auto w-11/12 max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
           <div className="mx-auto max-w-xl">
