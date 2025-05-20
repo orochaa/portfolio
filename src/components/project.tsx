@@ -101,7 +101,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
             <div className="flex gap-1">
               {!!project.liveUrl && (
                 <GlowContainer
-                  containerClassName="rounded-md p-2 hover:text-blue-300"
+                  containerClassName="rounded-md p-2 hover:text-blue-300 active:text-blue-300"
                   boxClassName="rounded-md bg-zinc-800"
                   glowClassName="from-blue-400 size-20"
                 >
@@ -117,7 +117,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
               )}
               {!!project.githubUrl && (
                 <GlowContainer
-                  containerClassName="rounded-md p-2 hover:text-indigo-300"
+                  containerClassName="rounded-md p-2 hover:text-indigo-300 active:text-indigo-300"
                   boxClassName="rounded-md bg-zinc-800"
                   glowClassName="from-indigo-400 size-20"
                 >

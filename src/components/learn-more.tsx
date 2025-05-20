@@ -78,7 +78,7 @@ export function LearnMore(props: LearnMoreProps): React.JSX.Element {
           target="_blank"
           rel="noreferrer"
           title={t('learnMore.documentation')}
-          className="group/learn-more absolute bottom-[2rem] z-10 w-max max-w-96 rounded-lg border border-transparent bg-zinc-800 p-3 transition hover:border-zinc-500"
+          className="group/learn-more absolute bottom-[2rem] z-10 w-max max-w-96 rounded-lg border border-transparent bg-zinc-800 p-3 transition hover:border-zinc-500 active:border-zinc-500"
           style={{ left }}
         >
           <div className="flex items-center justify-between">

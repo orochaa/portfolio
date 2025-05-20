@@ -113,7 +113,7 @@ export function ProjectsSection(): React.JSX.Element {
                   <a
                     href={`#${h.id}`}
                     data-active={activeId === h.id}
-                    className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:left-[-1px] before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 sm:before:w-[1px]"
+                    className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:left-[-1px] before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 sm:before:w-[1px]"
                     onClick={scrollTo(`#${h.id}`, 125)}
                   >
                     {h.text}
@@ -135,7 +135,7 @@ export function ProjectsSection(): React.JSX.Element {
                     <button
                       type="button"
                       data-selected={isSelected}
-                      className="relative block w-full rounded-r px-3 py-1.5 text-left text-base whitespace-nowrap before:absolute before:-bottom-[1px] before:left-0 before:h-[1px] before:w-full before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 data-selected:bg-zinc-800 data-selected:font-medium data-selected:before:bg-orange-400 sm:before:bottom-0 sm:before:left-[-1px] sm:before:h-full sm:before:w-[1px]"
+                      className="relative block w-full rounded-r px-3 py-1.5 text-left text-base whitespace-nowrap before:absolute before:bottom-[-1px] before:left-0 before:h-[1px] before:w-full before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-selected:bg-zinc-800 data-selected:font-medium data-selected:before:bg-orange-400 sm:before:bottom-0 sm:before:left-[-1px] sm:before:h-full sm:before:w-[1px]"
                       // eslint-disable-next-line react/jsx-no-bind
                       onClick={() =>
                         setSelectedFilters(state =>

@@ -34,7 +34,7 @@ export function AboutMeSection(): React.JSX.Element {
                 href="https://github.com/orochaa"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md border border-transparent bg-zinc-800 p-2 text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100 active:border-zinc-400"
+                className="rounded-md border border-transparent bg-zinc-800 p-2 text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100 active:border-zinc-400 active:text-zinc-100"
               >
                 <GithubIcon size={24} />
               </a>
@@ -43,7 +43,7 @@ export function AboutMeSection(): React.JSX.Element {
                 href="mailto:brunorocha2674@gmail.com"
                 target="_blank"
                 rel="noreferrer"
-                className="rounded-md border border-transparent bg-zinc-800 p-2 text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100 active:border-zinc-400"
+                className="rounded-md border border-transparent bg-zinc-800 p-2 text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100 active:border-zinc-400 active:text-zinc-100"
               >
                 <MailIcon size={24} />
               </a>
