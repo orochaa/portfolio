@@ -130,28 +130,6 @@ export const projects: Project[] = (
       _weight: 1,
     },
     {
-      name: 'go-opportunities',
-      displayName: 'Opportunities',
-      description: 'API for job vacancy tracking.',
-      technologies: ['gorm', 'sqlite'],
-      languages: ['go'],
-      githubUrl:
-        'https://github.com/orochaa/go-opportunities?tab=readme-ov-file#readme',
-      tags: ['backend'],
-      _weight: 1,
-    },
-    {
-      name: 'chattys',
-      displayName: 'Chattys',
-      description:
-        'Web chat based on chat rooms about backend programming languages.',
-      technologies: ['node', 'express', 'socket'],
-      languages: ['typescript'],
-      githubUrl: 'https://github.com/orochaa/chattys?tab=readme-ov-file#readme',
-      tags: ['backend'],
-      _weight: 1,
-    },
-    {
       name: 'lets-train',
       displayName: "Let's Train",
       description: 'Android/iOS app for tracking personalized workouts.',
@@ -162,26 +140,6 @@ export const projects: Project[] = (
       tags: ['mobile', 'live'],
       isPrivate: true,
       _weight: 2,
-    },
-    {
-      name: 'scalable-upload',
-      displayName: 'Scalable Upload',
-      description:
-        'API created without frameworks, made to handle files with GIGABYTES of data.',
-      technologies: [
-        'react',
-        'node',
-        'express',
-        'tailwindcss',
-        'busboy',
-        'socket',
-      ],
-      languages: ['typescript'],
-      githubUrl:
-        'https://github.com/orochaa/scalable-upload?tab=readme-ov-file#readme',
-      tags: ['backend'],
-      imgUrl: '/assets/scalable-upload.png',
-      _weight: 1,
     },
     {
       name: 'my-cli',
@@ -204,19 +162,6 @@ export const projects: Project[] = (
         'https://github.com/orochaa/go-clack?tab=readme-ov-file#readme',
       tags: ['tools'],
       imgUrl: '/assets/clack.gif',
-      _weight: 1,
-    },
-    {
-      name: 'eslint-config',
-      displayName: 'ESLint Config',
-      description:
-        'ESLint plugin that provides comprehensive configurations for various environments.',
-      technologies: ['node', 'eslint'],
-      languages: ['typescript'],
-      githubUrl:
-        'https://github.com/orochaa/eslint-config?tab=readme-ov-file#readme',
-      tags: ['tools'],
-      imgUrl: '/assets/eslint-config.png',
       _weight: 1,
     },
     {
