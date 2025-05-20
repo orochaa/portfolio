@@ -16,7 +16,7 @@ i18n
     fallbackLng: 'en', // idioma padrão
     detection: {
       // ordem de detecção de idioma
-      order: ['localStorage', 'navigator'],
+      order: ['localStorage', 'navigator', 'htmlTag'],
       // onde salvar o idioma escolhido
       caches: ['localStorage'],
     },
