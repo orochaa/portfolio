@@ -42,7 +42,7 @@ export const projects: Project[] = (
       displayName: 'Cineapp',
       description: {
         en: '🎥 Web app based on streaming services.',
-        pt: '🎥 Aplicativo web baseado em serviços de streaming.',
+        'pt-BR': '🎥 Aplicativo web baseado em serviços de streaming.',
       },
       technologies: ['react', 'tailwindcss', 'the-movie-database'],
       languages: ['typescript'],
@@ -57,7 +57,7 @@ export const projects: Project[] = (
       displayName: 'Cantinho do Açaí',
       description: {
         en: '🍨 Online menu for @cantinho_do_acaiiii.',
-        pt: '🍨 Cardápio online para @cantinho_do_acaiiii.',
+        'pt-BR': '🍨 Cardápio online para @cantinho_do_acaiiii.',
       },
       technologies: ['react', 'whatsapp', 'tailwindcss'],
       languages: ['typescript'],
@@ -73,7 +73,8 @@ export const projects: Project[] = (
       displayName: 'TechIAcad',
       description: {
         en: 'Chat with many AI integrations, and Dashboards for tracking token usage.',
-        pt: 'Chat com várias integrações de IA e dashboards para acompanhamento do uso de tokens.',
+        'pt-BR':
+          'Chat com várias integrações de IA e dashboards para acompanhamento do uso de tokens.',
       },
       technologies: [
         'react',
@@ -95,7 +96,7 @@ export const projects: Project[] = (
       displayName: '2048',
       description: {
         en: 'Web-based implementation of the popular 2048 game.',
-        pt: 'Implementação web do popular jogo 2048.',
+        'pt-BR': 'Implementação web do popular jogo 2048.',
       },
       technologies: ['react', 'tailwindcss'],
       languages: ['typescript'],
@@ -110,7 +111,7 @@ export const projects: Project[] = (
       displayName: 'TeamUp',
       description: {
         en: 'Android app to find coop players.',
-        pt: 'Aplicativo Android para encontrar jogadores cooperativos.',
+        'pt-BR': 'Aplicativo Android para encontrar jogadores cooperativos.',
       },
       technologies: ['android', 'node', 'postgresql', 'steam'],
       languages: ['java', 'typescript'],
@@ -124,7 +125,7 @@ export const projects: Project[] = (
       displayName: 'URL Shortener',
       description: {
         en: 'A simple, scalable URL shortener service.',
-        pt: 'Um serviço encurtador de URL simples e escalável.',
+        'pt-BR': 'Um serviço encurtador de URL simples e escalável.',
       },
       technologies: ['node', 'aws-lambda', 'aws-dynamodb', 'serverless'],
       languages: ['typescript'],
@@ -138,7 +139,7 @@ export const projects: Project[] = (
       displayName: 'Newsletter',
       description: {
         en: 'A simple, scalable newsletter subscription API.',
-        pt: 'Uma API simples e escalável para assinatura de newsletter.',
+        'pt-BR': 'Uma API simples e escalável para assinatura de newsletter.',
       },
       technologies: [
         'node',
@@ -158,7 +159,8 @@ export const projects: Project[] = (
       displayName: "Let's Train",
       description: {
         en: 'Android/iOS app for tracking personalized workouts.',
-        pt: 'Aplicativo Android/iOS para acompanhar treinos personalizados.',
+        'pt-BR':
+          'Aplicativo Android/iOS para acompanhar treinos personalizados.',
       },
       technologies: ['react-native', 'expo'],
       languages: ['typescript'],
@@ -173,7 +175,7 @@ export const projects: Project[] = (
       displayName: 'MyCLI',
       description: {
         en: 'A compilation of my CLI scripts.',
-        pt: 'Uma compilação dos meus scripts para CLI.',
+        'pt-BR': 'Uma compilação dos meus scripts para CLI.',
       },
       technologies: ['go-clack'],
       languages: ['go'],
@@ -187,7 +189,7 @@ export const projects: Project[] = (
       displayName: 'GoClack',
       description: {
         en: 'Effortlessly build beautiful command-line apps',
-        pt: 'Crie aplicativos de linha de comando bonitos com facilidade',
+        'pt-BR': 'Crie aplicativos de linha de comando bonitos com facilidade',
       },
       technologies: ['cobra'],
       languages: ['go'],
@@ -202,7 +204,7 @@ export const projects: Project[] = (
       displayName: 'Clack',
       description: {
         en: 'Effortlessly build beautiful command-line apps.',
-        pt: 'Crie aplicativos de linha de comando bonitos com facilidade.',
+        'pt-BR': 'Crie aplicativos de linha de comando bonitos com facilidade.',
       },
       technologies: [],
       languages: ['typescript'],
@@ -220,7 +222,7 @@ export const projects: Project[] = (
       displayName: 'Brazilian Utils',
       description: {
         en: 'Utils library for specific Brazilian businesses.',
-        pt: 'Biblioteca de utilitários específicos para o Brasil.',
+        'pt-BR': 'Biblioteca de utilitários específicos para o Brasil.',
       },
       technologies: [],
       languages: ['typescript'],

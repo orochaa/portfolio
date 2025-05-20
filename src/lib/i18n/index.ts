@@ -11,9 +11,9 @@ i18n
   .init({
     resources: {
       en: { translation: en },
-      pt: { translation: pt },
+      'pt-BR': { translation: pt },
     },
-    fallbackLng: 'pt', // idioma padrão
+    fallbackLng: 'en', // idioma padrão
     detection: {
       // ordem de detecção de idioma
       order: ['localStorage', 'navigator'],

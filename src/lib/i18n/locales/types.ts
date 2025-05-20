@@ -1,4 +1,4 @@
-export type Language = 'pt' | 'en'
+export type Language = 'pt-BR' | 'en'
 
 export interface LocaleTranslation {
   header: {

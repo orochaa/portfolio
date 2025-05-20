@@ -28,7 +28,7 @@ export function HeaderSection(): React.JSX.Element {
   }, [])
 
   const handleToggleLang = useCallback(() => {
-    changeLang(lang === 'pt' ? 'en' : 'pt')
+    changeLang(lang === 'pt-BR' ? 'en' : 'pt-BR')
   }, [changeLang, lang])
 
   return (

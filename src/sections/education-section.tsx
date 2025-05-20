@@ -17,7 +17,7 @@ const certifications: Certification[] = [
       description: "Associate's degree",
       institution: 'Uniftec University Center',
     },
-    pt: {
+    'pt-BR': {
       title: 'Análise e Desenvolvimento de Sistemas',
       description: 'Curso Superior em Tecnologia',
       institution: 'Centro Universitário Uniftec',
@@ -31,7 +31,7 @@ const certifications: Certification[] = [
       description: 'Backend Development Course',
       institution: 'Udemy',
     },
-    pt: {
+    'pt-BR': {
       title: 'NodeJs, Typescript, TDD, DDD, Clean Architecture e SOLID ',
       description: 'Curso de Desenvolvimento Backend',
       institution: 'Udemy',
@@ -45,7 +45,7 @@ const certifications: Certification[] = [
       description: 'Fullstack Development Course',
       institution: 'Alura',
     },
-    pt: {
+    'pt-BR': {
       title: 'Desenvolvimento Web',
       description: 'Curso de Desenvolvimento Fullstack',
       institution: 'Alura',
