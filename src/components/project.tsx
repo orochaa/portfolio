@@ -37,7 +37,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
         },
       }}
       viewport={{ once: true }}
-      className="min-h-40"
+      className="min-h-40 max-w-[30rem]"
     >
       <GlowContainer
         containerClassName="h-full rounded-lg border border-zinc-600 "
@@ -49,7 +49,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
           href={project.liveUrl ?? project.githubUrl ?? '#'}
           target="_blank"
           rel="noreferrer"
-          className="block border-b border-zinc-600 bg-gradient-to-br from-blue-500/20 to-orange-300/20"
+          className="block h-[16.75rem] border-b border-zinc-600 bg-gradient-to-br from-blue-500/20 to-orange-300/20"
         >
           {project.videoUrl ? (
             <video
@@ -59,17 +59,17 @@ export function Project(props: ProjectProps): React.JSX.Element {
               loop
               muted
               controls={false}
-              className="mx-auto h-[16.75rem]"
+              className="mx-auto h-full"
             />
           ) : project.imgUrl ? (
             <img
               src={project.imgUrl}
               alt=""
               loading="lazy"
-              className="mx-auto h-[16.75rem]"
+              className="mx-auto h-full object-cover sm:object-fill"
             />
           ) : (
-            <div className="flex h-[16.75rem] items-center justify-center">
+            <div className="flex h-full items-center justify-center">
               <div className="max-w-4/6">
                 <p className="text-lg font-semibold">
                   🚀 {project.displayName}

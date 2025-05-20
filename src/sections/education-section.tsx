@@ -37,7 +37,7 @@ export function EducationSection(): React.JSX.Element {
     <div className="bg-background py-20">
       <div className="mx-auto w-11/12 max-w-7xl">
         <h2 className="mb-6 text-3xl font-semibold">Education</h2>
-        <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
           {certifications.map(certification => (
             <div
               key={certification.title}

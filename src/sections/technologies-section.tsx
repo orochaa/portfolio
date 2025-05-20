@@ -26,20 +26,20 @@ export function TechnologiesSection(): React.JSX.Element {
 
   return (
     <div className="bg-slate-950 py-20">
-      <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-2">
-        <div>
+      <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-1 lg:grid-cols-2">
+        <div className="mx-auto mb-6 w-xl max-w-full">
           <h2 className="mb-6 text-3xl font-semibold">Technologies</h2>
-          <p className="text-zinc-300">{description}</p>
+          <p className="min-h-40 text-zinc-300">{description}</p>
         </div>
         <div>
-          <div className="mx-auto grid w-fit grid-cols-4 gap-6">
+          <div className="mx-auto grid w-fit grid-cols-4 gap-3 sm:gap-6">
             {technologies.map(technology => (
               <div
                 key={technology.displayName}
                 title={technology.displayName}
-                className="flex size-28 items-center justify-center rounded-md border border-zinc-700 bg-zinc-900 text-slate-200 transition-colors duration-200 hover:border-2 hover:border-blue-500/80 hover:bg-zinc-800 hover:text-blue-500"
+                data-active={description === technology.description}
+                className="flex size-20 items-center justify-center rounded-md border border-zinc-700 bg-zinc-900 text-slate-200 transition-colors duration-200 data-active:border-2 data-active:border-blue-500/80 data-active:bg-zinc-800 data-active:text-blue-500 sm:size-28"
                 onPointerEnter={() => setDescription(technology.description)}
-                onPointerLeave={() => setDescription(DEFAULT_DESCRIPTION)}
               >
                 <technology.Icon size={40} />
               </div>
