@@ -2,6 +2,7 @@ import { GlowContainer } from '@/components/glow-container'
 import { GithubIcon } from '@/components/icons/github'
 import { LinkIcon } from '@/components/icons/link'
 import { LearnMore } from '@/components/learn-more'
+import { useTranslation } from '@/hooks/use-translation'
 import type { Project } from '@/lib/data/projects'
 import { formatNumber } from '@/lib/utils'
 import { Download, LockKeyhole, Star } from 'lucide-react'
@@ -14,6 +15,8 @@ export interface ProjectProps {
 }
 
 export function Project(props: ProjectProps): React.JSX.Element {
+  const { t, lang } = useTranslation()
+
   const { project, groupIndex, projectIndex } = props
 
   return (
@@ -45,7 +48,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
         glowClassName="size-96 from-zinc-200"
       >
         <a
-          title="Go to application"
+          title={t('project.link')}
           href={project.liveUrl ?? project.githubUrl ?? '#'}
           target="_blank"
           rel="noreferrer"
@@ -74,7 +77,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                 <p className="text-lg font-semibold">
                   🚀 {project.displayName}
                 </p>
-                <p className="text-zinc-100">{project.description}</p>
+                <p className="text-zinc-100">{project.description[lang]}</p>
               </div>
             </div>
           )}
@@ -87,7 +90,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
               </span>
               {!!project.isPrivate && (
                 <span
-                  title="Project is private"
+                  title={t('project.private')}
                   className="flex items-center gap-1 rounded-lg bg-zinc-700/70 px-2 py-0.5 text-sm text-zinc-100"
                 >
                   <LockKeyhole size={12} />
@@ -103,7 +106,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                   glowClassName="from-blue-400 size-20"
                 >
                   <a
-                    title="Go to application"
+                    title={t('project.link')}
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
@@ -119,7 +122,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                   glowClassName="from-indigo-400 size-20"
                 >
                   <a
-                    title="Go to repository"
+                    title={t('project.github')}
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
@@ -130,12 +133,12 @@ export function Project(props: ProjectProps): React.JSX.Element {
               )}
             </div>
           </div>
-          <p className="min-h-12">{project.description}</p>
+          <p className="min-h-12">{project.description[lang]}</p>
           <div className="mt-3 space-y-1">
             <div className="flex gap-1">
               {!!project.downloadsByMonth && (
                 <span
-                  title="Downloads per month"
+                  title={t('project.downloads')}
                   className="flex items-center gap-1 rounded-lg bg-green-500/20 px-2 py-0.5 text-sm text-green-300"
                 >
                   <Download size={12} />

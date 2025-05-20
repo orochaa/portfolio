@@ -1,25 +1,24 @@
 import { GithubIcon } from '@/components/icons/github'
 import { LinkedinIcon } from '@/components/icons/linkedin'
+import { useTranslation } from '@/hooks/use-translation'
 import { MailIcon } from 'lucide-react'
 
 export function AboutMeSection(): React.JSX.Element {
+  const { t } = useTranslation()
+
   return (
-    <div className="bg-slate-950 py-20">
+    <div id="home" className="bg-slate-950 py-20">
       <div className="mx-auto w-11/12 max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
           <div className="mx-auto max-w-xl">
-            <p className="mb-1 block text-2xl font-medium">Hello,</p>
+            <p className="mb-1 block text-2xl font-medium">
+              {t('about.hello')}
+            </p>
             <p className="block text-3xl font-semibold">
-              I&apos;m <span className="text-blue-400">Bruno Rocha</span>
+              {t('about.iam')}{' '}
+              <span className="text-blue-400">Bruno Rocha</span>
             </p>
-            <p className="mt-2 text-pretty">
-              Fullstack Software Developer with 5 years of experience in web
-              development. Skilled in leading projects end-to-end, from
-              requirements gathering to deployment and post-launch maintenance.
-              Strong advocate for clean architecture, scalable code, and
-              continuous improvement.
-            </p>
-
+            <p className="mt-2 text-pretty">{t('about.description')}</p>
             <div className="mt-3 flex gap-2">
               <a
                 title="LinkedIn"

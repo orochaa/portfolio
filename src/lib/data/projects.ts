@@ -1,8 +1,12 @@
 /* eslint-disable unicorn/no-array-callback-reference */
-import { getLanguage } from '@/lib/data/languages'
-import type { Language, LanguageName } from '@/lib/data/languages'
+import { getProgrammingLanguage } from '@/lib/data/programming-languages'
+import type {
+  ProgrammingLanguage,
+  ProgrammingLanguageName,
+} from '@/lib/data/programming-languages'
 import { getTechnology } from '@/lib/data/technologies'
 import type { Technology, TechnologyName } from '@/lib/data/technologies'
+import type { Language } from '@/lib/i18n/locales/types'
 
 export type TagName =
   | 'backend'
@@ -17,8 +21,8 @@ export type TagName =
 export interface Project {
   name: string
   displayName: string
-  description: string
-  languages: Language[]
+  description: Record<Language, string>
+  languages: ProgrammingLanguage[]
   technologies: Technology[]
   githubUrl?: string
   liveUrl?: string
@@ -36,7 +40,10 @@ export const projects: Project[] = (
     {
       name: 'cineapp',
       displayName: 'Cineapp',
-      description: '🎥 Web app based on streaming services.',
+      description: {
+        en: '🎥 Web app based on streaming services.',
+        pt: '🎥 Aplicativo web baseado em serviços de streaming.',
+      },
       technologies: ['react', 'tailwindcss', 'the-movie-database'],
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/cineapp?tab=readme-ov-file#readme',
@@ -48,7 +55,10 @@ export const projects: Project[] = (
     {
       name: 'cantinho-do-acai',
       displayName: 'Cantinho do Açaí',
-      description: '🍨 Online menu for @cantinho_do_acaiiii.',
+      description: {
+        en: '🍨 Online menu for @cantinho_do_acaiiii.',
+        pt: '🍨 Cardápio online para @cantinho_do_acaiiii.',
+      },
       technologies: ['react', 'whatsapp', 'tailwindcss'],
       languages: ['typescript'],
       githubUrl:
@@ -61,8 +71,10 @@ export const projects: Project[] = (
     {
       name: 'ftec-chatbot',
       displayName: 'TechIAcad',
-      description:
-        'Chat with many AI integrations, and Dashboards for tracking token usage.',
+      description: {
+        en: 'Chat with many AI integrations, and Dashboards for tracking token usage.',
+        pt: 'Chat com várias integrações de IA e dashboards para acompanhamento do uso de tokens.',
+      },
       technologies: [
         'react',
         'node',
@@ -81,7 +93,10 @@ export const projects: Project[] = (
     {
       name: '2048',
       displayName: '2048',
-      description: 'Web-based implementation of the popular 2048 game.',
+      description: {
+        en: 'Web-based implementation of the popular 2048 game.',
+        pt: 'Implementação web do popular jogo 2048.',
+      },
       technologies: ['react', 'tailwindcss'],
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/2048?tab=readme-ov-file#readme',
@@ -93,7 +108,10 @@ export const projects: Project[] = (
     {
       name: 'team-up',
       displayName: 'TeamUp',
-      description: 'Android app to find coop players.',
+      description: {
+        en: 'Android app to find coop players.',
+        pt: 'Aplicativo Android para encontrar jogadores cooperativos.',
+      },
       technologies: ['android', 'node', 'postgresql', 'steam'],
       languages: ['java', 'typescript'],
       githubUrl: 'https://github.com/orochaa/team-up?tab=readme-ov-file#readme',
@@ -104,7 +122,10 @@ export const projects: Project[] = (
     {
       name: 'url-shortener-lambda',
       displayName: 'URL Shortener',
-      description: 'A simple, scalable URL shortener service.',
+      description: {
+        en: 'A simple, scalable URL shortener service.',
+        pt: 'Um serviço encurtador de URL simples e escalável.',
+      },
       technologies: ['node', 'aws-lambda', 'aws-dynamodb', 'serverless'],
       languages: ['typescript'],
       githubUrl:
@@ -115,7 +136,10 @@ export const projects: Project[] = (
     {
       name: 'newsletter-lambda',
       displayName: 'Newsletter',
-      description: 'A simple, scalable newsletter subscription API.',
+      description: {
+        en: 'A simple, scalable newsletter subscription API.',
+        pt: 'Uma API simples e escalável para assinatura de newsletter.',
+      },
       technologies: [
         'node',
         'aws-lambda',
@@ -132,7 +156,10 @@ export const projects: Project[] = (
     {
       name: 'lets-train',
       displayName: "Let's Train",
-      description: 'Android/iOS app for tracking personalized workouts.',
+      description: {
+        en: 'Android/iOS app for tracking personalized workouts.',
+        pt: 'Aplicativo Android/iOS para acompanhar treinos personalizados.',
+      },
       technologies: ['react-native', 'expo'],
       languages: ['typescript'],
       liveUrl: 'https://apps.apple.com/br/app/lets-train/id6739985648',
@@ -144,7 +171,10 @@ export const projects: Project[] = (
     {
       name: 'my-cli',
       displayName: 'MyCLI',
-      description: 'A compilation of my CLI snippets.',
+      description: {
+        en: 'A compilation of my CLI scripts.',
+        pt: 'Uma compilação dos meus scripts para CLI.',
+      },
       technologies: ['go-clack'],
       languages: ['go'],
       githubUrl: 'https://github.com/orochaa/my-cli?tab=readme-ov-file#readme',
@@ -155,7 +185,10 @@ export const projects: Project[] = (
     {
       name: 'go-clack',
       displayName: 'GoClack',
-      description: 'Effortlessly build beautiful command-line apps',
+      description: {
+        en: 'Effortlessly build beautiful command-line apps',
+        pt: 'Crie aplicativos de linha de comando bonitos com facilidade',
+      },
       technologies: ['cobra'],
       languages: ['go'],
       githubUrl:
@@ -167,7 +200,10 @@ export const projects: Project[] = (
     {
       name: 'clack',
       displayName: 'Clack',
-      description: 'Effortlessly build beautiful command-line apps.',
+      description: {
+        en: 'Effortlessly build beautiful command-line apps.',
+        pt: 'Crie aplicativos de linha de comando bonitos com facilidade.',
+      },
       technologies: [],
       languages: ['typescript'],
       githubUrl:
@@ -182,7 +218,10 @@ export const projects: Project[] = (
     {
       name: 'brazilian-utils',
       displayName: 'Brazilian Utils',
-      description: 'Utils library for specific Brazilian businesses.',
+      description: {
+        en: 'Utils library for specific Brazilian businesses.',
+        pt: 'Biblioteca de utilitários específicos para o Brasil.',
+      },
       technologies: [],
       languages: ['typescript'],
       githubUrl:
@@ -196,12 +235,12 @@ export const projects: Project[] = (
     },
   ] satisfies (Omit<Project, 'technologies' | 'languages'> & {
     technologies: TechnologyName[]
-    languages: LanguageName[]
+    languages: ProgrammingLanguageName[]
   })[]
 )
   .map(project => ({
     ...project,
-    languages: project.languages.map(getLanguage),
+    languages: project.languages.map(getProgrammingLanguage),
     technologies: project.technologies.map(getTechnology),
   }))
   .sort((a, b) => b._weight - a._weight)

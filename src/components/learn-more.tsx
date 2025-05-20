@@ -1,4 +1,5 @@
 import { useClickOutside } from '@/hooks/use-click-outside'
+import { useTranslation } from '@/hooks/use-translation'
 import { ExternalLink } from 'lucide-react'
 import { motion, useMotionValue } from 'motion/react'
 import { useLayoutEffect, useRef, useState } from 'react'
@@ -13,6 +14,8 @@ export interface LearnMoreProps {
 
 export function LearnMore(props: LearnMoreProps): React.JSX.Element {
   const { children, description, displayName, url } = props
+
+  const { t } = useTranslation()
 
   const [isVisible, setIsVisible] = useState(false)
   const left = useMotionValue(0)
@@ -60,9 +63,10 @@ export function LearnMore(props: LearnMoreProps): React.JSX.Element {
     <div ref={containerRef} className="relative inline-block shrink-0">
       <button
         type="button"
-        title="Lear more"
+        title={t('learnMore.title')}
         data-active={isVisible}
         className="transition data-active:-translate-y-1"
+        // eslint-disable-next-line react/jsx-no-bind
         onClick={() => setIsVisible(state => !state)}
       >
         {children}
@@ -73,7 +77,7 @@ export function LearnMore(props: LearnMoreProps): React.JSX.Element {
           href={url}
           target="_blank"
           rel="noreferrer"
-          title="Access documentation"
+          title={t('learnMore.documentation')}
           className="group/learn-more absolute bottom-[2rem] z-10 w-max max-w-96 rounded-lg border border-transparent bg-zinc-800 p-3 transition hover:border-zinc-500"
           style={{ left }}
         >

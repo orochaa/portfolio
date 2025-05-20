@@ -1,18 +1,19 @@
 import { Project } from '@/components/project'
+import { useTranslation } from '@/hooks/use-translation'
 import { projectGroups } from '@/lib/data/groups'
 import type { ProjectGroup } from '@/lib/data/groups'
-import type { LanguageName } from '@/lib/data/languages'
+import type { ProgrammingLanguageName } from '@/lib/data/programming-languages'
 import type { TagName } from '@/lib/data/projects'
 import type { TechnologyName } from '@/lib/data/technologies'
-import { useCallback, useEffect, useMemo, useState } from 'react'
-import type { MouseEvent } from 'react'
+import { scrollTo } from '@/lib/utils'
+import { useEffect, useMemo, useState } from 'react'
 
 interface HeadingItem {
   id: string
   text: string | null
 }
 
-type FilterOption = LanguageName | TechnologyName | TagName
+type FilterOption = ProgrammingLanguageName | TechnologyName | TagName
 
 const filterOptions: FilterOption[] = [
   'typescript',
@@ -25,6 +26,8 @@ const filterOptions: FilterOption[] = [
 ]
 
 export function ProjectsSection(): React.JSX.Element {
+  const { t } = useTranslation()
+
   const [headings, setHeadings] = useState<HeadingItem[]>([])
   const [activeId, setActiveId] = useState<string>('')
   const [selectedFilters, setSelectedFilters] = useState<FilterOption[]>([])
@@ -62,28 +65,6 @@ export function ProjectsSection(): React.JSX.Element {
     return filteredGroups
   }, [selectedFilters])
 
-  const handleGoToProjectSection = useCallback(
-    (e: MouseEvent, h: HeadingItem) => {
-      e.preventDefault()
-      const title = document.querySelector(`#${h.id}`)
-
-      if (!title) {
-        return
-      }
-
-      window.scroll({
-        top: Math.round(
-          title.getBoundingClientRect().top +
-            document.documentElement.scrollTop -
-            80
-        ),
-        left: 0,
-        behavior: 'smooth',
-      })
-    },
-    []
-  )
-
   useEffect(() => {
     const h3Nodes = [...document.querySelectorAll<HTMLHeadingElement>('h3[id]')]
     const extracted = h3Nodes.map(n => ({
@@ -116,13 +97,15 @@ export function ProjectsSection(): React.JSX.Element {
   }, [selectedFilters])
 
   return (
-    <div className="mx-auto w-11/12 max-w-6xl py-20">
-      <h2 className="bg-background sticky top-0 left-0 z-20 mb-6 pt-4 pb-3 text-3xl after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-linear-to-r after:from-zinc-400 after:to-zinc-200">
-        Projects
+    <div id="projects" className="mx-auto w-11/12 max-w-6xl py-20">
+      <h2 className="bg-background sticky top-[3.05rem] left-0 z-20 mb-6 pt-4 pb-3 text-2xl after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-linear-to-r after:from-zinc-400 after:to-zinc-200">
+        {t('projects.title')}
       </h2>
       <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">
-        <nav className="relative left-0 h-fit sm:sticky sm:top-20">
-          <p className="mb-1.5 text-base font-semibold">Categories</p>
+        <nav className="relative left-0 h-fit sm:sticky sm:top-32">
+          <p className="mb-1.5 text-base font-semibold">
+            {t('projects.categories')}
+          </p>
           <div className="overflow-x-auto pb-3">
             <ul className="flex w-fit flex-row gap-1 border-zinc-600 sm:w-36 sm:flex-col sm:border-l">
               {headings.map(h => (
@@ -131,8 +114,7 @@ export function ProjectsSection(): React.JSX.Element {
                     href={`#${h.id}`}
                     data-active={activeId === h.id}
                     className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:left-[-1px] before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 sm:before:w-[1px]"
-                    // eslint-disable-next-line react/jsx-no-bind
-                    onClick={e => handleGoToProjectSection(e, h)}
+                    onClick={scrollTo(`#${h.id}`, 125)}
                   >
                     {h.text}
                   </a>
@@ -140,7 +122,9 @@ export function ProjectsSection(): React.JSX.Element {
               ))}
             </ul>
           </div>
-          <p className="mt-4 mb-1.5 text-base font-semibold">Filters</p>
+          <p className="mt-4 mb-1.5 text-base font-semibold">
+            {t('projects.filters')}
+          </p>
           <div className="overflow-x-auto pb-3">
             <ul className="flex w-fit flex-row gap-1 border-b border-zinc-600 sm:w-36 sm:flex-col sm:border-0 sm:border-l">
               {filterOptions.map(option => {
@@ -189,7 +173,7 @@ export function ProjectsSection(): React.JSX.Element {
               </div>
             ))
           ) : (
-            <p>😦 There is no project with selected filters.</p>
+            <p>{t('projects.notFound')}</p>
           )}
         </div>
       </div>

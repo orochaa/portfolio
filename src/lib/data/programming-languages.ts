@@ -1,4 +1,4 @@
-export const languages = [
+export const programmingLanguages = [
   {
     name: 'typescript',
     displayName: 'TypesScript',
@@ -19,19 +19,24 @@ export const languages = [
       'High-level, general-purpose, memory-safe, object-oriented programming language.',
     url: 'https://www.java.com/',
   },
-] as const satisfies Language[]
+] as const satisfies ProgrammingLanguage[]
 
-export interface Language {
+export interface ProgrammingLanguage {
   name: string
   displayName: string
   description: string
   url: string
 }
 
-export type LanguageName = (typeof languages)[number]['name']
+export type ProgrammingLanguageName =
+  (typeof programmingLanguages)[number]['name']
 
-export function getLanguage(languageName: LanguageName): Language {
-  const language = languages.find(language => language.name === languageName)
+export function getProgrammingLanguage(
+  languageName: ProgrammingLanguageName
+): ProgrammingLanguage {
+  const language = programmingLanguages.find(
+    language => language.name === languageName
+  )
 
   if (!language) {
     throw new Error(`Language ${languageName} not found`)
