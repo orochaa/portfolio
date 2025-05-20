@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "module": "ESNext",
+    "target": "es2017",
+    "module": "esnext",
     "moduleResolution": "Bundler",
     "moduleDetection": "force",
     "esModuleInterop": false,

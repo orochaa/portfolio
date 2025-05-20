@@ -18,7 +18,7 @@ export default defineConfig({
     cors: false,
   },
   build: {
-    target: 'ES6',
+    target: 'es2017',
     outDir: 'dist',
     minify: 'esbuild',
   },
