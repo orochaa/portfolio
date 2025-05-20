@@ -31,8 +31,10 @@ export const en: LocaleTranslation = {
   project: {
     link: 'Go to application',
     github: 'Go to repository',
-    downloads: 'Downloads per month',
-    private: 'Project is private',
+    private: 'private',
+    privateTitle: 'Project is private',
+    downloadsPerMonth: '{{downloads}}/month',
+    downloadsTitle: 'Downloads per month',
   },
   learnMore: {
     title: 'Learn more',

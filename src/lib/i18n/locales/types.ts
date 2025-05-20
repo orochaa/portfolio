@@ -31,7 +31,9 @@ export interface LocaleTranslation {
     link: string
     github: string
     private: string
-    downloads: string
+    privateTitle: string
+    downloadsPerMonth: string
+    downloadsTitle: string
   }
   learnMore: {
     title: string

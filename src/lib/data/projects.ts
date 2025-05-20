@@ -31,7 +31,7 @@ export interface Project {
   imgUrl?: string
   tags: TagName[]
   stars?: number
-  downloadsByMonth?: number
+  downloadsPerMonth?: number
   _weight: number
 }
 
@@ -214,7 +214,7 @@ export const projects: Project[] = (
       tags: ['contributor', 'live'],
       imgUrl: '/assets/clack.gif',
       stars: 6400,
-      downloadsByMonth: 4_800_000,
+      downloadsPerMonth: 4_800_000,
       _weight: 1,
     },
     {
@@ -232,7 +232,7 @@ export const projects: Project[] = (
       tags: ['contributor', 'live'],
       imgUrl: '/assets/brazilian-utils.png',
       stars: 1600,
-      downloadsByMonth: 42_000,
+      downloadsPerMonth: 42_000,
       _weight: 1,
     },
   ] satisfies (Omit<Project, 'technologies' | 'languages'> & {

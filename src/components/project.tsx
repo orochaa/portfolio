@@ -90,11 +90,11 @@ export function Project(props: ProjectProps): React.JSX.Element {
               </span>
               {!!project.isPrivate && (
                 <span
-                  title={t('project.private')}
+                  title={t('project.privateTitle')}
                   className="flex items-center gap-1 rounded-lg bg-zinc-700/70 px-2 py-0.5 text-sm text-zinc-100"
                 >
                   <LockKeyhole size={12} />
-                  private
+                  {t('project.private')}
                 </span>
               )}
             </p>
@@ -136,13 +136,15 @@ export function Project(props: ProjectProps): React.JSX.Element {
           <p className="min-h-12">{project.description[lang]}</p>
           <div className="mt-3 space-y-1">
             <div className="flex gap-1">
-              {!!project.downloadsByMonth && (
+              {!!project.downloadsPerMonth && (
                 <span
-                  title={t('project.downloads')}
+                  title={t('project.downloadsTitle')}
                   className="flex items-center gap-1 rounded-lg bg-green-500/20 px-2 py-0.5 text-sm text-green-300"
                 >
                   <Download size={12} />
-                  {formatNumber(project.downloadsByMonth)}/month
+                  {t('project.downloadsPerMonth', {
+                    downloads: formatNumber(project.downloadsPerMonth),
+                  })}
                 </span>
               )}
               {!!project.stars && (

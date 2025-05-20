@@ -3,7 +3,10 @@ import { useCallback } from 'react'
 import { useTranslation as _useTranslation } from 'react-i18next'
 
 interface UseTranslationResponse {
-  t: (translationKey: TranslationKey) => string | undefined
+  t: (
+    translationKey: TranslationKey,
+    args?: Record<string, string>
+  ) => string | undefined
   lang: Language
   changeLang: (lang: Language) => void
 }
