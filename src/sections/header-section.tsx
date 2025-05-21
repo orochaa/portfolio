@@ -4,6 +4,7 @@ import { useTranslation } from '@/hooks/use-translation'
 import { useWindowSize } from '@/hooks/use-window-size'
 import { scrollTo } from '@/lib/utils'
 import { MailIcon } from 'lucide-react'
+import { AnimatePresence, motion } from 'motion/react'
 import { useCallback, useEffect, useState } from 'react'
 
 export function HeaderSection(): React.JSX.Element {
@@ -11,6 +12,7 @@ export function HeaderSection(): React.JSX.Element {
   const { windowWidth } = useWindowSize()
 
   const [scrolled, setScrolled] = useState(false)
+  const [flagUrl, setFlagUrl] = useState(t('header.lang.imgUrl'))
 
   useEffect(() => {
     const onScroll = (): void => {
@@ -29,7 +31,9 @@ export function HeaderSection(): React.JSX.Element {
 
   const handleToggleLang = useCallback(() => {
     changeLang(lang === 'pt-BR' ? 'en' : 'pt-BR')
-  }, [changeLang, lang])
+
+    setTimeout(() => setFlagUrl(t('header.lang.imgUrl')), 400)
+  }, [changeLang, lang, t])
 
   return (
     <div
@@ -41,15 +45,48 @@ export function HeaderSection(): React.JSX.Element {
           <button
             type="button"
             data-scrolled={scrolled}
-            className="grid grid-cols-2 items-center gap-2 rounded-xl border-2 border-zinc-800 bg-zinc-900/50 px-2 py-1 text-sm outline-hidden transition-colors duration-200 hover:border-zinc-700 active:border-zinc-700 data-[scrolled=true]:border-transparent data-[scrolled=true]:bg-transparent"
+            className="relative h-11 w-27 rounded-xl border-2 border-zinc-800 bg-zinc-900/50 text-sm outline-hidden transition-colors duration-200 hover:border-zinc-700 active:border-zinc-700 data-[scrolled=true]:border-transparent data-[scrolled=true]:bg-transparent"
             onClick={handleToggleLang}
           >
-            <span>{t('header.lang.name')}</span>
-            <img
-              src={t('header.lang.imgUrl')}
-              alt={t('header.lang.imgAlt')}
-              className="w-9"
-            />
+            <AnimatePresence>
+              <motion.span
+                key={t('header.lang.name')}
+                className="absolute top-1/2 -translate-y-1/2"
+                initial={{
+                  left: '60%',
+                  translateX: '-60%',
+                  opacity: 0,
+                }}
+                animate={{
+                  left: '0.5rem',
+                  translateX: '0',
+                  opacity: 1,
+                  transition: { delay: 0.4 },
+                }}
+                exit={{
+                  left: '60%',
+                  translateX: '-60%',
+                  opacity: 0,
+                }}
+              >
+                {t('header.lang.name')}
+              </motion.span>
+              <motion.img
+                key={flagUrl}
+                src={flagUrl}
+                alt={t('header.lang.imgAlt')}
+                className="absolute top-1/2 left-1/2 w-9 translate-x-1 -translate-y-1/2"
+                initial={{
+                  opacity: 0,
+                }}
+                animate={{
+                  opacity: 1,
+                }}
+                exit={{
+                  opacity: 0,
+                }}
+              />
+            </AnimatePresence>
           </button>
         </div>
         {!!scrolled && (

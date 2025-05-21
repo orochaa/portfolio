@@ -11,6 +11,7 @@ i18n
   .init({
     resources: {
       en: { translation: en },
+      pt: { translation: pt },
       'pt-BR': { translation: pt },
     },
     fallbackLng: 'en', // idioma padrão
