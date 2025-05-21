@@ -6,7 +6,6 @@ import type { PointerEvent, ReactNode } from 'react'
 export interface GlowContainerProps {
   children: ReactNode
   containerClassName?: string
-  boxClassName?: string
   glowClassName?: string
 }
 
@@ -59,10 +58,7 @@ export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
           opacity: isHover ? 100 : 0,
         }}
       />
-      <span
-        className={cn('absolute inset-0.5 bg-zinc-900', props.boxClassName)}
-      />
-      <div className="relative z-10">{props.children}</div>
+      {props.children}
     </div>
   )
 }
