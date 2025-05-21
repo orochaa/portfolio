@@ -1,7 +1,9 @@
 /* eslint-disable react/jsx-no-bind */
+import { useDebounce } from '@/hooks/use-debounce'
 import { useTranslation } from '@/hooks/use-translation'
 import type { Language } from '@/lib/i18n/locales/types'
-import { useState } from 'react'
+import { AnimatePresence, motion } from 'motion/react'
+import { useCallback, useState } from 'react'
 import type { IconType } from 'react-icons'
 import {
   SiAmazonwebservices,
@@ -25,35 +27,92 @@ export function TechnologiesSection(): React.JSX.Element {
   const { t, lang } = useTranslation()
 
   const [selectedTechnology, setSelectedTechnology] = useState<Technology>()
+  const [selectedCard, setSelectedCard] = useState<Technology>()
+
+  const debounceSelectTechnology = useDebounce(setSelectedTechnology, 150)
+
+  const handleSelectCard = useCallback(
+    (technology: Technology) => {
+      setSelectedCard(technology)
+      debounceSelectTechnology(technology)
+    },
+    [debounceSelectTechnology]
+  )
 
   return (
     <div id="technologies" className="bg-slate-950 py-20">
-      <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-1 lg:grid-cols-2">
-        <div className="mx-auto mb-6 w-xl max-w-full">
+      <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-1 gap-6 lg:grid-cols-2">
+        <div className="mx-auto w-xl max-w-full">
           <h2 className="mb-6 text-3xl font-semibold">
             {t('technologies.title')}
           </h2>
-          <p className="min-h-40 text-zinc-300">
-            {selectedTechnology?.description[lang] ??
-              t('technologies.placeholder')}
-          </p>
+          <AnimatePresence>
+            <motion.p
+              key={selectedTechnology?.displayName}
+              className="min-h-40 text-zinc-300"
+              initial={{
+                y: -25,
+                opacity: 0,
+              }}
+              animate={{
+                y: 0,
+                opacity: 1,
+                transition: { duration: 0.15, delay: 0.4 },
+              }}
+              exit={{
+                y: 25,
+                opacity: 0,
+                transition: { duration: 0.15 },
+              }}
+            >
+              {selectedTechnology?.description[lang] ??
+                t('technologies.placeholder')}
+            </motion.p>
+          </AnimatePresence>
         </div>
         <div>
           <div className="mx-auto grid w-fit grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-6">
-            {technologies.map(technology => (
-              <div
-                key={technology.displayName}
-                title={technology.title}
-                data-active={
-                  selectedTechnology?.displayName === technology.displayName
-                }
-                className="flex size-28 flex-col items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 p-4 text-slate-200 transition-colors duration-200 data-active:border-2 data-active:border-blue-500/80 data-active:bg-zinc-800 data-active:text-blue-500"
-                onPointerEnter={() => setSelectedTechnology(technology)}
-              >
-                <technology.Icon size={40} />
-                {technology.displayName}
-              </div>
-            ))}
+            {technologies.map((technology, i) => {
+              const colIndex = i % 4
+              const rowIndex = Math.floor(i / 4)
+
+              const isEvenRow = rowIndex % 2 === 0
+
+              const colDelay = 0.2
+              const rowDelay = colDelay * 4
+
+              const itemRowDelay = rowDelay * rowIndex
+              const itemColDelay = isEvenRow
+                ? colDelay * (colIndex + 1)
+                : rowDelay - colDelay * colIndex
+              const delay = itemRowDelay + itemColDelay
+
+              return (
+                <motion.div
+                  key={technology.displayName}
+                  title={technology.title}
+                  data-active={
+                    selectedCard?.displayName === technology.displayName
+                  }
+                  className="flex size-28 flex-col items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 p-4 text-slate-200 transition-colors duration-200 data-active:border-2 data-active:border-blue-500/80 data-active:bg-zinc-800 data-active:text-blue-500"
+                  onPointerEnter={() => handleSelectCard(technology)}
+                  initial={{ y: -50, x: isEvenRow ? -25 : 25, opacity: 0 }}
+                  whileInView={{
+                    y: 0,
+                    x: 0,
+                    opacity: 1,
+                    transition: {
+                      delay: delay,
+                      duration: 0.3,
+                    },
+                  }}
+                  viewport={{ once: true }}
+                >
+                  <technology.Icon size={40} />
+                  {technology.displayName}
+                </motion.div>
+              )
+            })}
           </div>
         </div>
       </div>
