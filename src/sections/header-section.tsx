@@ -95,28 +95,28 @@ export function HeaderSection(): React.JSX.Element {
               <div className="flex gap-4 text-lg">
                 <button
                   type="button"
-                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#home')}
                 >
                   {t('header.home')}
                 </button>
                 <button
                   type="button"
-                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#education')}
                 >
                   {t('education.title')}
                 </button>
                 <button
                   type="button"
-                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#technologies')}
                 >
                   {t('technologies.title')}
                 </button>
                 <button
                   type="button"
-                  className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#projects')}
                 >
                   {t('projects.title')}
@@ -130,7 +130,7 @@ export function HeaderSection(): React.JSX.Element {
                 href="https://linkedin.com/in/bruno-rocha-a65a49157"
                 target="_blank"
                 rel="noreferrer"
-                className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
               >
                 <LinkedinIcon size={24} />
               </a>
@@ -139,7 +139,7 @@ export function HeaderSection(): React.JSX.Element {
                 href="https://github.com/orochaa"
                 target="_blank"
                 rel="noreferrer"
-                className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
               >
                 <GithubIcon size={24} />
               </a>
@@ -148,7 +148,7 @@ export function HeaderSection(): React.JSX.Element {
                 href="mailto:brunorocha2674@gmail.com"
                 target="_blank"
                 rel="noreferrer"
-                className="text-zinc-300 transition-colors hover:text-zinc-100 active:text-zinc-100"
+                className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
               >
                 <MailIcon size={24} />
               </a>
