@@ -46,29 +46,32 @@ export function TechnologiesSection(): React.JSX.Element {
           <h2 className="mb-6 text-3xl font-semibold">
             {t('technologies.title')}
           </h2>
-          <AnimatePresence>
-            <motion.p
-              key={selectedTechnology?.displayName}
-              className="min-h-40 text-zinc-300"
-              initial={{
-                y: -25,
-                opacity: 0,
-              }}
-              animate={{
-                y: 0,
-                opacity: 1,
-                transition: { duration: 0.15, delay: 0.4 },
-              }}
-              exit={{
-                y: 25,
-                opacity: 0,
-                transition: { duration: 0.15 },
-              }}
-            >
-              {selectedTechnology?.description[lang] ??
-                t('technologies.placeholder')}
-            </motion.p>
-          </AnimatePresence>
+          <div className="h-44 overflow-hidden sm:h-auto">
+            <AnimatePresence>
+              <motion.p
+                key={selectedTechnology?.displayName}
+                className="text-zinc-300"
+                initial={{
+                  y: -25,
+                  opacity: 0,
+                }}
+                animate={{
+                  y: 0,
+                  opacity: 1,
+                  transition: { duration: 0.15, delay: 0.4 },
+                }}
+                exit={{
+                  y: 25,
+                  opacity: 0,
+                  transition: { duration: 0.15 },
+                  height: 0,
+                }}
+              >
+                {selectedTechnology?.description[lang] ??
+                  t('technologies.placeholder')}
+              </motion.p>
+            </AnimatePresence>
+          </div>
         </div>
         <div>
           <div className="mx-auto grid w-fit grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-6">
@@ -272,9 +275,9 @@ const technologies: Technology[] = [
     title: 'Amazon Web Services',
     displayName: 'AWS',
     description: {
-      en: 'Amazon Web Services is a suite of cloud computing services that offers a wide range of tools and infrastructure for building and running applications. It includes services for computing, storage, databases, analytics, machine learning, and more, providing scalable and cost-effective solutions for businesses of all sizes.',
+      en: 'Amazon Web Services is a suite of cloud computing services that offers a wide range of tools and infrastructure for building and running applications. It includes services for computing, storage, databases, analytics, machine learning, and more.',
       'pt-BR':
-        'Amazon Web Services é um conjunto de serviços de computação em nuvem que oferece uma ampla variedade de ferramentas e infraestrutura para construção e execução de aplicações. Inclui serviços de computação, armazenamento, bancos de dados, analytics, machine learning, entre outros, fornecendo soluções escaláveis e com bom custo-benefício para empresas de todos os tamanhos.',
+        'Amazon Web Services é um conjunto de serviços de computação em nuvem que oferece uma ampla variedade de ferramentas e infraestrutura para construção e execução de aplicações. Inclui serviços de armazenamento, bancos de dados, analytics, machine learning, entre outros.',
     },
     Icon: SiAmazonwebservices,
   },
