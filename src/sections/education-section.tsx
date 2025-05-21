@@ -61,7 +61,7 @@ export function EducationSection(): React.JSX.Element {
   return (
     <div
       id="education"
-      className="from-background bg-gradient-to-br to-zinc-950 py-20"
+      className="from-background bg-gradient-to-br from-40% to-zinc-950 py-20"
     >
       <div className="mx-auto w-11/12 max-w-7xl">
         <h2 className="mb-6 text-center text-3xl font-semibold">

@@ -78,7 +78,7 @@ export function TechnologiesSection(): React.JSX.Element {
 
               const isEvenRow = rowIndex % 2 === 0
 
-              const colDelay = 0.2
+              const colDelay = 0.15
               const rowDelay = colDelay * 4
 
               const itemRowDelay = rowDelay * rowIndex
@@ -103,7 +103,7 @@ export function TechnologiesSection(): React.JSX.Element {
                     opacity: 1,
                     transition: {
                       delay: delay,
-                      duration: 0.3,
+                      duration: 0.2,
                     },
                   }}
                   viewport={{ once: true }}
