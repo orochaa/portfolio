@@ -160,7 +160,7 @@ export function ProjectsSection(): React.JSX.Element {
                 <h3 id={group.name} className="mb-2 text-xl font-semibold">
                   {group.name}
                 </h3>
-                <ul className="grid grid-cols-1 gap-2 xl:grid-cols-2">
+                <ul className="grid w-fit grid-cols-1 gap-2 xl:grid-cols-2">
                   {group.projects.map((project, projectIndex) => (
                     <Project
                       key={project.name}

@@ -39,18 +39,19 @@ export function TechnologiesSection(): React.JSX.Element {
           </p>
         </div>
         <div>
-          <div className="mx-auto grid w-fit grid-cols-4 gap-3 sm:gap-6">
+          <div className="mx-auto grid w-fit grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-6">
             {technologies.map(technology => (
               <div
                 key={technology.displayName}
-                title={technology.displayName}
+                title={technology.title}
                 data-active={
                   selectedTechnology?.displayName === technology.displayName
                 }
-                className="flex size-20 items-center justify-center rounded-md border border-zinc-700 bg-zinc-900 text-slate-200 transition-colors duration-200 data-active:border-2 data-active:border-blue-500/80 data-active:bg-zinc-800 data-active:text-blue-500 sm:size-28"
+                className="flex size-28 flex-col items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 p-4 text-slate-200 transition-colors duration-200 data-active:border-2 data-active:border-blue-500/80 data-active:bg-zinc-800 data-active:text-blue-500"
                 onPointerEnter={() => setSelectedTechnology(technology)}
               >
                 <technology.Icon size={40} />
+                {technology.displayName}
               </div>
             ))}
           </div>
@@ -61,6 +62,7 @@ export function TechnologiesSection(): React.JSX.Element {
 }
 
 interface Technology {
+  title: string
   displayName: string
   description: Record<Language, string>
   Icon: IconType
@@ -68,6 +70,7 @@ interface Technology {
 
 const technologies: Technology[] = [
   {
+    title: 'NodeJS',
     displayName: 'NodeJS',
     description: {
       en: 'NodeJS is a runtime environment that allows JavaScript to be executed on the server-side. It enables developers to build scalable and high-performance network applications using JavaScript, facilitating tasks such as server management, database interactions, and handling HTTP requests.',
@@ -77,6 +80,7 @@ const technologies: Technology[] = [
     Icon: SiNodedotjs,
   },
   {
+    title: 'NestJS',
     displayName: 'NestJS',
     description: {
       en: 'NestJS is a progressive Node.js framework for building efficient, reliable and scalable server-side applications.',
@@ -86,6 +90,7 @@ const technologies: Technology[] = [
     Icon: SiNestjs,
   },
   {
+    title: 'Express',
     displayName: 'Express',
     description: {
       en: 'Express is a minimal and flexible Node.js web application framework that provides a robust set of features for building APIs and web applications. It simplifies routing, middleware integration, and request handling, making it a popular choice for developing server-side applications.',
@@ -95,6 +100,7 @@ const technologies: Technology[] = [
     Icon: SiExpress,
   },
   {
+    title: 'GraphQL',
     displayName: 'GraphQL',
     description: {
       en: 'GraphQL is a query language for APIs that allows clients to request specific data, reducing over-fetching and improving efficiency. It enables developers to define the structure of the data they need, and the server responds with exactly that data.',
@@ -104,6 +110,7 @@ const technologies: Technology[] = [
     Icon: SiGraphql,
   },
   {
+    title: 'React',
     displayName: 'React',
     description: {
       en: 'React is a JavaScript library for building user interfaces, particularly single-page applications. It allows developers to create reusable UI components, manage application state efficiently, and update the view in response to data changes.',
@@ -113,6 +120,7 @@ const technologies: Technology[] = [
     Icon: SiReact,
   },
   {
+    title: 'NextJS',
     displayName: 'NextJS',
     description: {
       en: 'NextJS is a React framework that provides additional features such as server-side rendering, static site generation, and API routes. It simplifies the development of production-ready React applications by offering built-in optimizations and tools.',
@@ -122,6 +130,7 @@ const technologies: Technology[] = [
     Icon: TbBrandNextjs,
   },
   {
+    title: 'TailwindCSS',
     displayName: 'TailwindCSS',
     description: {
       en: 'TailwindCSS is a utility-first CSS framework that provides low-level utility classes for styling web applications. It allows developers to quickly build custom designs by composing pre-defined classes, resulting in maintainable and efficient CSS.',
@@ -131,7 +140,8 @@ const technologies: Technology[] = [
     Icon: SiTailwindcss,
   },
   {
-    displayName: 'Styled Components',
+    title: 'Styled Components',
+    displayName: 'StyledComp.',
     description: {
       en: 'Styled Components is a CSS-in-JS library that allows you to write CSS code directly within your JavaScript components. It enhances component styling by enabling dynamic styles based on component props and state, and it automatically scopes styles to prevent conflicts.',
       'pt-BR':
@@ -140,6 +150,7 @@ const technologies: Technology[] = [
     Icon: SiStyledcomponents,
   },
   {
+    title: 'ReactNative',
     displayName: 'ReactNative',
     description: {
       en: 'ReactNative is a framework for building native mobile apps with JavaScript and React. It allows developers to create cross-platform applications for iOS and Android from a single codebase, leveraging React components and native device capabilities.',
@@ -149,6 +160,7 @@ const technologies: Technology[] = [
     Icon: TbBrandReactNative,
   },
   {
+    title: 'ExpoJS',
     displayName: 'ExpoJS',
     description: {
       en: 'ExpoJS is a framework built on top of React Native that provides a set of tools and services to simplify the development of mobile applications. It offers features like over-the-air updates, push notifications, and pre-built components, making it easier to build and deploy React Native apps.',
@@ -158,6 +170,7 @@ const technologies: Technology[] = [
     Icon: SiExpo,
   },
   {
+    title: 'PostgreSQL',
     displayName: 'PostgreSQL',
     description: {
       en: 'PostgreSQL is a powerful open-source relational database management system known for its reliability, robustness, and extensibility. It supports advanced data types, full-text search, and various features to handle complex data management tasks.',
@@ -167,6 +180,7 @@ const technologies: Technology[] = [
     Icon: SiPostgresql,
   },
   {
+    title: 'Prisma',
     displayName: 'Prisma',
     description: {
       en: 'Prisma is an open-source ORM (Object-Relational Mapping) for Node.js and TypeScript. It simplifies database access by providing a type-safe query builder and an intuitive data modeling interface, making it easier to interact with databases.',
@@ -176,6 +190,7 @@ const technologies: Technology[] = [
     Icon: SiPrisma,
   },
   {
+    title: 'Jest',
     displayName: 'Jest',
     description: {
       en: 'Jest is a JavaScript testing framework that focuses on simplicity and developer experience. It provides a complete solution for testing JavaScript code, including test runners, assertions, and mocking capabilities, making it easy to write and run tests for your applications.',
@@ -185,7 +200,8 @@ const technologies: Technology[] = [
     Icon: SiJest,
   },
   {
-    displayName: 'Testing Library',
+    title: 'Testing Library',
+    displayName: 'TestingLibrary',
     description: {
       en: 'Testing Library is a set of utilities that allow you to test React components in a way that resembles how users interact with them. It provides functions to query elements, simulate user events, and assert the expected behavior of components.',
       'pt-BR':
@@ -194,7 +210,8 @@ const technologies: Technology[] = [
     Icon: SiTestinglibrary,
   },
   {
-    displayName: 'Amazon Web Services',
+    title: 'Amazon Web Services',
+    displayName: 'AWS',
     description: {
       en: 'Amazon Web Services is a suite of cloud computing services that offers a wide range of tools and infrastructure for building and running applications. It includes services for computing, storage, databases, analytics, machine learning, and more, providing scalable and cost-effective solutions for businesses of all sizes.',
       'pt-BR':
@@ -203,6 +220,7 @@ const technologies: Technology[] = [
     Icon: SiAmazonwebservices,
   },
   {
+    title: 'Docker',
     displayName: 'Docker',
     description: {
       en: 'Docker is a platform for developing, shipping, and running applications inside containers. It simplifies the process of packaging applications with their dependencies, ensuring consistency across different environments and facilitating deployment and scaling.',

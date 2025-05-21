@@ -34,7 +34,7 @@ export function HeaderSection(): React.JSX.Element {
   return (
     <div
       data-scrolled={scrolled}
-      className="group lef-0 fixed top-0 z-20 w-full border-b border-transparent bg-slate-950 pt-4 transition-all data-[scrolled=true]:border-zinc-800 data-[scrolled=true]:bg-zinc-950 data-[scrolled=true]:py-0"
+      className="group lef-0 fixed top-0 z-20 w-full border-b border-transparent bg-slate-950 pt-4 transition-all data-[scrolled=true]:border-zinc-700 data-[scrolled=true]:bg-zinc-950 data-[scrolled=true]:py-0"
     >
       <div className="mx-auto flex w-11/12 max-w-6xl items-center justify-between">
         <div>

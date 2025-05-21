@@ -16,7 +16,7 @@ export const pt: LocaleTranslation = {
       'Desenvolvedor de Software com 5 anos de experiência, focado em criar soluções escaláveis com boas práticas e arquitetura limpa. Atuo em todas as etapas do desenvolvimento, colaborando com times diversos e buscando melhorias contínuas no produto e nos processos.',
   },
   education: {
-    title: 'Formações e Cursos',
+    title: 'Cursos e Formações',
   },
   technologies: {
     title: 'Tecnologias',
