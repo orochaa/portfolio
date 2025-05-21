@@ -181,7 +181,7 @@ export const projects: Project[] = (
       languages: ['go'],
       githubUrl: 'https://github.com/orochaa/my-cli?tab=readme-ov-file#readme',
       tags: ['tools'],
-      imgUrl: '/assets/my-cli.jpg',
+      imgUrl: '/assets/my-cli.png',
       _weight: 1,
     },
     {

@@ -40,7 +40,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
         },
       }}
       viewport={{ once: true }}
-      className="min-h-40 max-w-[30rem]"
+      className="min-h-40 w-[30rem] max-w-full"
     >
       <GlowContainer
         containerClassName="h-full flex flex-col rounded-lg border border-zinc-600"
@@ -70,7 +70,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                 src={project.imgUrl}
                 alt={`${project.name}.jpg`}
                 loading="lazy"
-                className="mx-auto h-full object-cover sm:object-fill"
+                className="mx-auto h-full object-fill"
               />
             ) : (
               <div className="flex h-full items-center justify-center bg-gradient-to-br from-blue-500/35 to-orange-300/35">
