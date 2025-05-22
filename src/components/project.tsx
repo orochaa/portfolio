@@ -59,7 +59,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
             <span className="absolute inset-0.5 bottom-0 rounded-t-md bg-zinc-900" />
             <button
               type="button"
-              className="relative block h-[16.75rem] w-full overflow-hidden rounded-t-md"
+              className="relative block h-[16.75rem] w-full overflow-hidden rounded-t-md text-left"
               disabled={!project.videoUrl && !project.imgUrl}
               onClick={blendy.handleOpen}
               data-blendy-from={blendy.id}
@@ -83,7 +83,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                 />
               ) : (
                 <div className="flex h-full items-center justify-center bg-gradient-to-br from-blue-500/35 to-orange-300/35">
-                  <div className="max-w-4/6">
+                  <div className="max-w-5/6">
                     <p className="text-lg font-semibold">
                       🚀 {project.displayName}
                     </p>
