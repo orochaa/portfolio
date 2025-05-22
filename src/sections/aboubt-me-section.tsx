@@ -1,7 +1,7 @@
 import { GithubIcon } from '@/components/icons/github'
 import { LinkedinIcon } from '@/components/icons/linkedin'
 import { useTranslation } from '@/hooks/use-translation'
-import { MailIcon } from 'lucide-react'
+import { MailIcon } from '@/components/icons/mail'
 
 export function AboutMeSection(): React.JSX.Element {
   const { t } = useTranslation()

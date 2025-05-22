@@ -1,9 +1,9 @@
 import { GithubIcon } from '@/components/icons/github'
 import { LinkedinIcon } from '@/components/icons/linkedin'
+import { MailIcon } from '@/components/icons/mail'
 import { useTranslation } from '@/hooks/use-translation'
 import { useWindowSize } from '@/hooks/use-window-size'
 import { scrollTo } from '@/lib/utils'
-import { MailIcon } from 'lucide-react'
 import { AnimatePresence, motion } from 'motion/react'
 import { useCallback, useEffect, useState } from 'react'
 
