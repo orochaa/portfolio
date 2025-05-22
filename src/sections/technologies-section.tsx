@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import { useDebounce } from '@/hooks/use-debounce'
 import { useTranslation } from '@/hooks/use-translation'
+import { useWindowSize } from '@/hooks/use-window-size'
 import type { Language } from '@/lib/i18n/locales/types'
 import { AnimatePresence, motion } from 'motion/react'
 import { useCallback, useState } from 'react'
@@ -26,6 +27,8 @@ import { TbBrandNextjs, TbBrandReactNative } from 'react-icons/tb'
 export function TechnologiesSection(): React.JSX.Element {
   const { t, lang } = useTranslation()
 
+  const { windowWidth } = useWindowSize()
+
   const [selectedTechnology, setSelectedTechnology] = useState<Technology>()
   const [selectedCard, setSelectedCard] = useState<Technology>()
 
@@ -50,7 +53,7 @@ export function TechnologiesSection(): React.JSX.Element {
             <AnimatePresence>
               <motion.p
                 key={selectedTechnology?.displayName}
-                className="text-zinc-300"
+                className="whitespace-pre-wrap text-zinc-300"
                 initial={{
                   y: -25,
                   opacity: 0,
@@ -76,13 +79,14 @@ export function TechnologiesSection(): React.JSX.Element {
         <div>
           <div className="mx-auto grid w-fit grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-6">
             {technologies.map((technology, i) => {
-              const colIndex = i % 4
-              const rowIndex = Math.floor(i / 4)
+              const colsByRow = windowWidth < 640 ? 3 : 4
+              const colIndex = i % colsByRow
+              const rowIndex = Math.floor(i / colsByRow)
 
               const isEvenRow = rowIndex % 2 === 0
 
               const colDelay = 0.15
-              const rowDelay = colDelay * 4
+              const rowDelay = colDelay * colsByRow
 
               const itemRowDelay = rowDelay * rowIndex
               const itemColDelay = isEvenRow
