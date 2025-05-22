@@ -4,11 +4,13 @@ import { LinkIcon } from '@/components/icons/link'
 import { LearnMore } from '@/components/learn-more'
 import { useBlendy } from '@/hooks/use-blendy'
 import { useTranslation } from '@/hooks/use-translation'
+import { useWindowSize } from '@/hooks/use-window-size'
 import type { Project } from '@/lib/data/projects'
 import { formatNumber } from '@/lib/utils'
-import { Download, LockKeyhole, Star } from 'lucide-react'
+import { Download, LockKeyhole, RefreshCcw, Star } from 'lucide-react'
 import { motion } from 'motion/react'
 import { createPortal } from 'react-dom'
+import { IoPhonePortraitOutline } from 'react-icons/io5'
 import { MdClose } from 'react-icons/md'
 
 export interface ProjectProps {
@@ -22,6 +24,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
 
   const { t, lang } = useTranslation()
 
+  const { windowWidth } = useWindowSize()
   const blendy = useBlendy(project.name)
 
   return (
@@ -197,10 +200,21 @@ export function Project(props: ProjectProps): React.JSX.Element {
               className="absolute inset-0 cursor-default bg-black/40"
               onClick={blendy.handleClose}
             />
-            <div
-              className="relative z-10 max-h-[80svh] max-w-11/12 overflow-hidden rounded-xl border border-zinc-600 bg-zinc-800 sm:h-[80svh]"
-              data-blendy-to={blendy.id}
-            >
+            <div className="relative z-10 max-w-11/12">
+              {windowWidth < 640 && (
+                <div className="absolute -top-18 left-1/2 -translate-x-1/2 text-zinc-200">
+                  <div className="relative">
+                    <IoPhonePortraitOutline
+                      size={60}
+                      className="animate-rotate-device"
+                    />
+                    <RefreshCcw
+                      size={20}
+                      className="animate-rotate-device-indicator absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rotate-45"
+                    />
+                  </div>
+                </div>
+              )}
               <button
                 type="button"
                 className="absolute top-4.5 right-4.5 z-10 text-zinc-500 transition hover:text-zinc-200 active:text-zinc-200"
@@ -208,31 +222,38 @@ export function Project(props: ProjectProps): React.JSX.Element {
               >
                 <MdClose className="size-6 shrink-0" />
               </button>
-              {project.videoUrl ? (
-                <video
-                  src={project.videoUrl}
-                  className="h-full"
-                  controls
-                  autoPlay
-                  muted
-                  loop
-                />
-              ) : project.imgUrl ? (
-                <img
-                  src={project.imgUrl}
-                  alt={`${project.name}.jpg`}
-                  className="mx-auto h-full object-fill"
-                />
-              ) : (
-                <div className="flex h-full w-2xl max-w-full items-center justify-center bg-gradient-to-br from-blue-500/35 to-orange-300/35">
-                  <div className="max-w-4/6">
-                    <p className="text-lg font-semibold">
-                      🚀 {project.displayName}
-                    </p>
-                    <p className="text-zinc-100">{project.description[lang]}</p>
+              <div
+                className="max-h-[70svh] overflow-hidden rounded-xl border border-zinc-600 bg-zinc-800 sm:h-[80svh]"
+                data-blendy-to={blendy.id}
+              >
+                {project.videoUrl ? (
+                  <video
+                    src={project.videoUrl}
+                    className="h-full"
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                  />
+                ) : project.imgUrl ? (
+                  <img
+                    src={project.imgUrl}
+                    alt={`${project.name}.jpg`}
+                    className="mx-auto h-full object-fill"
+                  />
+                ) : (
+                  <div className="flex h-full w-2xl max-w-full items-center justify-center bg-gradient-to-br from-blue-500/35 to-orange-300/35">
+                    <div className="max-w-4/6">
+                      <p className="text-lg font-semibold">
+                        🚀 {project.displayName}
+                      </p>
+                      <p className="text-zinc-100">
+                        {project.description[lang]}
+                      </p>
+                    </div>
                   </div>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </div>,
           document.body

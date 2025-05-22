@@ -7,6 +7,58 @@
   --font-*: initial;
 
   --color-background: #121214;
+
+  --animate-rotate-device: rotate-device 6s ease-in-out infinite;
+
+  @keyframes rotate-device {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    16% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    32% {
+      transform: rotate(0deg);
+    }
+    64% {
+      transform: rotate(-90deg);
+    }
+    80% {
+      transform: rotate(-90deg);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-90deg) scale(0);
+      opacity: 0;
+    }
+  }
+
+  --animate-rotate-device-indicator: rotate-device-indicator 6s ease-in-out
+    infinite;
+
+  @keyframes rotate-device-indicator {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+    16% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    32% {
+      transform: rotate(30deg);
+    }
+    80% {
+      transform: rotate(-360deg);
+      opacity: 1;
+    }
+    100% {
+      transform: rotate(-360deg) scale(0);
+      opacity: 0;
+    }
+  }
 }
 
 @custom-variant data-selected (&[data-selected="true"]);
