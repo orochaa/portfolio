@@ -9,6 +9,7 @@ i18n
   .use(LanguageDetector) // detecta idioma automaticamente
   .use(initReactI18next)
   .init({
+    supportedLngs: ['pt', 'pt-BR', 'en'],
     resources: {
       en: { translation: en },
       pt: { translation: pt },
