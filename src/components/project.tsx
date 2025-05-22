@@ -124,9 +124,9 @@ export function Project(props: ProjectProps): React.JSX.Element {
                         href={project.liveUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="relative block p-1.5"
+                        className="relative"
                       >
-                        <LinkIcon size={20} />
+                        <LinkIcon size={20} className="p-1.5" />
                       </a>
                     </GlowContainer>
                   )}
@@ -141,9 +141,9 @@ export function Project(props: ProjectProps): React.JSX.Element {
                         href={project.githubUrl}
                         target="_blank"
                         rel="noreferrer"
-                        className="relative block p-1.5"
+                        className="relative"
                       >
-                        <GithubIcon size={20} />
+                        <GithubIcon size={20} className="p-1.5" />
                       </a>
                     </GlowContainer>
                   )}

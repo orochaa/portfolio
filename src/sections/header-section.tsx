@@ -40,7 +40,7 @@ export function HeaderSection(): React.JSX.Element {
       data-scrolled={scrolled}
       className="group lef-0 fixed top-0 z-20 w-full border-b border-transparent bg-slate-950 pt-4 transition-all data-[scrolled=true]:border-zinc-700 data-[scrolled=true]:bg-zinc-950 data-[scrolled=true]:py-0"
     >
-      <div className="mx-auto flex w-11/12 max-w-6xl items-center justify-between">
+      <div className="mx-auto flex w-11/12 max-w-6xl justify-between">
         <div>
           <button
             type="button"
@@ -95,28 +95,28 @@ export function HeaderSection(): React.JSX.Element {
               <div className="flex gap-4 text-lg">
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#home')}
                 >
                   {t('header.home')}
                 </button>
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#education')}
                 >
                   {t('education.title')}
                 </button>
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#technologies')}
                 >
                   {t('technologies.title')}
                 </button>
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
                   onClick={scrollTo('#projects')}
                 >
                   {t('projects.title')}
@@ -130,27 +130,33 @@ export function HeaderSection(): React.JSX.Element {
                 href="https://linkedin.com/in/bruno-rocha-a65a49157"
                 target="_blank"
                 rel="noreferrer"
-                className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
               >
-                <LinkedinIcon size={24} />
+                <LinkedinIcon
+                  size={24}
+                  className="relative flex h-full items-center text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                />
               </a>
               <a
                 title="GitHub"
                 href="https://github.com/orochaa"
                 target="_blank"
                 rel="noreferrer"
-                className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
               >
-                <GithubIcon size={24} />
+                <GithubIcon
+                  size={24}
+                  className="relative flex h-full items-center text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                />
               </a>
               <a
                 title="Mail"
                 href="mailto:brunorocha2674@gmail.com"
                 target="_blank"
                 rel="noreferrer"
-                className="relative text-zinc-300 transition-colors before:absolute before:-bottom-[0.66rem] before:left-0 before:h-0 before:w-full before:rounded-lg before:bg-blue-500 before:transition-[height] hover:text-zinc-100 hover:before:h-0.5 active:text-zinc-100"
               >
-                <MailIcon size={24} />
+                <MailIcon
+                  size={24}
+                  className="relative flex h-full items-center text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                />
               </a>
             </div>
           </div>
