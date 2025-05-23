@@ -230,6 +230,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                   <video
                     src={project.videoUrl}
                     className="h-full"
+                    preload="none"
                     controls
                     autoPlay
                     muted
