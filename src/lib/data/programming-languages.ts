@@ -2,21 +2,31 @@ export const programmingLanguages = [
   {
     name: 'typescript',
     displayName: 'TypesScript',
-    description:
-      'TypeScript is a strongly typed programming language that builds on JavaScript.',
+    description: {
+      en: 'TypeScript is a strongly typed programming language that builds on JavaScript.',
+      'pt-BR':
+        'TypeScript é uma linguagem de programação fortemente tipada que expande o JavaScript.',
+    },
     url: 'https://www.typescriptlang.org/',
   },
   {
     name: 'go',
     displayName: 'Go',
-    description: 'An open-source programming language supported by Google.',
+    description: {
+      en: 'An open-source programming language supported by Google.',
+      'pt-BR':
+        'Uma linguagem de programação open-source com suporte do Google.',
+    },
     url: 'https://go.dev/',
   },
   {
     name: 'java',
     displayName: 'Java',
-    description:
-      'High-level, general-purpose, memory-safe, object-oriented programming language.',
+    description: {
+      en: 'High-level, general-purpose, memory-safe, object-oriented programming language.',
+      'pt-BR':
+        'Linguagem de programação de alto nível, de propósito geral, segura em memória e orientada a objetos.',
+    },
     url: 'https://www.java.com/',
   },
 ] as const satisfies ProgrammingLanguage[]
@@ -24,7 +34,10 @@ export const programmingLanguages = [
 export interface ProgrammingLanguage {
   name: string
   displayName: string
-  description: string
+  description: {
+    en: string
+    'pt-BR': string
+  }
   url: string
 }
 

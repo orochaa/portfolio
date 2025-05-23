@@ -8,14 +8,17 @@ import type { CSSProperties, ReactNode } from 'react'
 export interface LearnMoreProps {
   children: ReactNode
   displayName: string
-  description: string
+  description: {
+    en: string
+    'pt-BR': string
+  }
   url: string
 }
 
 export function LearnMore(props: LearnMoreProps): React.JSX.Element {
   const { children, description, displayName, url } = props
 
-  const { t } = useTranslation()
+  const { t, lang } = useTranslation()
 
   const [isVisible, setIsVisible] = useState(false)
   const left = useMotionValue(0)
@@ -88,7 +91,7 @@ export function LearnMore(props: LearnMoreProps): React.JSX.Element {
               className="group-hover/learn-more:text-blue-200"
             />
           </div>
-          <p className="text-sm">{description}</p>
+          <p className="text-sm text-pretty">{description[lang]}</p>
         </motion.a>
       )}
     </div>

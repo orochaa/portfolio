@@ -247,7 +247,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
                       <p className="text-lg font-semibold">
                         🚀 {project.displayName}
                       </p>
-                      <p className="text-zinc-100">
+                      <p className="text-pretty text-zinc-100">
                         {project.description[lang]}
                       </p>
                     </div>

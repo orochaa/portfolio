@@ -53,7 +53,7 @@ export function TechnologiesSection(): React.JSX.Element {
             <AnimatePresence>
               <motion.p
                 key={selectedTechnology?.displayName}
-                className="whitespace-pre-wrap text-zinc-300"
+                className="text-pretty whitespace-pre-wrap text-zinc-300"
                 initial={{
                   y: -25,
                   opacity: 0,
