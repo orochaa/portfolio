@@ -238,6 +238,16 @@ export const technologies = [
     },
     url: 'https://aws.amazon.com/s3',
   },
+  {
+    name: 'motion',
+    displayName: 'Motion',
+    description: {
+      en: 'A robust animation library for modern web projects using React.',
+      'pt-BR':
+        'Uma biblioteca de animação robusta para projetos web modernos usando React.',
+    },
+    url: 'https://motion.dev/',
+  },
 ] as const satisfies Technology[]
 
 export interface Technology {

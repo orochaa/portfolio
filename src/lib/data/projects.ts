@@ -50,7 +50,24 @@ export const projects: Project[] = (
       liveUrl: 'https://cineapp-orochaa.vercel.app/',
       tags: ['frontend', 'live'],
       videoUrl: '/assets/cineapp.mp4',
-      _weight: 1,
+      _weight: 2,
+    },
+    {
+      name: 'tesla-bank',
+      displayName: 'TeslaBank',
+      description: {
+        en: "Fictional landing page for an innovative digital bank, inspired by Tesla's technological and futuristic vision.",
+        'pt-BR':
+          'Landing page fictícia de um banco digital inovador, inspirado na visão tecnológica e futurista da Tesla.',
+      },
+      technologies: ['react', 'tailwindcss', 'motion'],
+      languages: ['typescript'],
+      githubUrl:
+        'https://github.com/orochaa/tesla-bank?tab=readme-ov-file#readme',
+      liveUrl: 'https://teslabank-orochaa.vercel.app/',
+      tags: ['frontend', 'live'],
+      videoUrl: '/assets/tesla-bank.mp4',
+      _weight: 2,
     },
     {
       name: 'cantinho-do-acai',
@@ -89,7 +106,7 @@ export const projects: Project[] = (
       imgUrl: '/assets/techiacad.png',
       tags: ['frontend', 'backend', 'live'],
       isPrivate: true,
-      _weight: 2,
+      _weight: 1,
     },
     {
       name: '2048',
