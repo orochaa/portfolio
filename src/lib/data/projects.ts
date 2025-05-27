@@ -79,7 +79,7 @@ export const projects: Project[] = (
       technologies: ['react', 'whatsapp', 'tailwindcss'],
       languages: ['typescript'],
       githubUrl:
-        'https://github.com/orochaa/url-shortener-lambda?tab=readme-ov-file#readme',
+        'https://github.com/orochaa/cantinho-do-acai?tab=readme-ov-file#readme',
       liveUrl: 'https://cantinho-do-acai.vercel.app/',
       tags: ['frontend', 'live'],
       videoUrl: '/assets/cantinho-do-acai.mp4',
