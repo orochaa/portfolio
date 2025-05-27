@@ -60,7 +60,7 @@ export function MailIcon({
   const pathControls = useAnimation()
   const rectControls = useAnimation()
 
-  const handleMouseEnter = useCallback(async () => {
+  const handleMouseEnter = useCallback(() => {
     rectControls.start('animate')
     pathControls.start('animate')
   }, [pathControls, rectControls])

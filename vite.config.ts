@@ -11,22 +11,10 @@ import { defineConfig } from 'vite'
 
 export default defineConfig({
   plugins: [react(), tailwind()],
-  server: {
-    host: '0.0.0.0',
-    port: 4000,
-    strictPort: true,
-    cors: false,
-  },
   build: {
     target: 'es2017',
     outDir: 'dist',
     minify: 'esbuild',
-  },
-  preview: {
-    host: '0.0.0.0',
-    port: 3000,
-    strictPort: true,
-    cors: false,
   },
   resolve: {
     alias: {
