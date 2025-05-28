@@ -1,4 +1,4 @@
-import { Project } from '@/components/project'
+import { Project } from '@/components/project/project'
 import { useTranslation } from '@/hooks/use-translation'
 import { projectGroups } from '@/lib/data/groups'
 import type { ProjectGroup } from '@/lib/data/groups'

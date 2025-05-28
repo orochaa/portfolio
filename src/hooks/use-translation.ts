@@ -2,7 +2,7 @@ import type { Language, TranslationKey } from '@/lib/i18n/locales/types'
 import { useCallback } from 'react'
 import { useTranslation as _useTranslation } from 'react-i18next'
 
-interface UseTranslationResponse {
+export interface Translation {
   t: (
     translationKey: TranslationKey,
     args?: Record<string, string>
@@ -11,7 +11,7 @@ interface UseTranslationResponse {
   changeLang: (lang: Language) => void
 }
 
-export function useTranslation(): UseTranslationResponse {
+export function useTranslation(): Translation {
   const { t, i18n } = _useTranslation()
 
   const changeLanguage = useCallback(

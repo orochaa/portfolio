@@ -1,9 +1,9 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import type { Blendy } from 'blendy'
+import type { Blendy as BlendyRef } from 'blendy'
 import { createBlendy } from 'blendy'
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
-interface UseBlendyResult {
+export interface Blendy {
   id: string
   isOpen: boolean
   handleOpen: () => void
@@ -17,8 +17,8 @@ interface UseBlendyResult {
  * @param baseId The base id of the blendy component.
  * @link  https://blendy.tahazsh.com/
  */
-export function useBlendy(baseId: string): Prettify<UseBlendyResult> {
-  const blendy = useRef<Blendy | null>(null)
+export function useBlendy(baseId: string): Blendy {
+  const blendy = useRef<BlendyRef | null>(null)
 
   const blendyId = useMemo((): string => {
     return `blendy-${baseId}`
@@ -56,7 +56,7 @@ export function useBlendy(baseId: string): Prettify<UseBlendyResult> {
   }, [])
 
   const result = useMemo(
-    (): UseBlendyResult => ({
+    (): Blendy => ({
       id: blendyId,
       isOpen,
       handleOpen,
