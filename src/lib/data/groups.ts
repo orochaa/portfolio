@@ -3,28 +3,28 @@ import type { Project } from '@/lib/data/projects'
 
 export interface ProjectGroup {
   name: string
+  tag: string
   projects: Project[]
 }
 
 export const projectGroups: ProjectGroup[] = [
-  {
-    name: 'Frontend',
-    projects: projects.filter(project => project.tags.includes('frontend')),
-  },
-  {
-    name: 'Backend',
-    projects: projects.filter(project => project.tags.includes('backend')),
-  },
-  {
-    name: 'Mobile',
-    projects: projects.filter(project => project.tags.includes('mobile')),
-  },
-  {
-    name: 'Tools',
-    projects: projects.filter(project => project.tags.includes('tools')),
-  },
-  {
-    name: 'Contributor',
-    projects: projects.filter(project => project.tags.includes('contributor')),
-  },
-]
+  'Frontend',
+  'Backend',
+  'Mobile',
+  'Tools',
+  'Contributor',
+].map(name => ({
+  name,
+  tag: name.toLowerCase(),
+  projects: [],
+}))
+
+for (const project of projects) {
+  for (const tag of project.tags) {
+    const group = projectGroups.find(group => group.tag === tag)
+
+    if (group) {
+      group.projects.push(project)
+    }
+  }
+}
