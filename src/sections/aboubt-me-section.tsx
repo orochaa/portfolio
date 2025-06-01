@@ -1,3 +1,4 @@
+import { GlowContainer } from '@/components/glow-container'
 import { GithubIcon } from '@/components/icons/github'
 import { LinkedinIcon } from '@/components/icons/linkedin'
 import { MailIcon } from '@/components/icons/mail'
@@ -23,39 +24,51 @@ export function AboutMeSection(): React.JSX.Element {
             </p>
             <p className="mt-2 text-pretty">{t('about.description')}</p>
             <div className="mt-3 flex gap-2">
-              <a
-                title="LinkedIn"
-                href="https://linkedin.com/in/bruno-rocha-a65a49157"
-                target="_blank"
-                rel="noreferrer"
+              <GlowContainer
+                containerClassName="bg-zinc-800 rounded-md text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
+                glowClassName="size-22 from-zinc-100"
               >
-                <LinkedinIcon
-                  size={24}
-                  className="rounded-md border border-transparent bg-zinc-800 p-2 text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100 active:border-zinc-400"
-                />
-              </a>
-              <a
-                title="GitHub"
-                href="https://github.com/orochaa"
-                target="_blank"
-                rel="noreferrer"
+                <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
+                <a
+                  title="LinkedIn"
+                  href="https://linkedin.com/in/bruno-rocha-a65a49157"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative"
+                >
+                  <LinkedinIcon size={24} className="p-2" />
+                </a>
+              </GlowContainer>
+              <GlowContainer
+                containerClassName="bg-zinc-800 rounded-md text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
+                glowClassName="size-22 from-zinc-100"
               >
-                <GithubIcon
-                  size={24}
-                  className="rounded-md border border-transparent bg-zinc-800 p-2 text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100 active:border-zinc-400 active:text-zinc-100"
-                />
-              </a>
-              <a
-                title="Mail"
-                href="mailto:brunorocha2674@gmail.com"
-                target="_blank"
-                rel="noreferrer"
+                <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
+                <a
+                  title="GitHub"
+                  href="https://github.com/orochaa"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative"
+                >
+                  <GithubIcon size={24} className="p-2" />
+                </a>
+              </GlowContainer>
+              <GlowContainer
+                containerClassName="bg-zinc-800 rounded-md text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
+                glowClassName="size-22 from-zinc-100"
               >
-                <MailIcon
-                  size={24}
-                  className="rounded-md border border-transparent bg-zinc-800 p-2 text-zinc-300 transition-colors hover:border-zinc-500 hover:text-zinc-100 active:border-zinc-400 active:text-zinc-100"
-                />
-              </a>
+                <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
+                <a
+                  title="Mail"
+                  href="mailto:brunorocha2674@gmail.com"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="relative"
+                >
+                  <MailIcon size={24} className="p-2" />
+                </a>
+              </GlowContainer>
             </div>
           </div>
           <div>

@@ -30,23 +30,24 @@ export function ProjectHeader(props: ProjectHeaderProps): React.JSX.Element {
       <div className="flex gap-1">
         {!!project.liveUrl && (
           <GlowContainer
-            containerClassName="rounded-md p-0.5 bg-zinc-800 hover:text-blue-300 active:text-blue-300"
+            containerClassName="rounded-md  bg-zinc-800 hover:text-blue-300 active:text-blue-300"
             glowClassName="from-blue-400 size-20"
           >
             <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
+            {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <a
               title={t('project.link')}
               href={project.liveUrl}
               target="_blank"
               className="relative"
             >
-              <LinkIcon size={20} className="p-1.5" />
+              <LinkIcon size={20} className="p-2" />
             </a>
           </GlowContainer>
         )}
         {!!project.githubUrl && (
           <GlowContainer
-            containerClassName="rounded-md p-0.5 bg-zinc-800 hover:text-indigo-300 active:text-indigo-300"
+            containerClassName="rounded-md bg-zinc-800 hover:text-indigo-300 active:text-indigo-300"
             glowClassName="from-indigo-400 size-20"
           >
             <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
@@ -57,7 +58,7 @@ export function ProjectHeader(props: ProjectHeaderProps): React.JSX.Element {
               rel="noreferrer"
               className="relative"
             >
-              <GithubIcon size={20} className="p-1.5" />
+              <GithubIcon size={20} className="p-2" />
             </a>
           </GlowContainer>
         )}
