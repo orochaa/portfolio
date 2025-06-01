@@ -95,28 +95,28 @@ export function HeaderSection(): React.JSX.Element {
               <div className="flex gap-4 text-lg">
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-blue-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                   onClick={scrollTo('#home')}
                 >
                   {t('header.home')}
                 </button>
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-blue-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                   onClick={scrollTo('#education')}
                 >
                   {t('education.title')}
                 </button>
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-blue-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                   onClick={scrollTo('#technologies')}
                 >
                   {t('technologies.title')}
                 </button>
                 <button
                   type="button"
-                  className="relative text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                  className="relative text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-blue-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                   onClick={scrollTo('#projects')}
                 >
                   {t('projects.title')}
@@ -133,7 +133,7 @@ export function HeaderSection(): React.JSX.Element {
               >
                 <LinkedinIcon
                   size={24}
-                  className="relative flex h-full items-center text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                  className="relative flex h-full items-center text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-blue-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                 />
               </a>
               <a
@@ -144,7 +144,7 @@ export function HeaderSection(): React.JSX.Element {
               >
                 <GithubIcon
                   size={24}
-                  className="relative flex h-full items-center text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                  className="relative flex h-full items-center text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-blue-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                 />
               </a>
               <a
@@ -155,7 +155,7 @@ export function HeaderSection(): React.JSX.Element {
               >
                 <MailIcon
                   size={24}
-                  className="relative flex h-full items-center text-zinc-300 transition-colors after:absolute after:bottom-0 after:left-0 after:h-0 after:w-full after:rounded-lg after:bg-blue-500 after:transition-[height] hover:text-zinc-100 hover:after:h-0.5 active:text-zinc-100"
+                  className="relative flex h-full items-center text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-blue-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                 />
               </a>
             </div>
