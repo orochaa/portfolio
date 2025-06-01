@@ -38,7 +38,6 @@ export function ProjectHeader(props: ProjectHeaderProps): React.JSX.Element {
               title={t('project.link')}
               href={project.liveUrl}
               target="_blank"
-              rel="noreferrer"
               className="relative"
             >
               <LinkIcon size={20} className="p-1.5" />
