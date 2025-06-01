@@ -59,6 +59,17 @@
       opacity: 0;
     }
   }
+
+  --animate-rotate: rotate 5s ease-out infinite;
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
 
 @custom-variant data-selected (&[data-selected="true"]);

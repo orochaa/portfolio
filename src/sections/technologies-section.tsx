@@ -79,6 +79,9 @@ export function TechnologiesSection(): React.JSX.Element {
         <div>
           <div className="mx-auto grid w-fit grid-cols-3 gap-3 sm:grid-cols-4 sm:gap-6">
             {technologies.map((technology, i) => {
+              const isActive =
+                selectedCard?.displayName === technology.displayName
+
               const colsByRow = windowWidth < 640 ? 3 : 4
               const colIndex = i % colsByRow
               const rowIndex = Math.floor(i / colsByRow)
@@ -98,10 +101,6 @@ export function TechnologiesSection(): React.JSX.Element {
                 <motion.div
                   key={technology.displayName}
                   title={technology.title}
-                  data-active={
-                    selectedCard?.displayName === technology.displayName
-                  }
-                  className="flex size-28 flex-col items-center justify-center gap-2 rounded-md border border-zinc-700 bg-zinc-900 p-4 text-slate-200 transition-colors duration-200 data-active:border-2 data-active:border-blue-500/80 data-active:bg-zinc-800 data-active:text-blue-500"
                   onPointerEnter={() => handleSelectCard(technology)}
                   initial={{ y: -50, x: isEvenRow ? -25 : 25, opacity: 0 }}
                   whileInView={{
@@ -114,9 +113,23 @@ export function TechnologiesSection(): React.JSX.Element {
                     },
                   }}
                   viewport={{ once: true }}
+                  className="relative overflow-hidden rounded-md bg-zinc-800"
                 >
-                  <technology.Icon size={40} />
-                  {technology.displayName}
+                  <span
+                    data-active={isActive}
+                    className="data-active:animate-rotate absolute top-1/2 left-1/2 h-[140%] w-24 -translate-1/2 rotate-12 from-blue-400 to-cyan-400 transition-all data-active:bg-gradient-to-r"
+                  />
+                  <span
+                    data-active={isActive}
+                    className="absolute inset-1 rounded-md bg-zinc-900 data-active:bg-zinc-800"
+                  />
+                  <div
+                    data-active={isActive}
+                    className="relative flex size-28 flex-col items-center justify-center gap-2 p-4 text-slate-200 transition-colors data-active:text-blue-400"
+                  >
+                    <technology.Icon size={40} />
+                    {technology.displayName}
+                  </div>
                 </motion.div>
               )
             })}
