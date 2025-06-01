@@ -20,7 +20,17 @@ export function AboutMeSection(): React.JSX.Element {
             </p>
             <p className="block text-3xl font-semibold">
               {t('about.iam')}{' '}
-              <span className="text-blue-400">Bruno Rocha</span>
+              <span className="group/name relative">
+                <span className="text-blue-400">Bruno Rocha</span>
+                <span
+                  className="ease absolute bottom-0.5 left-0 w-0 overflow-hidden whitespace-nowrap text-cyan-400 transition-[width] duration-300 group-hover/name:w-full"
+                  style={{
+                    filter: 'drop-shadow(0 0 23px oklch(78.9% 0.154 211.53)',
+                  }}
+                >
+                  Bruno Rocha
+                </span>
+              </span>
             </p>
             <p className="mt-2 text-pretty">{t('about.description')}</p>
             <div className="mt-3 flex gap-2">
