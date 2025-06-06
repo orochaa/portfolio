@@ -150,7 +150,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/scalable-microservices-challenge?tab=readme-ov-file#readme',
       tags: ['backend', 'serverless'],
-      imgUrl: '/assets/scalable-microservices-challenge.png',
+      imgUrl: '/assets/scalable-microservices-challenge.jpg',
       _weight: 2,
     },
     {
