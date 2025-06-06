@@ -248,6 +248,43 @@ export const technologies = [
     },
     url: 'https://motion.dev/',
   },
+  {
+    name: 'pulumi',
+    displayName: 'Pulumi',
+    description: {
+      en: 'Modern Infrastructure as Code.',
+      'pt-BR': 'Infraestrutura como Código Moderna.',
+    },
+    url: 'https://www.pulumi.com/',
+  },
+  {
+    name: 'rabbitmq',
+    displayName: 'RabbitMQ',
+    description: {
+      en: 'The most widely deployed open source message broker.',
+      'pt-BR': 'O message broker open source mais amplamente implantado.',
+    },
+    url: 'https://www.rabbitmq.com/',
+  },
+  {
+    name: 'grafana',
+    displayName: 'Grafana',
+    description: {
+      en: 'The open and composable observability and data visualization platform.',
+      'pt-BR':
+        'A plataforma de observabilidade e visualização de dados aberta e composable.',
+    },
+    url: 'https://grafana.com/',
+  },
+  {
+    name: 'kong',
+    displayName: 'Kong Gateway',
+    description: {
+      en: 'The world’s most popular open source API gateway.',
+      'pt-BR': 'O gateway de API open source mais popular do mundo.',
+    },
+    url: 'https://konghq.com/kong-gateway',
+  },
 ] as const satisfies Technology[]
 
 export interface Technology {

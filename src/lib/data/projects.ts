@@ -133,9 +133,25 @@ export const projects: Project[] = (
       technologies: ['android', 'node', 'postgresql', 'steam'],
       languages: ['java', 'typescript'],
       githubUrl: 'https://github.com/orochaa/team-up?tab=readme-ov-file#readme',
-      tags: ['mobile', 'backend'],
+      tags: ['mobile'],
       imgUrl: '/assets/team-up.png',
       _weight: 1,
+    },
+    {
+      name: 'scalable-microservices-challenge',
+      displayName: 'Scalable Microservices',
+      description: {
+        en: 'Microservices for managing orders and invoices. Includes RabbitMQ, API Gateway, and AWS Fargate deployment.',
+        'pt-BR':
+          'Microsserviços para gerenciamento de pedidos e faturas. Inclui RabbitMQ, API Gateway e implantação no AWS Fargate.',
+      },
+      technologies: ['node', 'nest', 'rabbitmq', 'kong', 'grafana', 'pulumi'],
+      languages: ['typescript'],
+      githubUrl:
+        'https://github.com/orochaa/scalable-microservices-challenge?tab=readme-ov-file#readme',
+      tags: ['backend', 'serverless'],
+      imgUrl: '/assets/scalable-microservices-challenge.png',
+      _weight: 2,
     },
     {
       name: 'url-shortener-lambda',

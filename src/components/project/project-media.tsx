@@ -42,7 +42,7 @@ export function ProjectMedia(props: ProjectMediaProps): React.JSX.Element {
             src={project.imgUrl}
             alt={`${project.name}.jpg`}
             loading="lazy"
-            className="mx-auto h-full object-fill"
+            className="mx-auto h-full object-contain"
           />
         ) : (
           <div className="flex h-full items-center justify-center bg-gradient-to-br from-blue-500/35 to-orange-300/35">
@@ -102,7 +102,7 @@ export function ProjectMedia(props: ProjectMediaProps): React.JSX.Element {
                   <img
                     src={project.imgUrl}
                     alt={`${project.name}.jpg`}
-                    className="mx-auto h-full object-fill"
+                    className="mx-auto h-full object-contain"
                   />
                 ) : (
                   <div className="flex h-full w-2xl max-w-full items-center justify-center bg-gradient-to-br from-blue-500/35 to-orange-300/35">
