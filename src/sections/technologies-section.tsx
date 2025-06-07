@@ -113,7 +113,8 @@ export function TechnologiesSection(): React.JSX.Element {
                     },
                   }}
                   viewport={{ once: true }}
-                  className="relative overflow-hidden rounded-md bg-zinc-800"
+                  data-active={isActive}
+                  className="relative overflow-hidden rounded-md bg-zinc-800 transition-transform duration-200 ease-in-out data-active:scale-105"
                 >
                   <span
                     data-active={isActive}
