@@ -1,7 +1,7 @@
 import { cn } from '@/lib/utils'
 import { motion, useMotionValue } from 'motion/react'
-import { useCallback, useRef, useState } from 'react'
-import type { PointerEvent, ReactNode } from 'react'
+import { useEffect, useRef } from 'react'
+import type { ReactNode } from 'react'
 
 export interface GlowContainerProps {
   children: ReactNode
@@ -13,18 +13,9 @@ export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
   const containerRef = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
-  const [isHover, setIsHover] = useState(false)
 
-  const handlePointerEnter = useCallback(() => {
-    setIsHover(true)
-  }, [])
-
-  const handlePointerLeave = useCallback(() => {
-    setIsHover(false)
-  }, [])
-
-  const handlePointerMove = useCallback(
-    (e: PointerEvent) => {
+  useEffect(() => {
+    const handler = (e: PointerEvent): void => {
       const container = containerRef.current
 
       if (!container) {
@@ -34,17 +25,19 @@ export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
       const rect = container.getBoundingClientRect()
       x.set(e.clientX - rect.left)
       y.set(e.clientY - rect.top)
-    },
-    [x, y]
-  )
+    }
+
+    globalThis.addEventListener('pointermove', handler)
+
+    return (): void => {
+      globalThis.removeEventListener('pointermove', handler)
+    }
+  }, [x, y])
 
   return (
     <div
       ref={containerRef}
       className={cn('relative overflow-hidden', props.containerClassName)}
-      onPointerEnter={handlePointerEnter}
-      onPointerMove={handlePointerMove}
-      onPointerLeave={handlePointerLeave}
     >
       <motion.span
         aria-hidden
@@ -55,7 +48,6 @@ export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
         style={{
           translateX: x,
           translateY: y,
-          opacity: isHover ? 100 : 0,
         }}
       />
       {props.children}
