@@ -10,6 +10,8 @@ export interface GlowContainerProps extends ComponentProps<'div'> {
 }
 
 export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
+  const { containerClassName, glowClassName, children, ..._props } = props
+
   const containerRef = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
   const y = useMotionValue(0)
@@ -36,22 +38,22 @@ export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
 
   return (
     <div
-      {...props}
+      {..._props}
       ref={containerRef}
-      className={cn('relative overflow-hidden', props.containerClassName)}
+      className={cn('relative overflow-hidden', containerClassName)}
     >
       <motion.span
         aria-hidden
         className={cn(
           'absolute top-0 left-0 -translate-1/2 bg-radial via-transparent transition-opacity',
-          props.glowClassName
+          glowClassName
         )}
         style={{
           translateX: x,
           translateY: y,
         }}
       />
-      {props.children}
+      {children}
     </div>
   )
 }
