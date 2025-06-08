@@ -33,7 +33,7 @@ export function ProjectHeader(props: ProjectHeaderProps): React.JSX.Element {
             containerClassName="rounded-md  bg-zinc-800 hover:text-blue-300 active:text-blue-300"
             glowClassName="from-blue-400 size-20"
           >
-            <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
+            <span className="absolute inset-0.5 rounded-md bg-zinc-800/80" />
             {/* eslint-disable-next-line react/jsx-no-target-blank */}
             <a
               title={t('project.link')}
@@ -50,7 +50,7 @@ export function ProjectHeader(props: ProjectHeaderProps): React.JSX.Element {
             containerClassName="rounded-md bg-zinc-800 hover:text-indigo-300 active:text-indigo-300"
             glowClassName="from-indigo-400 size-20"
           >
-            <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
+            <span className="absolute inset-0.5 rounded-md bg-zinc-800/80" />
             <a
               title={t('project.github')}
               href={project.githubUrl}

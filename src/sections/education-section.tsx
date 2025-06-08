@@ -1,3 +1,4 @@
+import { GlowContainer } from '@/components/glow-container'
 import { useTranslation } from '@/hooks/use-translation'
 import type { Language } from '@/lib/i18n/locales/types'
 import { ScrollText } from 'lucide-react'
@@ -24,6 +25,20 @@ const certifications: Certification[] = [
     },
     startAt: new Date(2020, 2, 1),
     endAt: new Date(2024, 11, 1),
+  },
+  {
+    en: {
+      title: 'Scalable Microservices',
+      description: 'Event',
+      institution: 'Rocketseat',
+    },
+    'pt-BR': {
+      title: 'Microsserviços Escaláveis',
+      description: 'Evento',
+      institution: 'Rocketseat',
+    },
+    startAt: new Date(2025, 5, 2),
+    endAt: new Date(2025, 5, 6),
   },
   {
     en: {
@@ -67,34 +82,37 @@ export function EducationSection(): React.JSX.Element {
         <h2 className="mb-6 text-center text-3xl font-semibold">
           {t('education.title')}
         </h2>
-        <div className="grid grid-cols-1 gap-6 xl:grid-cols-3">
+        <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {certifications.map(certification => (
-            <div
+            <GlowContainer
               key={certification[lang].title}
-              className="flex items-center gap-4 rounded-md border border-zinc-600 bg-zinc-900 p-4"
+              containerClassName="rounded-md border border-zinc-600 bg-zinc-900 p-0.5"
+              glowClassName="size-96 from-sky-500"
             >
-              <ScrollText size={40} className="shrink-0 text-slate-200" />
-              <div>
-                <p className="text-lg font-semibold text-pretty">
-                  {certification[lang].title}
-                </p>
-                <p className="mb-2 text-base text-pretty">
-                  {certification[lang].description},{' '}
-                  {certification[lang].institution}
-                </p>
-                <p className="flex items-center gap-1.5 text-sm">
-                  {certification.startAt.toLocaleString(lang, {
-                    month: '2-digit',
-                    year: 'numeric',
-                  })}
-                  <span className="block h-0.5 w-1.5 rounded-lg bg-zinc-400" />
-                  {certification.endAt?.toLocaleString(lang, {
-                    month: '2-digit',
-                    year: 'numeric',
-                  }) ?? 'Present'}
-                </p>
+              <div className="relative flex h-full items-center gap-4 rounded-md bg-zinc-900/90 p-4">
+                <ScrollText size={40} className="shrink-0 text-slate-200" />
+                <div>
+                  <p className="text-lg font-semibold text-pretty">
+                    {certification[lang].title}
+                  </p>
+                  <p className="mb-2 text-base text-pretty">
+                    {certification[lang].description},{' '}
+                    {certification[lang].institution}
+                  </p>
+                  <p className="flex items-center gap-1.5 text-sm">
+                    {certification.startAt.toLocaleString(lang, {
+                      month: '2-digit',
+                      year: 'numeric',
+                    })}
+                    <span className="block h-0.5 w-1.5 rounded-lg bg-zinc-400" />
+                    {certification.endAt?.toLocaleString(lang, {
+                      month: '2-digit',
+                      year: 'numeric',
+                    }) ?? 'Present'}
+                  </p>
+                </div>
               </div>
-            </div>
+            </GlowContainer>
           ))}
         </div>
       </div>

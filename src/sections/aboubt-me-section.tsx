@@ -35,48 +35,45 @@ export function AboutMeSection(): React.JSX.Element {
             <p className="mt-2 text-pretty">{t('about.description')}</p>
             <div className="mt-3 flex gap-2">
               <GlowContainer
-                containerClassName="bg-zinc-800 rounded-md text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
+                containerClassName="bg-zinc-800 rounded-md p-0.5 text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
                 glowClassName="size-22 from-zinc-100"
               >
-                <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
                 <a
                   title="LinkedIn"
                   href="https://linkedin.com/in/bruno-rocha-a65a49157"
                   target="_blank"
                   rel="noreferrer"
-                  className="relative"
+                  className="relative block rounded-md bg-zinc-800/90"
                 >
-                  <LinkedinIcon size={24} className="p-2" />
+                  <LinkedinIcon size={24} className="p-1.5" />
                 </a>
               </GlowContainer>
               <GlowContainer
-                containerClassName="bg-zinc-800 rounded-md text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
+                containerClassName="bg-zinc-800 rounded-md p-0.5 text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
                 glowClassName="size-22 from-zinc-100"
               >
-                <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
                 <a
                   title="GitHub"
                   href="https://github.com/orochaa"
                   target="_blank"
                   rel="noreferrer"
-                  className="relative"
+                  className="relative block rounded-md bg-zinc-800/90"
                 >
-                  <GithubIcon size={24} className="p-2" />
+                  <GithubIcon size={24} className="p-1.5" />
                 </a>
               </GlowContainer>
               <GlowContainer
-                containerClassName="bg-zinc-800 rounded-md text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
+                containerClassName="bg-zinc-800 rounded-md p-0.5 text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
                 glowClassName="size-22 from-zinc-100"
               >
-                <span className="absolute inset-0.5 rounded-md bg-zinc-800" />
                 <a
                   title="Mail"
                   href="mailto:brunorocha2674@gmail.com"
                   target="_blank"
                   rel="noreferrer"
-                  className="relative"
+                  className="relative block rounded-md bg-zinc-800/90"
                 >
-                  <MailIcon size={24} className="p-2" />
+                  <MailIcon size={24} className="p-1.5" />
                 </a>
               </GlowContainer>
             </div>

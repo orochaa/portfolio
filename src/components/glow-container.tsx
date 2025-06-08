@@ -1,12 +1,12 @@
 import { cn } from '@/lib/utils'
 import { motion, useMotionValue } from 'motion/react'
 import { useEffect, useRef } from 'react'
-import type { ReactNode } from 'react'
+import type { ComponentProps, ReactNode } from 'react'
 
-export interface GlowContainerProps {
+export interface GlowContainerProps extends ComponentProps<'div'> {
   children: ReactNode
-  containerClassName?: string
-  glowClassName?: string
+  containerClassName: string
+  glowClassName: string
 }
 
 export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
@@ -36,6 +36,7 @@ export function GlowContainer(props: GlowContainerProps): React.JSX.Element {
 
   return (
     <div
+      {...props}
       ref={containerRef}
       className={cn('relative overflow-hidden', props.containerClassName)}
     >
