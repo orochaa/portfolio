@@ -23,12 +23,12 @@ export function HardSkillsSection(): React.JSX.Element {
         <p className="mb-8 text-center text-sm text-zinc-100">
           {t('hard-skills.subtitle')}
         </p>
-        <div className="mx-auto grid w-fit grid-cols-2 gap-6 sm:grid-cols-3">
+        <div className="mx-auto grid w-fit grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {hardSkills.map(hardSkill => (
             <div
               key={hardSkill.title.en}
               title={hardSkill.title[lang]}
-              className="rounded-xl border-4 border-zinc-800 bg-zinc-900 p-10 sm:aspect-10/9"
+              className="rounded-xl border-4 border-zinc-800 bg-zinc-900 p-10 lg:aspect-10/9"
             >
               <div className="mx-auto mb-4 w-fit rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5">
                 <hardSkill.Icon size={48} className="shrink-0" />
