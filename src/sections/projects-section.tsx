@@ -100,7 +100,7 @@ export function ProjectsSection(): React.JSX.Element {
   return (
     <div className="bg-background py-20">
       <div id="projects" className="mx-auto w-11/12 max-w-6xl">
-        <Title className="bg-background relative top-[3.05rem] left-0 z-10 pt-4 text-3xl sm:sticky">
+        <Title className="bg-background relative top-[3.05rem] left-0 z-10 mb-6 pt-4 text-3xl sm:sticky">
           {t('projects.title')}
         </Title>
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">

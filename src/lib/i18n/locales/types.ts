@@ -22,6 +22,10 @@ export interface LocaleTranslation {
     subtitle: string
     hint: string
   }
+  'soft-skills': {
+    title: string
+    subtitle: string
+  }
   projects: {
     title: string
     categories: string

@@ -73,7 +73,7 @@ export function AboutMeSection(): React.JSX.Element {
             <img
               src="https://avatars.githubusercontent.com/u/100330057?v=4"
               alt="bruno-rocha.png"
-              className="mx-auto size-96 w-fit rounded-md bg-cover"
+              className="mx-auto aspect-square size-96 w-fit rounded-md bg-cover"
             />
           </div>
         </div>
