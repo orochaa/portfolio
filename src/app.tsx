@@ -1,6 +1,7 @@
 import { useDailyAppPing } from '@/hooks/use-daily-app-ping'
 import { AboutMeSection } from '@/sections/aboubt-me-section'
 import { EducationSection } from '@/sections/education-section'
+import { HardSkillsSection } from '@/sections/hard-skills-section'
 import { HeaderSection } from '@/sections/header-section'
 import { ProjectsSection } from '@/sections/projects-section'
 import { SoftSkillsSection } from '@/sections/soft-skills-section'
@@ -14,6 +15,7 @@ export function App(): React.JSX.Element {
       <HeaderSection />
       <AboutMeSection />
       <EducationSection />
+      <HardSkillsSection />
       <TechnologiesSection />
       <SoftSkillsSection />
       <ProjectsSection />

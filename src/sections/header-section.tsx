@@ -103,13 +103,6 @@ export function HeaderSection(): React.JSX.Element {
                 <button
                   type="button"
                   className="relative text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-gradient-to-r after:from-cyan-500 after:via-blue-500 after:to-cyan-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
-                  onClick={scrollTo('#education')}
-                >
-                  {t('education.title')}
-                </button>
-                <button
-                  type="button"
-                  className="relative text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-gradient-to-r after:from-cyan-500 after:via-blue-500 after:to-cyan-500 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                   onClick={scrollTo('#technologies')}
                 >
                   {t('technologies.title')}

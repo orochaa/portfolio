@@ -25,33 +25,31 @@ export function SoftSkillsSection(): React.JSX.Element {
           {t('soft-skills.subtitle')}
         </p>
         <div className="mx-auto grid w-fit grid-cols-2 gap-6 sm:grid-cols-3">
-          {softSkills.map(softSkill => {
-            return (
-              <div
-                key={softSkill.title.en}
-                title={softSkill.title[lang]}
-                className="group/skill relative overflow-hidden rounded-xl"
-              >
-                <div className="flex h-full flex-col items-center justify-center gap-2 rounded-xl border-4 border-zinc-800 bg-zinc-900 p-6 sm:aspect-square">
-                  <div className="via-blue-50% rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5">
-                    <softSkill.Icon size={48} className="shrink-0" />
-                  </div>
-                  <p className="flex max-w-52 flex-col text-center text-base font-bold text-balance sm:text-lg">
-                    {softSkill.title[lang]}
-                  </p>
+          {softSkills.map(softSkill => (
+            <div
+              key={softSkill.title.en}
+              title={softSkill.title[lang]}
+              className="group/skill relative overflow-hidden rounded-xl"
+            >
+              <div className="flex h-full flex-col items-center justify-center gap-2 rounded-xl border-4 border-zinc-800 bg-zinc-900 p-6 sm:aspect-square">
+                <div className="rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5">
+                  <softSkill.Icon size={48} className="shrink-0" />
                 </div>
-                <IoChevronUp
-                  className="animate-bounce-2 absolute bottom-0 left-1/2 shrink-0 -translate-x-1/2 text-violet-400"
-                  size={30}
-                />
-                <div className="absolute inset-x-0 -bottom-full flex size-full items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 p-4 opacity-0 transition-all duration-500 group-hover/skill:bottom-0 group-hover/skill:opacity-100 group-active/skill:bottom-0 group-active/skill:opacity-100">
-                  <p className="text-center text-sm text-balance sm:text-base">
-                    {softSkill.description[lang]}
-                  </p>
-                </div>
+                <p className="flex max-w-52 flex-col text-center text-base font-bold text-balance sm:text-lg">
+                  {softSkill.title[lang]}
+                </p>
               </div>
-            )
-          })}
+              <IoChevronUp
+                className="animate-bounce-2 absolute bottom-0 left-1/2 shrink-0 -translate-x-1/2 text-violet-400"
+                size={30}
+              />
+              <div className="absolute inset-x-0 -bottom-full flex size-full items-center justify-center rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 p-4 opacity-0 transition-all duration-500 group-hover/skill:bottom-0 group-hover/skill:opacity-100 group-active/skill:bottom-0 group-active/skill:opacity-100">
+                <p className="text-center text-sm text-balance sm:text-base">
+                  {softSkill.description[lang]}
+                </p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </div>

@@ -84,10 +84,9 @@ export function EducationSection(): React.JSX.Element {
           {t('education.title')}
         </Title>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
-          {certifications.map((certification, i) => (
+          {certifications.map(certification => (
             <GlowContainer
-              // eslint-disable-next-line react/no-array-index-key
-              key={i}
+              key={certification.en.title}
               containerClassName="rounded-md border border-zinc-600 bg-zinc-900 p-1"
               glowClassName="size-96 from-sky-500"
             >

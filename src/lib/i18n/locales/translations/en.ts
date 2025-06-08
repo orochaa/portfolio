@@ -23,6 +23,10 @@ export const en: LocaleTranslation = {
     subtitle: 'Main technologies that I work with.',
     hint: 'Hover a technology to see its description',
   },
+  'hard-skills': {
+    title: 'Hard Skills',
+    subtitle: 'Technical skills and specific knowledge',
+  },
   'soft-skills': {
     title: 'Soft Skills',
     subtitle: 'Interpersonal and behavioral skills',
