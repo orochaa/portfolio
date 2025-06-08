@@ -49,7 +49,7 @@ export const projects: Project[] = (
       githubUrl: 'https://github.com/orochaa/cineapp?tab=readme-ov-file#readme',
       liveUrl: 'https://cineapp-orochaa.vercel.app/',
       tags: ['frontend', 'live'],
-      videoUrl: '/assets/cineapp.mp4',
+      videoUrl: '/assets/projects/cineapp.mp4',
       _weight: 2,
     },
     {
@@ -66,7 +66,7 @@ export const projects: Project[] = (
         'https://github.com/orochaa/tesla-bank?tab=readme-ov-file#readme',
       liveUrl: 'https://teslabank-orochaa.vercel.app/',
       tags: ['frontend', 'live'],
-      videoUrl: '/assets/tesla-bank.mp4',
+      videoUrl: '/assets/projects/tesla-bank.mp4',
       _weight: 2,
     },
     {
@@ -82,7 +82,7 @@ export const projects: Project[] = (
         'https://github.com/orochaa/cantinho-do-acai?tab=readme-ov-file#readme',
       liveUrl: 'https://cantinho-do-acai.vercel.app/',
       tags: ['frontend', 'live'],
-      videoUrl: '/assets/cantinho-do-acai.mp4',
+      videoUrl: '/assets/projects/cantinho-do-acai.mp4',
       _weight: 1,
     },
     {
@@ -103,7 +103,7 @@ export const projects: Project[] = (
       ],
       languages: ['typescript'],
       liveUrl: 'https://tap.uniftec.com.br/',
-      imgUrl: '/assets/techiacad.png',
+      imgUrl: '/assets/projects/techiacad.png',
       tags: ['frontend', 'backend', 'live'],
       isPrivate: true,
       _weight: 1,
@@ -119,7 +119,7 @@ export const projects: Project[] = (
       languages: ['typescript'],
       githubUrl: 'https://github.com/orochaa/2048?tab=readme-ov-file#readme',
       liveUrl: 'https://2048-orochaa.vercel.app/',
-      videoUrl: '/assets/2048.mp4',
+      videoUrl: '/assets/projects/2048.mp4',
       tags: ['frontend', 'game', 'live'],
       _weight: 1,
     },
@@ -134,7 +134,7 @@ export const projects: Project[] = (
       languages: ['java', 'typescript'],
       githubUrl: 'https://github.com/orochaa/team-up?tab=readme-ov-file#readme',
       tags: ['mobile'],
-      imgUrl: '/assets/team-up.png',
+      imgUrl: '/assets/projects/team-up.png',
       _weight: 1,
     },
     {
@@ -150,7 +150,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/scalable-microservices-challenge?tab=readme-ov-file#readme',
       tags: ['backend', 'serverless'],
-      imgUrl: '/assets/scalable-microservices-challenge.jpg',
+      imgUrl: '/assets/projects/scalable-microservices-challenge.jpg',
       _weight: 2,
     },
     {
@@ -198,7 +198,7 @@ export const projects: Project[] = (
       technologies: ['react-native', 'expo'],
       languages: ['typescript'],
       liveUrl: 'https://apps.apple.com/br/app/lets-train/id6739985648',
-      videoUrl: '/assets/lets-train.mp4',
+      videoUrl: '/assets/projects/lets-train.mp4',
       tags: ['mobile', 'live'],
       isPrivate: true,
       _weight: 2,
@@ -214,7 +214,7 @@ export const projects: Project[] = (
       languages: ['go'],
       githubUrl: 'https://github.com/orochaa/my-cli?tab=readme-ov-file#readme',
       tags: ['tools'],
-      imgUrl: '/assets/my-cli.png',
+      imgUrl: '/assets/projects/my-cli.png',
       _weight: 1,
     },
     {
@@ -229,7 +229,7 @@ export const projects: Project[] = (
       githubUrl:
         'https://github.com/orochaa/go-clack?tab=readme-ov-file#readme',
       tags: ['tools'],
-      imgUrl: '/assets/clack.gif',
+      imgUrl: '/assets/projects/clack.gif',
       _weight: 1,
     },
     {
@@ -245,7 +245,7 @@ export const projects: Project[] = (
         'https://github.com/bombshell-dev/clack?tab=readme-ov-file#readme',
       liveUrl: 'https://www.clack.cc',
       tags: ['contributor', 'live'],
-      imgUrl: '/assets/clack.gif',
+      imgUrl: '/assets/projects/clack.gif',
       stars: 6400,
       downloadsPerMonth: 4_800_000,
       _weight: 1,
@@ -263,7 +263,7 @@ export const projects: Project[] = (
         'https://github.com/brazilian-utils/brazilian-utils?tab=readme-ov-file#readme',
       liveUrl: 'https://brazilian-utils.com.br',
       tags: ['contributor', 'live'],
-      imgUrl: '/assets/brazilian-utils.png',
+      imgUrl: '/assets/projects/brazilian-utils.png',
       stars: 1600,
       downloadsPerMonth: 42_000,
       _weight: 1,
