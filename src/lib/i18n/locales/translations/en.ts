@@ -20,8 +20,8 @@ export const en: LocaleTranslation = {
   },
   technologies: {
     title: 'Technologies',
-    placeholder:
-      'Main technologies that I work with.\n*Hover a technology to see its description*',
+    subtitle: 'Main technologies that I work with.',
+    hint: 'Hover a technology to see its description',
   },
   projects: {
     title: 'Projects',

@@ -20,8 +20,8 @@ export const pt: LocaleTranslation = {
   },
   technologies: {
     title: 'Tecnologias',
-    placeholder:
-      'Principais tecnologias com que eu trabalho.\n*Passe o cursor no card para ver a descrição da tecnologia*',
+    subtitle: 'Principais tecnologias com que eu trabalho.',
+    hint: 'Passe o cursor no card para ver a descrição da tecnologia',
   },
   projects: {
     title: 'Projetos',

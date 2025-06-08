@@ -1,4 +1,5 @@
 import { GlowContainer } from '@/components/glow-container'
+import { Title } from '@/components/title'
 import { useTranslation } from '@/hooks/use-translation'
 import type { Language } from '@/lib/i18n/locales/types'
 import { ScrollText } from 'lucide-react'
@@ -79,9 +80,9 @@ export function EducationSection(): React.JSX.Element {
       className="from-background bg-gradient-to-br from-40% to-zinc-950 py-20"
     >
       <div className="mx-auto w-11/12 max-w-7xl">
-        <h2 className="mb-6 text-center text-3xl font-semibold">
+        <Title className="mx-auto w-fit after:left-1/2 after:w-5/7 after:-translate-x-1/2 after:from-cyan-500 after:via-blue-500 after:to-cyan-500">
           {t('education.title')}
-        </h2>
+        </Title>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           {certifications.map(certification => (
             <GlowContainer

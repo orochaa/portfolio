@@ -1,4 +1,5 @@
 import { Project } from '@/components/project/project'
+import { Title } from '@/components/title'
 import { useTranslation } from '@/hooks/use-translation'
 import { projectGroups } from '@/lib/data/groups'
 import type { ProjectGroup } from '@/lib/data/groups'
@@ -99,22 +100,22 @@ export function ProjectsSection(): React.JSX.Element {
   return (
     <div className="bg-background py-20">
       <div id="projects" className="mx-auto w-11/12 max-w-6xl">
-        <h2 className="bg-background relative top-[3.05rem] left-0 z-10 mb-6 pt-4 pb-3 text-2xl after:absolute after:bottom-0 after:left-0 after:h-[1px] after:w-full after:bg-zinc-400 sm:sticky">
+        <Title className="bg-background relative top-[3.05rem] left-0 z-10 pt-4 text-3xl sm:sticky">
           {t('projects.title')}
-        </h2>
+        </Title>
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">
           <nav className="relative left-0 h-fit sm:sticky sm:top-32">
             <p className="mb-1.5 text-base font-semibold">
               {t('projects.categories')}
             </p>
             <div className="overflow-x-auto pb-3">
-              <ul className="flex w-fit flex-row gap-1 border-zinc-600 sm:w-36 sm:flex-col sm:border-l">
+              <ul className="flex w-fit flex-row gap-1 border-zinc-600 sm:w-36 sm:flex-col sm:border-l-2">
                 {headings.map(h => (
                   <li key={h.id}>
                     <a
                       href={`#${h.id}`}
                       data-active={activeId === h.id}
-                      className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:left-[-1px] before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 sm:before:w-[1px]"
+                      className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:-left-0.5 before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 sm:before:w-0.5"
                       onClick={scrollTo(`#${h.id}`, 125)}
                     >
                       {h.text}
@@ -127,7 +128,7 @@ export function ProjectsSection(): React.JSX.Element {
               {t('projects.filters')}
             </p>
             <div className="overflow-x-auto pb-3">
-              <ul className="flex w-fit flex-row gap-1 border-b border-zinc-600 sm:w-36 sm:flex-col sm:border-0 sm:border-l">
+              <ul className="flex w-fit flex-row gap-1 border-b-2 border-zinc-600 sm:w-36 sm:flex-col sm:border-0 sm:border-l-2">
                 {filterOptions.map(option => {
                   const isSelected = selectedFilters.includes(option)
 
@@ -136,7 +137,7 @@ export function ProjectsSection(): React.JSX.Element {
                       <button
                         type="button"
                         data-selected={isSelected}
-                        className="relative block w-full rounded-r px-3 py-1.5 text-left text-base whitespace-nowrap before:absolute before:bottom-[-1px] before:left-0 before:h-[1px] before:w-full before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-selected:bg-zinc-800 data-selected:font-medium data-selected:before:bg-orange-400 sm:before:bottom-0 sm:before:left-[-1px] sm:before:h-full sm:before:w-[1px]"
+                        className="relative block w-full rounded-r px-3 py-1.5 text-left text-base whitespace-nowrap before:absolute before:-bottom-0.5 before:left-0 before:h-0.5 before:w-full before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-selected:bg-zinc-800 data-selected:font-medium data-selected:before:bg-orange-400 sm:before:bottom-0 sm:before:-left-0.5 sm:before:h-full sm:before:w-0.5"
                         // eslint-disable-next-line react/jsx-no-bind
                         onClick={() =>
                           setSelectedFilters(state =>

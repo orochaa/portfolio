@@ -1,4 +1,5 @@
 /* eslint-disable react/jsx-no-bind */
+import { Title } from '@/components/title'
 import { useDebounce } from '@/hooks/use-debounce'
 import { useTranslation } from '@/hooks/use-translation'
 import { useWindowSize } from '@/hooks/use-window-size'
@@ -46,14 +47,13 @@ export function TechnologiesSection(): React.JSX.Element {
     <div id="technologies" className="bg-slate-950 py-20">
       <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="mx-auto w-xl max-w-full">
-          <h2 className="mb-6 text-3xl font-semibold">
-            {t('technologies.title')}
-          </h2>
+          <Title className="mb-4">{t('technologies.title')}</Title>
+          <p className="mb-6 text-zinc-100">{t('technologies.subtitle')}</p>
           <div className="h-44 overflow-hidden sm:h-auto">
             <AnimatePresence>
               <motion.p
                 key={selectedTechnology?.displayName}
-                className="text-pretty whitespace-pre-wrap text-zinc-300"
+                className="text-pretty whitespace-pre-wrap text-zinc-100"
                 initial={{
                   y: -25,
                   opacity: 0,
@@ -71,7 +71,7 @@ export function TechnologiesSection(): React.JSX.Element {
                 }}
               >
                 {selectedTechnology?.description[lang] ??
-                  t('technologies.placeholder')}
+                  `*${t('technologies.hint')}*`}
               </motion.p>
             </AnimatePresence>
           </div>
@@ -114,19 +114,15 @@ export function TechnologiesSection(): React.JSX.Element {
                   }}
                   viewport={{ once: true }}
                   data-active={isActive}
-                  className="relative overflow-hidden rounded-md bg-zinc-800 transition-transform duration-200 ease-in-out data-active:scale-105"
+                  className="relative overflow-hidden rounded-md bg-zinc-800 p-1 transition-transform duration-200 ease-in-out data-active:scale-105"
                 >
                   <span
                     data-active={isActive}
                     className="data-active:animate-rotate absolute top-1/2 left-1/2 h-[140%] w-24 -translate-1/2 rotate-12 from-blue-400 to-cyan-400 transition-all data-active:bg-gradient-to-r"
                   />
-                  <span
-                    data-active={isActive}
-                    className="absolute inset-1 rounded-md bg-zinc-900 data-active:bg-zinc-800"
-                  />
                   <div
                     data-active={isActive}
-                    className="relative flex size-28 flex-col items-center justify-center gap-2 p-4 text-slate-200 transition-colors data-active:text-blue-400"
+                    className="relative flex aspect-square flex-col items-center justify-center gap-2 bg-zinc-900 p-4 text-slate-200 transition-colors data-active:bg-zinc-800 data-active:text-blue-400"
                   >
                     <technology.Icon size={40} />
                     {technology.displayName}

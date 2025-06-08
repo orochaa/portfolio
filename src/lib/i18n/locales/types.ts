@@ -19,7 +19,8 @@ export interface LocaleTranslation {
   }
   technologies: {
     title: string
-    placeholder: string
+    subtitle: string
+    hint: string
   }
   projects: {
     title: string
