@@ -111,6 +111,11 @@
 
 * {
   -webkit-font-smoothing: antialiased;
+
+  scrollbar-color: var(--scrollbar-thumb, initial)
+    var(--scrollbar-track, initial);
+  --scrollbar-thumb: #52525b;
+  --scrollbar-track: #121214;
 }
 
 body {
