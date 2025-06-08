@@ -7,9 +7,9 @@ export interface LocaleTranslation {
       imgUrl: string
       imgAlt: string
     }
-    home: string
   }
-  about: {
+  home: {
+    title: string
     hello: string
     iam: string
     description: string

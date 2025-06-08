@@ -7,9 +7,9 @@ export const en: LocaleTranslation = {
       imgUrl: '/assets/usa-flag.svg',
       imgAlt: 'usa-flag.svg',
     },
-    home: 'Home',
   },
-  about: {
+  home: {
+    title: 'Home',
     hello: 'Hello,',
     iam: "I'm",
     description:

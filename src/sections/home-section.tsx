@@ -5,7 +5,7 @@ import { LinkedinIcon } from '@/components/icons/linkedin'
 import { MailIcon } from '@/components/icons/mail'
 import { useTranslation } from '@/hooks/use-translation'
 
-export function AboutMeSection(): React.JSX.Element {
+export function HomeSection(): React.JSX.Element {
   const { t } = useTranslation()
 
   return (
@@ -16,14 +16,12 @@ export function AboutMeSection(): React.JSX.Element {
       <div className="mx-auto w-11/12 max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
           <div className="mx-auto max-w-xl">
-            <p className="mb-1 block text-2xl font-medium">
-              {t('about.hello')}
-            </p>
+            <p className="mb-1 block text-2xl font-medium">{t('home.hello')}</p>
             <p className="block text-3xl font-semibold">
-              {t('about.iam')}{' '}
+              {t('home.iam')}{' '}
               <GlowText textClassName="text-blue-400">Bruno Rocha</GlowText>
             </p>
-            <p className="mt-2 text-pretty">{t('about.description')}</p>
+            <p className="mt-2 text-pretty">{t('home.description')}</p>
             <div className="mt-3 flex gap-2">
               <GlowContainer
                 containerClassName="bg-zinc-800 rounded-md p-0.5 text-zinc-200 hover:text-zinc-100 active:text-zinc-100"

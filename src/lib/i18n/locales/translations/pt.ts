@@ -7,9 +7,9 @@ export const pt: LocaleTranslation = {
       imgUrl: '/assets/brazil-flag.svg',
       imgAlt: 'brazil-flag.svg',
     },
-    home: 'Inicio',
   },
-  about: {
+  home: {
+    title: 'Inicio',
     hello: 'Olá,',
     iam: 'Me chamo',
     description:
