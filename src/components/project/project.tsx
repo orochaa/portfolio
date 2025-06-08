@@ -50,7 +50,7 @@ export function Project(props: ProjectProps): React.JSX.Element {
         </div>
         <div className="block h-[1px] w-full bg-zinc-600" />
         <div className="relative grow p-0.5">
-          <span className="absolute inset-0.5 rounded-b-md bg-zinc-900/90" />
+          <span className="absolute inset-0.5 rounded-b-md bg-zinc-900" />
           <div className="relative p-4">
             <ProjectHeader project={project} t={t} />
             <p className="min-h-12">{project.description[lang]}</p>

@@ -1,3 +1,4 @@
+import { GlowContainer } from '@/components/glow-container'
 import { Title } from '@/components/title'
 import { useTranslation } from '@/hooks/use-translation'
 import type { Language } from '@/lib/i18n/locales/types'
@@ -25,21 +26,24 @@ export function HardSkillsSection(): React.JSX.Element {
         </p>
         <div className="mx-auto grid w-fit grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {hardSkills.map(hardSkill => (
-            <div
+            <GlowContainer
               key={hardSkill.title.en}
               title={hardSkill.title[lang]}
-              className="rounded-xl border-4 border-zinc-800 bg-zinc-900 p-10 lg:aspect-10/9"
+              containerClassName="rounded-xl bg-zinc-800 p-1"
+              glowClassName="size-[52rem] from-violet-500"
             >
-              <div className="mx-auto mb-4 w-fit rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5">
-                <hardSkill.Icon size={48} className="shrink-0" />
+              <div className="relative rounded-xl bg-zinc-900 p-10 lg:aspect-10/9">
+                <div className="mx-auto mb-4 w-fit rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5">
+                  <hardSkill.Icon size={48} className="shrink-0" />
+                </div>
+                <p className="mx-auto mb-2 text-center text-base font-bold text-balance sm:text-lg">
+                  {hardSkill.title[lang]}
+                </p>
+                <p className="text-center text-sm text-pretty text-neutral-200 sm:text-base">
+                  {hardSkill.description[lang]}
+                </p>
               </div>
-              <p className="mx-auto mb-2 text-center text-base font-bold text-balance sm:text-lg">
-                {hardSkill.title[lang]}
-              </p>
-              <p className="text-center text-sm text-pretty text-neutral-200 sm:text-base">
-                {hardSkill.description[lang]}
-              </p>
-            </div>
+            </GlowContainer>
           ))}
         </div>
       </div>

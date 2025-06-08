@@ -23,7 +23,7 @@ export function EducationSection(): React.JSX.Element {
             >
               <GlowContainer
                 containerClassName="shrink-0 bg-zinc-800 p-1 rounded-md rounded-b-none md:size-fit md:rounded-full"
-                glowClassName="size-96 from-sky-500"
+                glowClassName="size-[28rem] from-sky-500"
               >
                 <a
                   href={certification.institutionUrl}
@@ -42,7 +42,7 @@ export function EducationSection(): React.JSX.Element {
               </GlowContainer>
               <GlowContainer
                 containerClassName="rounded-md rounded-t-none h-fit bg-zinc-800 p-1 md:rounded-t-md"
-                glowClassName="size-96 from-sky-500"
+                glowClassName="size-[28rem] from-sky-500"
               >
                 <div className="relative h-full rounded-md bg-zinc-900/90 p-6">
                   <p className="mb-1 flex items-center gap-1.5 text-sm text-zinc-100">
