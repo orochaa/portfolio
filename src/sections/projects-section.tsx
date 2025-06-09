@@ -100,7 +100,7 @@ export function ProjectsSection(): React.JSX.Element {
   return (
     <div className="bg-background py-20">
       <div id="projects" className="mx-auto w-11/12 max-w-6xl">
-        <Title className="bg-background relative top-[3.05rem] left-0 z-10 mb-6 pt-4 text-3xl sm:sticky">
+        <Title className="bg-background relative top-[3.05rem] left-0 z-10 mb-6 pt-4 text-3xl after:drop-shadow-sky-500/40 sm:sticky">
           {t('projects.title')}
         </Title>
         <div className="flex flex-col gap-4 sm:flex-row sm:gap-0">
@@ -115,7 +115,7 @@ export function ProjectsSection(): React.JSX.Element {
                     <a
                       href={`#${h.id}`}
                       data-active={activeId === h.id}
-                      className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:-left-0.5 before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 sm:before:w-0.5"
+                      className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:-left-0.5 before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 data-active:before:drop-shadow-[0.25rem_0_0.33rem] data-active:before:drop-shadow-cyan-400/75 sm:before:w-0.5"
                       onClick={scrollTo(`#${h.id}`, 125)}
                     >
                       {h.text}

@@ -22,7 +22,7 @@ export function EducationSection(): React.JSX.Element {
               key={certification.en.title}
             >
               <GlowContainer
-                containerClassName="shrink-0 bg-zinc-800 p-1 rounded-md rounded-b-none md:size-fit md:rounded-full"
+                containerClassName="shrink-0 bg-zinc-800 p-1 rounded-md rounded-b-none md:size-fit md:rounded-full "
                 glowClassName="size-[28rem] from-sky-500"
               >
                 <a

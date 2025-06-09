@@ -32,8 +32,8 @@ export function HardSkillsSection(): React.JSX.Element {
               containerClassName="rounded-xl bg-zinc-800 p-1"
               glowClassName="size-[52rem] from-violet-500"
             >
-              <div className="relative rounded-xl bg-zinc-900 p-10 lg:aspect-10/9">
-                <div className="mx-auto mb-4 w-fit rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5">
+              <div className="relative h-full rounded-xl bg-zinc-900 p-10 lg:aspect-10/9">
+                <div className="mx-auto mb-4 w-fit rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5 drop-shadow-[0.25rem_0.25rem_1.5rem] drop-shadow-purple-500/40">
                   <hardSkill.Icon size={48} className="shrink-0" />
                 </div>
                 <p className="mx-auto mb-2 text-center text-base font-bold text-balance sm:text-lg">

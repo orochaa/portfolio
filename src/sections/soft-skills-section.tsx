@@ -32,7 +32,7 @@ export function SoftSkillsSection(): React.JSX.Element {
               className="group/skill relative overflow-hidden rounded-xl"
             >
               <div className="flex h-full flex-col items-center justify-center gap-2 rounded-xl border-4 border-zinc-800 bg-zinc-900 p-6 sm:aspect-square">
-                <div className="rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5">
+                <div className="rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-3.5 drop-shadow-[0.25rem_0.25rem_1.5rem] drop-shadow-purple-500/40">
                   <softSkill.Icon size={48} className="shrink-0" />
                 </div>
                 <p className="flex max-w-52 flex-col text-center text-base font-bold text-balance sm:text-lg">

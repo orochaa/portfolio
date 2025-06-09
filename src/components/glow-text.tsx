@@ -14,12 +14,9 @@ export function GlowText(props: GlowTextProps): React.JSX.Element {
       <span className={props.textClassName}>{props.children}</span>
       <span
         className={cn(
-          'ease absolute bottom-0.5 left-0 w-0 overflow-hidden whitespace-nowrap text-cyan-400 transition-[width] duration-300 group-hover/name:w-full',
+          'absolute bottom-0.5 left-0 w-0 overflow-hidden whitespace-nowrap text-cyan-400 drop-shadow-[0_0_1.25rem] drop-shadow-cyan-500/75 transition-[width] duration-300 ease-in-out group-hover/name:w-full',
           props.glowClassName
         )}
-        style={{
-          filter: 'drop-shadow(0 0 23px oklch(78.9% 0.154 211.53)',
-        }}
       >
         {props.children}
       </span>
