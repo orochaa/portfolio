@@ -37,6 +37,42 @@ export const pt: LocaleTranslation = {
     filters: 'Filtros',
     notFound: '😦 Nenhum projeto encontrado com os filtros selecionados.',
   },
+  contact: {
+    title: 'Entre em Contato',
+    subtitle:
+      'Sinta-se à vontade para entrar em contato para novas oportunidades, colaborações ou apenas para dizer oi!',
+    form: {
+      name: {
+        label: 'Nome',
+        placeholder: 'Digite seu nome',
+      },
+      email: {
+        label: 'Email',
+        placeholder: 'exemplo@gmail.com',
+      },
+      subject: {
+        label: 'Assunto',
+        placeholder: 'Digite o assunto da sua mensagem',
+      },
+      message: {
+        label: 'Mensagem',
+        placeholder: 'Escreva sua mensagem aqui',
+      },
+      submit: 'Enviar mensagem',
+    },
+    alert: {
+      success: {
+        title: 'Mensagem enviada com sucesso!',
+        message:
+          'Obrigado pela sua mensagem! Responderei o mais breve possível.',
+      },
+      error: {
+        title: 'Erro ao enviar mensagem!',
+        message:
+          'Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde.',
+      },
+    },
+  },
   project: {
     link: 'Abrir para aplicação',
     github: 'Abrir repositório',

@@ -37,6 +37,42 @@ export const en: LocaleTranslation = {
     filters: 'Filters',
     notFound: '😦 There is no project with selected filters.',
   },
+  contact: {
+    title: 'Contact Me',
+    subtitle:
+      'Feel free to reach out for new opportunities, collaborations, or just to say hi!',
+    form: {
+      name: {
+        label: 'Name',
+        placeholder: 'Enter your name',
+      },
+      email: {
+        label: 'Email',
+        placeholder: 'example@gmail.com',
+      },
+      subject: {
+        label: 'Subject',
+        placeholder: 'Enter the subject of your message',
+      },
+      message: {
+        label: 'Message',
+        placeholder: 'Write your message here',
+      },
+      submit: 'Send message',
+    },
+    alert: {
+      success: {
+        title: 'Message sent successfully!',
+        message:
+          'Thanks for your message! I will get back to you as soon as possible.',
+      },
+      error: {
+        title: 'Error sending message!',
+        message:
+          'There was an error sending your message. Please try again later.',
+      },
+    },
+  },
   project: {
     link: 'Go to application',
     github: 'Go to repository',

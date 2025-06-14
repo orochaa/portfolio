@@ -36,6 +36,39 @@ export interface LocaleTranslation {
     filters: string
     notFound: string
   }
+  contact: {
+    title: string
+    subtitle: string
+    form: {
+      name: {
+        label: string
+        placeholder: string
+      }
+      email: {
+        label: string
+        placeholder: string
+      }
+      subject: {
+        label: string
+        placeholder: string
+      }
+      message: {
+        label: string
+        placeholder: string
+      }
+      submit: string
+    }
+    alert: {
+      success: {
+        title: string
+        message: string
+      }
+      error: {
+        title: string
+        message: string
+      }
+    }
+  }
   project: {
     link: string
     github: string

@@ -1,4 +1,5 @@
 import { useDailyAppPing } from '@/hooks/use-daily-app-ping'
+import { ContactSection } from '@/sections/contact-section'
 import { EducationSection } from '@/sections/education-section'
 import { HardSkillsSection } from '@/sections/hard-skills-section'
 import { HeaderSection } from '@/sections/header-section'
@@ -19,6 +20,7 @@ export function App(): React.JSX.Element {
       <TechnologiesSection />
       <SoftSkillsSection />
       <ProjectsSection />
+      <ContactSection />
     </div>
   )
 }

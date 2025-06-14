@@ -4,6 +4,7 @@ import { GithubIcon } from '@/components/icons/github'
 import { LinkedinIcon } from '@/components/icons/linkedin'
 import { MailIcon } from '@/components/icons/mail'
 import { useTranslation } from '@/hooks/use-translation'
+import { scrollTo } from '@/lib/utils'
 
 export function HomeSection(): React.JSX.Element {
   const { t } = useTranslation()
@@ -55,15 +56,14 @@ export function HomeSection(): React.JSX.Element {
                 containerClassName="bg-zinc-800 rounded-md p-0.5 text-zinc-200 hover:text-zinc-100 active:text-zinc-100"
                 glowClassName="size-22 from-zinc-100"
               >
-                <a
+                <button
+                  type="button"
                   title="Mail"
-                  href="mailto:brunorocha2674@gmail.com"
-                  target="_blank"
-                  rel="noreferrer"
                   className="relative block rounded-md bg-zinc-800/90"
+                  onClick={scrollTo('#contact')}
                 >
                   <MailIcon size={24} className="p-1.5" />
-                </a>
+                </button>
               </GlowContainer>
             </div>
           </div>

@@ -147,17 +147,12 @@ export function HeaderSection(): React.JSX.Element {
                   className="relative flex h-full items-center text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-cyan-500 after:drop-shadow-[0_-0.25rem_0.25rem] after:drop-shadow-sky-500/40 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                 />
               </a>
-              <a
-                title="Mail"
-                href="mailto:brunorocha2674@gmail.com"
-                target="_blank"
-                rel="noreferrer"
-              >
+              <button type="button" title="Mail" onClick={scrollTo('#contact')}>
                 <MailIcon
                   size={24}
                   className="relative flex h-full items-center text-zinc-300 after:absolute after:bottom-0 after:left-1/2 after:h-1 after:w-0 after:-translate-x-1/2 after:bg-cyan-500 after:drop-shadow-[0_-0.25rem_0.25rem] after:drop-shadow-sky-500/40 after:transition-[width] hover:text-zinc-100 hover:after:w-full active:text-zinc-100 active:after:w-full"
                 />
-              </a>
+              </button>
             </div>
           </div>
         )}
