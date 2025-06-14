@@ -44,7 +44,7 @@ export function TechnologiesSection(): React.JSX.Element {
   )
 
   return (
-    <div id="technologies" className="bg-slate-950 py-20">
+    <section id="technologies" className="bg-slate-950 py-20">
       <div className="mx-auto grid w-11/12 max-w-6xl grid-cols-1 gap-6 lg:grid-cols-2">
         <div className="mx-auto w-xl max-w-full">
           <Title className="mb-4">{t('technologies.title')}</Title>
@@ -133,7 +133,7 @@ export function TechnologiesSection(): React.JSX.Element {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

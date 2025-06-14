@@ -98,8 +98,8 @@ export function ProjectsSection(): React.JSX.Element {
   }, [selectedFilters])
 
   return (
-    <div className="bg-background py-20">
-      <div id="projects" className="mx-auto w-11/12 max-w-6xl">
+    <section id="projects" className="bg-background py-20">
+      <div className="mx-auto w-11/12 max-w-6xl">
         <Title className="bg-background relative top-[3.05rem] left-0 z-10 mb-6 pt-4 text-3xl after:drop-shadow-sky-500/40 sm:sticky sm:text-3xl">
           {t('projects.title')}
         </Title>
@@ -180,6 +180,6 @@ export function ProjectsSection(): React.JSX.Element {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

@@ -9,7 +9,7 @@ export function HomeSection(): React.JSX.Element {
   const { t } = useTranslation()
 
   return (
-    <div
+    <section
       id="home"
       className="bg-gradient-to-b from-slate-950 from-50% to-slate-900 py-20"
     >
@@ -76,6 +76,6 @@ export function HomeSection(): React.JSX.Element {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   )
 }

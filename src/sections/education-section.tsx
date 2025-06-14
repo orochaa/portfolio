@@ -7,7 +7,7 @@ export function EducationSection(): React.JSX.Element {
   const { t, lang } = useTranslation()
 
   return (
-    <div
+    <section
       id="education"
       className="from-background bg-gradient-to-br from-40% to-zinc-950 py-20"
     >
@@ -68,7 +68,7 @@ export function EducationSection(): React.JSX.Element {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 

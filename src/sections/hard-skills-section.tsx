@@ -16,7 +16,7 @@ export function HardSkillsSection(): React.JSX.Element {
   const { t, lang } = useTranslation()
 
   return (
-    <div id="hard-skills" className="bg-slate-950 py-20">
+    <section id="hard-skills" className="bg-slate-950 py-20">
       <div className="mx-auto w-11/12 max-w-6xl">
         <Title className="mx-auto mb-4 w-fit px-1 after:left-1/2 after:w-5/7 after:-translate-x-1/2 after:from-cyan-500 after:via-blue-500 after:to-cyan-500">
           {t('hard-skills.title')}
@@ -47,7 +47,7 @@ export function HardSkillsSection(): React.JSX.Element {
           ))}
         </div>
       </div>
-    </div>
+    </section>
   )
 }
 
