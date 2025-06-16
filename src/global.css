@@ -142,3 +142,13 @@ button:disabled {
 li {
   list-style: none;
 }
+
+.blink {
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  50% {
+    border-color: transparent;
+  }
+}
