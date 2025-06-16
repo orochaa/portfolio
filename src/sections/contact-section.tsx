@@ -1,7 +1,9 @@
+import { Modal, useModal } from '@/components/modal'
 import { Title } from '@/components/title'
 import { useTranslation } from '@/hooks/use-translation'
 import { useValidate } from '@/hooks/use-validate'
-import { useActionState } from 'react'
+import { useCallback, useState, useTransition } from 'react'
+import type { ChangeEvent, FormEvent } from 'react'
 import { z } from 'zod'
 
 const formSchema = z.object({
@@ -13,45 +15,73 @@ const formSchema = z.object({
 
 type Form = z.infer<typeof formSchema>
 
+const initialForm: Form = {
+  name: '',
+  email: '',
+  subject: '',
+  message: '',
+}
+
 export function ContactSection(): React.JSX.Element {
   const { t } = useTranslation()
 
+  const [form, setForm] = useState<Form>(initialForm)
+  const [isPending, startTransition] = useTransition()
   const { validate, validationError } = useValidate(formSchema)
+  const successModal = useModal()
 
-  const [, formAction, isPending] = useActionState<Partial<Form>, FormData>(
-    async (_, formData): Promise<Form> => {
-      const form = Object.fromEntries(formData.entries()) as Form
-      const { parsedData, error } = validate(form)
+  const handleChange = useCallback(
+    (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+      const { name, value } = e.target
 
-      if (error) {
-        return form
-      }
-
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      const res = await fetch(import.meta.env.VITE_CONTACT_URL!, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(parsedData),
-      })
-
-      if (!res.ok) {
-        const error = await res.text()
-        alert(error || t('contact.alert.error.message'))
-
-        return form
-      }
-
-      alert(t('contact.alert.success.message'))
-
-      return {
-        ...form,
-        subject: '',
-        message: '',
-      }
+      setForm(state => ({ ...state, [name]: value }))
     },
-    {}
+    []
+  )
+
+  const handleSubmit = useCallback(
+    (e: FormEvent) => {
+      e.preventDefault()
+
+      startTransition(async () => {
+        try {
+          const formData = new FormData(e.target as HTMLFormElement)
+          const form = Object.fromEntries(formData.entries()) as Form
+          const { parsedData, error } = validate(form)
+
+          if (error) {
+            return
+          }
+
+          // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+          const res = await fetch(import.meta.env.VITE_CONTACT_URL!, {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(parsedData),
+          })
+
+          if (!res.ok) {
+            const error = await res.text()
+            alert(error || t('contact.alert.error.message'))
+
+            return
+          }
+
+          successModal.current?.openModal()
+
+          setForm({
+            ...form,
+            subject: '',
+            message: '',
+          })
+        } catch {
+          alert(t('contact.alert.error.message'))
+        }
+      })
+    },
+    [successModal, t, validate]
   )
 
   return (
@@ -68,7 +98,10 @@ export function ContactSection(): React.JSX.Element {
         </p>
       </div>
 
-      <form action={formAction} className="mx-auto w-11/12 max-w-3xl space-y-6">
+      <form
+        onSubmit={handleSubmit}
+        className="mx-auto w-11/12 max-w-3xl space-y-6"
+      >
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <label htmlFor="name" className="mb-1 block text-sm font-medium">
@@ -80,6 +113,8 @@ export function ContactSection(): React.JSX.Element {
               name="name"
               placeholder={t('contact.form.name.placeholder')}
               className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
+              value={form.name}
+              onChange={handleChange}
             />
             {!!validationError.name && (
               <span className="text-sm text-red-500">
@@ -97,6 +132,8 @@ export function ContactSection(): React.JSX.Element {
               name="email"
               placeholder={t('contact.form.email.placeholder')}
               className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
+              value={form.email}
+              onChange={handleChange}
             />
             {!!validationError.email && (
               <span className="text-sm text-red-500">
@@ -116,6 +153,8 @@ export function ContactSection(): React.JSX.Element {
             name="subject"
             placeholder={t('contact.form.subject.placeholder')}
             className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
+            value={form.subject}
+            onChange={handleChange}
           />
           {!!validationError.subject && (
             <span className="text-sm text-red-500">
@@ -134,6 +173,8 @@ export function ContactSection(): React.JSX.Element {
             placeholder={t('contact.form.message.placeholder')}
             rows={5}
             className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
+            value={form.message}
+            onChange={handleChange}
           />
           {!!validationError.message && (
             <span className="text-sm text-red-500">
@@ -149,10 +190,24 @@ export function ContactSection(): React.JSX.Element {
         >
           <span className="absolute top-0 left-1/2 h-[140%] w-0 -translate-x-1/2 bg-blue-400 transition-[width] group-hover/submit:w-full" />
           <span className="relative">
-            {isPending ? t('contact.form.pending') : t('contact.form.submit')}
+            {isPending
+              ? t('contact.form.submit.pending')
+              : t('contact.form.submit.label')}
           </span>
         </button>
       </form>
+
+      <Modal.Root ref={successModal}>
+        <Modal.Content>
+          <Modal.Title>{t('contact.alert.success.title')}</Modal.Title>
+          <Modal.CloseButton />
+          <div className="px-6 py-10">
+            <p className="text-pretty whitespace-pre">
+              {t('contact.alert.success.message')} 😄
+            </p>
+          </div>
+        </Modal.Content>
+      </Modal.Root>
     </section>
   )
 }

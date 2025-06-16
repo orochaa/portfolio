@@ -2,7 +2,10 @@ import type { MouseEvent } from 'react'
 
 export * from './format'
 
-export function scrollTo(id: `#${string}`, offset: number = 0) {
+export function scrollTo(
+  id: `#${string}`,
+  options?: { offset?: number; behavior?: ScrollBehavior }
+) {
   return (e: MouseEvent): void => {
     e.preventDefault()
     const title = document.querySelector(id)
@@ -11,6 +14,8 @@ export function scrollTo(id: `#${string}`, offset: number = 0) {
       return
     }
 
+    const { behavior = 'smooth', offset = 0 } = options ?? {}
+
     window.scroll({
       top: Math.round(
         title.getBoundingClientRect().top +
@@ -18,7 +23,7 @@ export function scrollTo(id: `#${string}`, offset: number = 0) {
           offset
       ),
       left: 0,
-      behavior: 'smooth',
+      behavior,
     })
     globalThis.history.pushState({}, '', id)
   }

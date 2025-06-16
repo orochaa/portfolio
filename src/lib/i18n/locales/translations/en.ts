@@ -58,8 +58,10 @@ export const en: LocaleTranslation = {
         label: 'Message',
         placeholder: 'Write your message here',
       },
-      submit: 'Send message',
-      pending: 'Sending message...',
+      submit: {
+        label: 'Send message',
+        pending: 'Sending message...',
+      },
     },
     alert: {
       success: {

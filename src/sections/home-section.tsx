@@ -60,7 +60,7 @@ export function HomeSection(): React.JSX.Element {
                   type="button"
                   title="Mail"
                   className="relative block rounded-md bg-zinc-800/90"
-                  onClick={scrollTo('#contact')}
+                  onClick={scrollTo('#contact', { behavior: 'instant' })}
                 >
                   <MailIcon size={24} className="p-1.5" />
                 </button>
