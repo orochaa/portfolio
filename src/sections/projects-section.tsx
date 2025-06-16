@@ -116,7 +116,7 @@ export function ProjectsSection(): React.JSX.Element {
                       href={`#${h.id}`}
                       data-active={activeId === h.id}
                       className="relative block rounded-r px-3 py-1.5 text-base before:absolute before:bottom-0 before:-left-0.5 before:h-full before:w-0 before:bg-zinc-600 hover:bg-zinc-900 hover:before:bg-zinc-500 active:bg-zinc-900 active:before:bg-zinc-500 data-active:bg-zinc-800 data-active:font-medium data-active:before:bg-blue-400 data-active:before:drop-shadow-[0.25rem_0_0.33rem] data-active:before:drop-shadow-cyan-400/75 sm:before:w-0.5"
-                      onClick={scrollTo(`#${h.id}`, 125)}
+                      onClick={scrollTo(`#${h.id}`, { offset: 125 })}
                     >
                       {h.text}
                     </a>
