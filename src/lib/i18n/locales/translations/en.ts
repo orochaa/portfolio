@@ -59,6 +59,7 @@ export const en: LocaleTranslation = {
         placeholder: 'Write your message here',
       },
       submit: 'Send message',
+      pending: 'Sending message...',
     },
     alert: {
       success: {

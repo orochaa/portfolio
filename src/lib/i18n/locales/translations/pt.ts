@@ -59,6 +59,7 @@ export const pt: LocaleTranslation = {
         placeholder: 'Escreva sua mensagem aqui',
       },
       submit: 'Enviar mensagem',
+      pending: 'Enviando mensagem...',
     },
     alert: {
       success: {

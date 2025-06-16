@@ -1,7 +1,7 @@
 import { Title } from '@/components/title'
 import { useTranslation } from '@/hooks/use-translation'
 import { useValidate } from '@/hooks/use-validate'
-import { useCallback, useState } from 'react'
+import { useActionState } from 'react'
 import { z } from 'zod'
 
 const formSchema = z.object({
@@ -13,62 +13,45 @@ const formSchema = z.object({
 
 type Form = z.infer<typeof formSchema>
 
-const initialForm: Form = {
-  name: '',
-  email: '',
-  subject: '',
-  message: '',
-}
-
 export function ContactSection(): React.JSX.Element {
   const { t } = useTranslation()
 
-  const [form, setForm] = useState<Form>(initialForm)
   const { validate, validationError } = useValidate(formSchema)
 
-  const handleChange = useCallback(
-    (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>): void => {
-      setForm(form => ({ ...form, [e.target.name]: e.target.value }))
-    },
-    []
-  )
-
-  const handleSubmit = useCallback(
-    (e: React.FormEvent): void => {
-      e.preventDefault()
+  const [, formAction, isPending] = useActionState<Partial<Form>, FormData>(
+    async (_, formData): Promise<Form> => {
+      const form = Object.fromEntries(formData.entries()) as Form
       const { parsedData, error } = validate(form)
 
       if (error) {
-        return
+        return form
       }
 
       // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      fetch(import.meta.env.VITE_CONTACT_URL!, {
+      const res = await fetch(import.meta.env.VITE_CONTACT_URL!, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify(parsedData),
       })
-        .then(async res => {
-          if (!res.ok) {
-            const error = await res.text()
-            alert(error || t('contact.alert.error.message'))
 
-            return
-          }
-          alert(t('contact.alert.success.message'))
-          setForm(form => ({
-            ...form,
-            subject: initialForm.subject,
-            message: initialForm.message,
-          }))
-        })
-        .catch(error => {
-          alert(error)
-        })
+      if (!res.ok) {
+        const error = await res.text()
+        alert(error || t('contact.alert.error.message'))
+
+        return form
+      }
+
+      alert(t('contact.alert.success.message'))
+
+      return {
+        ...form,
+        subject: '',
+        message: '',
+      }
     },
-    [form, t, validate]
+    {}
   )
 
   return (
@@ -85,10 +68,7 @@ export function ContactSection(): React.JSX.Element {
         </p>
       </div>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mx-auto w-11/12 max-w-3xl space-y-6"
-      >
+      <form action={formAction} className="mx-auto w-11/12 max-w-3xl space-y-6">
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div>
             <label htmlFor="name" className="mb-1 block text-sm font-medium">
@@ -99,8 +79,6 @@ export function ContactSection(): React.JSX.Element {
               type="text"
               name="name"
               placeholder={t('contact.form.name.placeholder')}
-              value={form.name}
-              onChange={handleChange}
               className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
             />
             {!!validationError.name && (
@@ -118,8 +96,6 @@ export function ContactSection(): React.JSX.Element {
               type="email"
               name="email"
               placeholder={t('contact.form.email.placeholder')}
-              value={form.email}
-              onChange={handleChange}
               className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
             />
             {!!validationError.email && (
@@ -139,8 +115,6 @@ export function ContactSection(): React.JSX.Element {
             type="text"
             name="subject"
             placeholder={t('contact.form.subject.placeholder')}
-            value={form.subject}
-            onChange={handleChange}
             className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
           />
           {!!validationError.subject && (
@@ -159,8 +133,6 @@ export function ContactSection(): React.JSX.Element {
             name="message"
             placeholder={t('contact.form.message.placeholder')}
             rows={5}
-            value={form.message}
-            onChange={handleChange}
             className="block w-full rounded-sm border border-zinc-600 bg-zinc-900 p-1 text-base outline-hidden autofill:shadow-[inset_0_0_0px_1000px_#18181b] hover:border-zinc-500 focus:border-blue-500 focus:drop-shadow-[0_0_0.1rem] focus:drop-shadow-blue-500"
           />
           {!!validationError.message && (
@@ -172,10 +144,13 @@ export function ContactSection(): React.JSX.Element {
 
         <button
           type="submit"
-          className="group/submit relative mx-auto block overflow-hidden rounded-md bg-blue-500 px-6 py-3 transition-colors active:bg-blue-400"
+          className="group/submit relative mx-auto block w-xs max-w-full overflow-hidden rounded-md bg-blue-500 px-6 py-3 transition-colors active:bg-blue-400 disabled:bg-blue-400"
+          disabled={isPending}
         >
           <span className="absolute top-0 left-1/2 h-[140%] w-0 -translate-x-1/2 bg-blue-400 transition-[width] group-hover/submit:w-full" />
-          <span className="relative">{t('contact.form.submit')}</span>
+          <span className="relative">
+            {isPending ? t('contact.form.pending') : t('contact.form.submit')}
+          </span>
         </button>
       </form>
     </section>

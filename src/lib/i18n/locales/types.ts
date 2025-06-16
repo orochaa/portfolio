@@ -57,6 +57,7 @@ export interface LocaleTranslation {
         placeholder: string
       }
       submit: string
+      pending: string
     }
     alert: {
       success: {

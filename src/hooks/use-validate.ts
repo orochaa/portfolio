@@ -15,7 +15,7 @@ type ValidateError<T extends Record<string | number, unknown>> = {
 }
 
 type ValidateData<T extends Record<string, unknown>> = {
-  [K in keyof T]:
+  [K in keyof T]?:
     | (T[K] extends Record<string, unknown> ? ValidateData<T[K]> : T[K])
     | null
     | undefined
