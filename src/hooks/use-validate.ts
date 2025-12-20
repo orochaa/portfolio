@@ -66,7 +66,7 @@ interface ValidateState<T extends Record<string, unknown>> {
  * @returns validate: (data: ValidateData<T>) => ValidateResult<T>, validationError: ValidateError<T>, mergeError: (data: Partial<ValidateError<T>>) => void
  */
 export function useValidate<T extends Record<string, unknown>>(
-  schema: z.Schema<T>
+  schema: z.ZodType<T>
 ): ValidateState<T> {
   const [validationError, setValidationError] = useState(
     {} as unknown as ValidateError<T>
