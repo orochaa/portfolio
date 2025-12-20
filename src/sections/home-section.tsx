@@ -12,7 +12,7 @@ export function HomeSection(): React.JSX.Element {
   return (
     <section
       id="home"
-      className="bg-gradient-to-b from-slate-950 from-50% to-slate-900 py-20"
+      className="bg-linear-to-b from-slate-950 from-50% to-slate-900 py-20"
     >
       <div className="mx-auto w-11/12 max-w-6xl">
         <div className="grid grid-cols-1 items-center gap-6 md:grid-cols-2">
@@ -68,11 +68,15 @@ export function HomeSection(): React.JSX.Element {
             </div>
           </div>
           <div>
-            <img
-              src="https://avatars.githubusercontent.com/u/100330057?v=4"
-              alt="bruno-rocha.png"
-              className="mx-auto aspect-square size-96 w-fit rounded-md bg-cover"
-            />
+            <div className="relative mx-auto w-fit">
+              <div className="absolute -right-2 -bottom-2 h-97.5 w-full rounded-r-xl border-2 border-blue-600" />
+              <div className="absolute -right-4 -bottom-4 h-97.5 w-full rounded-r-xl border-2 border-blue-600" />
+              <img
+                src="https://avatars.githubusercontent.com/u/100330057?v=4"
+                alt="bruno-rocha.png"
+                className="relative aspect-square size-96 rounded-r-md bg-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
