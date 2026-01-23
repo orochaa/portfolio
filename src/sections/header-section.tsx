@@ -40,6 +40,8 @@ export function HeaderSection(): React.JSX.Element {
       data-scrolled={scrolled}
       className="group lef-0 fixed top-0 z-20 w-full border-b border-transparent bg-slate-950 pt-4 transition-all data-[scrolled=true]:border-zinc-700 data-[scrolled=true]:bg-zinc-950 data-[scrolled=true]:py-0"
     >
+      <img src="/assets/brazil-flag.svg" alt="brazil-flag" className="hidden" />
+      <img src="/assets/usa-flag.svg" alt="usa-flag" className="hidden" />
       <div className="mx-auto flex w-11/12 max-w-6xl justify-between">
         <div>
           <button
